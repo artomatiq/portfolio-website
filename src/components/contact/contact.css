@@ -1,0 +1,50 @@
+a {
+    font-size: var(--normal-font-size);
+}
+
+.contact__info {
+    font-size: var(--small-font-size);
+    font-weight: 100;
+}
+
+.contact__title {
+    font-weight: normal;
+}
+
+.contact__card-title {
+    font-weight: normal;
+}
+
+.contact__input {
+    font-size: var(--larger-font-size);
+    border-radius: 2rem;
+    border-color: var(--title-color-light);
+}
+
+#contact-message {
+    height: 15rem;
+}
+
+.contact__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact__media {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact__form {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    row-gap: 0.5rem;
+}
+
+.button {
+    font-weight: var(--font-small);
+    display: flex;
+    justify-content: center;
+}
