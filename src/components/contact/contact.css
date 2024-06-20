@@ -2,23 +2,22 @@ a {
     font-size: var(--normal-font-size);
 }
 
-.contact__info {
-    font-size: var(--small-font-size);
-    font-weight: 100;
+.contact__form-div {
+    
 }
 
-.contact__title {
-    font-weight: normal;
+label {
+    position: relative;
+    font-size: var(--h3-font-size);
 }
 
-.contact__card-title {
-    font-weight: normal;
-}
-
-.contact__input {
+.contact__form-input {
     font-size: var(--larger-font-size);
-    border-radius: 2rem;
-    border-color: var(--title-color-light);
+    background-color: var(--body-color);
+    border-style:solid;
+    border-width: 1px;
+    border-color: var(--text-color);
+    border-radius: 0.75rem;
 }
 
 #contact-message {
@@ -40,7 +39,7 @@ a {
 .contact__form {
     display: grid;
     grid-template-rows: repeat(4, auto);
-    row-gap: 0.5rem;
+    row-gap: 1rem;
 }
 
 .button {
