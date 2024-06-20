@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Press+Start+2P&family=Tiny5&display=swap');
 
+
 :root {
   --header-height: 3rem;
 
@@ -105,15 +106,19 @@
     font-size: var(--h1-font-size);
   }
 
-  .section_subtitle {
+  .section__subtitle {
     display: block;
-    font-size: var(--small-font-size);
+    font-size: var(--normal-font-size);
     margin-bottom: 4rem;
   }
 
-  .section_title,
-  .section_subtitle {
+  .section__title {
     text-align: center;
+    margin-top: 3rem;
+  }
+  .section__subtitle {
+    text-align: center;
+    margin-top: 1rem;
   }
 
   .container {
@@ -166,6 +171,8 @@
       margin: 0 0 var(--header-height) 0;
     }
 
+
+
     .section {
       padding: 2rem 0 4rem;
     }
@@ -176,9 +183,6 @@
   }
 
   @media screen and (max-width: 576px) {
-  }
-
-  @media screen and (max-width: 350px) {
     :root {
       --big-font-size: 2.25rem;
       text-align: center;
@@ -188,4 +192,7 @@
       padding-left: var(--mb-1);
       padding-right: var(--mb-1);
     }
+  }
+
+  @media screen and (max-width: 350px) {
   }

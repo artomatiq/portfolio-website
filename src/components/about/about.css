@@ -69,22 +69,19 @@
     .about__description {
         padding: 0 5rem;
         margin-bottom: 2rem;
+        font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .section__title {
-        text-align: center;
-    }
-    .section__subtitle {
-        text-align: center;
-    }
+    
     .about__info {
         grid-template-columns: repeat(3, 1fr);
     }
 
     .about__description {
         padding: 0;
+        font-size: 1rem;
     }
 }
 
