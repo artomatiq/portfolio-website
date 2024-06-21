@@ -1,7 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import './contact.css'
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    })
+
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value})
+    }
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(formData)
+    }
+
     return (
         <section className="contact section" id="contact">
             <h2 className="section__title">Get In Touch</h2>
@@ -22,6 +37,7 @@ const Contact = () => {
                             name="name"
                             className="contact__form-input"
                             id="contact-name"
+                            onChange={handleChange}
                         // placeholder="type your name"
                         />
                     </div>
@@ -33,6 +49,7 @@ const Contact = () => {
                             name="email"
                             className="contact__form-input"
                             id="contact-email"
+                            onChange={handleChange}
                         // placeholder="type your email"
                         />
                     </div>
@@ -47,6 +64,7 @@ const Contact = () => {
                             rows="10"
                             className="contact__form-input"
                             id="contact-message"
+                            onChange={handleChange}
                         // placeholder="type your message"
                         />
                     </div>
@@ -54,6 +72,7 @@ const Contact = () => {
                     <div className="contact__form-div but">
                         <button
                             type="submit"
+                            onClick={handleSubmit}
                             className="button button--flex"
                         >
                             Send Message
