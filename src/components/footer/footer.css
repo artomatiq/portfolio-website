@@ -54,3 +54,15 @@
     text-align: center;
     padding: 2rem;
 }
+
+@media screen and (max-width: 576px) {
+    .footer__title {
+        font-size: 1rem;
+    }
+    .footer__list {
+        font-size: 0.6rem;
+    }
+    .footer__social-icon {
+        font-size: 1rem;
+    }
+}

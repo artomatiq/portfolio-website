@@ -190,6 +190,43 @@ input::-webkit-selection {
     .contact__quote::before {
         content: "";
         position: absolute;
+        top: 10.5rem;
+        left: 1rem;
+        right: auto;
+        bottom: -0.75rem;
+        border-radius: 50%;
+        z-index: -1;
+        
+        box-shadow:
+            0 0 0 10px #f2f2f2,
+            0 0 0 15px #d9d9d9,
+            0 0 0 20px #bfbfbf;
+        animation: wobble 5s infinite;
+        width: 17rem;
+        height: 17rem;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+
+    .contact__quote {
+        /* border: 1px solid black; */
+        position: relative;
+        display: flex;
+        padding: 2vw;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50%;
+        flex-direction: column;
+        font-size: medium;
+        font-family: 'Lucida Handwriting', cursive;
+        width: 14rem;
+    }
+
+    .contact__quote::before {
+        content: "";
+        position: absolute;
         top: 11rem;
         left: 2.2rem;
         right: auto;
@@ -205,7 +242,4 @@ input::-webkit-selection {
         width: 15rem;
         height: 15rem;
     }
-
 }
-
-@media screen and (max-width: 350px) {}

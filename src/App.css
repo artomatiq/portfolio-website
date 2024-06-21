@@ -205,7 +205,18 @@
       padding-left: var(--mb-1);
       padding-right: var(--mb-1);
     }
+    .button {
+      padding: 1.25rem;
+      margin: 1rem;
+      margin-bottom: 1rem;
+    }
   }
 
   @media screen and (max-width: 350px) {
+    .button {
+      padding: 1.25rem;
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+
   }
