@@ -1,3 +1,7 @@
+.home {
+    margin-top: 0;
+}
+
 .home__container {
     row-gap: 7rem;
 }

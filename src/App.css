@@ -107,6 +107,7 @@
 
   .section {
     font-size: var(--h1-font-size);
+    margin-top: 15rem;
   }
 
   .section__subtitle {
