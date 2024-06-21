@@ -54,6 +54,10 @@
     text-align: right;
 }
 
+.qualification__right {
+    text-align: left;
+}
+
 .qualification__title {
     font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
