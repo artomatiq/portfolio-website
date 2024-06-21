@@ -83,6 +83,37 @@ input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: var(--text-color) !important;
 }
+input::selection {
+    background: yourHighlightColor;
+}
+
+input::-webkit-selection {
+    background: yourHighlightColor;
+}
+
+/* Sweet Alert */
+.swal-container .swal-popup {
+    border-radius: 20px;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.swal-container .swal-title {
+    color: #333;
+    font-size: 24px;
+}
+
+.swal-container .swal-content {
+    color: #666;
+}
+
+.swal-container .swal-confirm-button {
+    background-color: var(--text-color);
+    color: #fff;
+    border-radius: 5px;
+}
+
+
 
 @keyframes wobble {
     0% {

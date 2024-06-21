@@ -1,20 +1,74 @@
-import React, {useState} from "react";
+import React, { useState} from "react";
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 import './contact.css'
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
+    const initialState = {
         name: '',
         email: '',
         message: ''
-    })
+    }
+    const [formData, setFormData] = useState(initialState)
 
     const handleChange = (e) => {
-        setFormData({...formData, [e.target.name]: e.target.value})
+        setFormData({ ...formData, [e.target.name]: e.target.value })
     }
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData)
+
+        Swal.fire({
+            title: 'Success!',
+            text: 'Thanks for reaching out! I will be in touch soon.',
+            icon: 'success',
+            customClass: {
+                container: 'swal-container',
+                popup: 'swal-popup',
+                title: 'swal-title',
+                content: 'swal-content',
+                confirmButton: 'swal-confirm-button'
+            }
+        });
+
+        // emailjs
+        //     .send('service_41u1fhd', 'template_cra28yw', formData, {
+        //         publicKey: '1LrsqCWwK1-KwUSbt',
+        //     })
+        //     .then(
+        //         () => {
+        //             console.log('Email successfully sent!');
+        //             Swal.fire({
+        //                 title: 'Success!',
+        //                 text: 'Thanks for reaching out! I will be in touch soon.',
+        //                 icon: 'success',
+        //                 customClass: {
+        //                     container: 'swal-container',
+        //                     popup: 'swal-popup',
+        //                     title: 'swal-title',
+        //                     content: 'swal-content',
+        //                     confirmButton: 'swal-confirm-button'
+        //                 }
+        //             });
+        //         },
+        //         (error) => {
+        //             console.log('Failed to send email...', error.text);
+        //             Swal.fire({
+        //                 title: 'Error',
+        //                 text: 'There was an error sending your message. Please try again.',
+        //                 icon: 'failure',
+        //                 customClass: {
+        //                     container: 'swal-container',
+        //                     popup: 'swal-popup',
+        //                     title: 'swal-title',
+        //                     content: 'swal-content',
+        //                     confirmButton: 'swal-confirm-button'
+        //                 }
+        //             });
+        //         },
+        //     );
+
+        setFormData(initialState)
     }
 
     return (
@@ -37,6 +91,7 @@ const Contact = () => {
                             name="name"
                             className="contact__form-input"
                             id="contact-name"
+                            value={formData.name}
                             onChange={handleChange}
                         // placeholder="type your name"
                         />
@@ -49,6 +104,7 @@ const Contact = () => {
                             name="email"
                             className="contact__form-input"
                             id="contact-email"
+                            value={formData.email}
                             onChange={handleChange}
                         // placeholder="type your email"
                         />
@@ -64,6 +120,7 @@ const Contact = () => {
                             rows="10"
                             className="contact__form-input"
                             id="contact-message"
+                            value={formData.message}
                             onChange={handleChange}
                         // placeholder="type your message"
                         />
@@ -72,6 +129,7 @@ const Contact = () => {
                     <div className="contact__form-div but">
                         <button
                             type="submit"
+                            value="Send"
                             onClick={handleSubmit}
                             className="button button--flex"
                         >
@@ -95,7 +153,7 @@ const Contact = () => {
                             </svg>
                         </button>
                     </div>
-                    
+
                 </form>
                 {/* </div> */}
             </div>
