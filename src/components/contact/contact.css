@@ -184,13 +184,13 @@ input::-webkit-selection {
 @media screen and (max-width: 576px) {
 
     .contact__quote {
-        font-size: small;
+        font-size: medium;
     }
 
     .contact__quote::before {
         content: "";
         position: absolute;
-        top: 10.5rem;
+        top: 10rem;
         left: 1rem;
         right: auto;
         bottom: -0.75rem;
