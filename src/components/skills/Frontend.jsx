@@ -9,7 +9,7 @@ const Frontend = () => {
                 <div className="skills__group">
                     <div className="skills__data">
                         <i className="bx bx-badge-check"></i>
-                        <div>
+                        <div className="skills__pair">
                             <h3 className="skills__name">HTML</h3>
                             <span className="skills__level">proficient</span>
                         </div>
@@ -17,7 +17,7 @@ const Frontend = () => {
 
                     <div className="skills__data">
                         <i className="bx bx-badge-check"></i>
-                        <div>
+                        <div className="skills__pair">
                             <h3 className="skills__name">CSS</h3>
                             <span className="skills__level">proficient</span>
                         </div>
@@ -25,7 +25,7 @@ const Frontend = () => {
 
                     <div className="skills__data">
                         <i className="bx bx-badge-check"></i>
-                        <div>
+                        <div className="skills__pair">
                             <h3 className="skills__name">JavaScript</h3>
                             <span className="skills__level">proficient</span>
                         </div>
@@ -33,7 +33,7 @@ const Frontend = () => {
 
                     <div className="skills__data">
                         <i className="bx bx-badge-check"></i>
-                        <div>
+                        <div className="skills__pair">
                             <h3 className="skills__name">React</h3>
                             <span className="skills__level">proficient</span>
                         </div>
@@ -41,7 +41,7 @@ const Frontend = () => {
 
                     <div className="skills__data">
                         <i className="bx bx-badge-check"></i>
-                        <div>
+                        <div className="skills__pair">
                             <h3 className="skills__name">Redux</h3>
                             <span className="skills__level">proficient</span>
                         </div>
@@ -49,7 +49,7 @@ const Frontend = () => {
 
                     <div className="skills__data">
                         <i className="bx bx-badge-check"></i>
-                        <div>
+                        <div className="skills__pair">
                             <h3 className="skills__name">Git</h3>
                             <span className="skills__level">proficient</span>
                         </div>
