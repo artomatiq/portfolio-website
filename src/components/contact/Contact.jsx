@@ -18,55 +18,42 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        Swal.fire({
-            title: 'Success!',
-            text: 'Thanks for reaching out! I will be in touch soon.',
-            icon: 'success',
-            customClass: {
-                container: 'swal-container',
-                popup: 'swal-popup',
-                title: 'swal-title',
-                content: 'swal-content',
-                confirmButton: 'swal-confirm-button'
-            }
-        });
-
-        // emailjs
-        //     .send('service_41u1fhd', 'template_cra28yw', formData, {
-        //         publicKey: '1LrsqCWwK1-KwUSbt',
-        //     })
-        //     .then(
-        //         () => {
-        //             console.log('Email successfully sent!');
-        //             Swal.fire({
-        //                 title: 'Success!',
-        //                 text: 'Thanks for reaching out! I will be in touch soon.',
-        //                 icon: 'success',
-        //                 customClass: {
-        //                     container: 'swal-container',
-        //                     popup: 'swal-popup',
-        //                     title: 'swal-title',
-        //                     content: 'swal-content',
-        //                     confirmButton: 'swal-confirm-button'
-        //                 }
-        //             });
-        //         },
-        //         (error) => {
-        //             console.log('Failed to send email...', error.text);
-        //             Swal.fire({
-        //                 title: 'Error',
-        //                 text: 'There was an error sending your message. Please try again.',
-        //                 icon: 'failure',
-        //                 customClass: {
-        //                     container: 'swal-container',
-        //                     popup: 'swal-popup',
-        //                     title: 'swal-title',
-        //                     content: 'swal-content',
-        //                     confirmButton: 'swal-confirm-button'
-        //                 }
-        //             });
-        //         },
-        //     );
+        emailjs
+            .send('service_41u1fhd', 'template_cra28yw', formData, {
+                publicKey: '1LrsqCWwK1-KwUSbt',
+            })
+            .then(
+                () => {
+                    console.log('Email successfully sent!');
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Thanks for reaching out! I will be in touch soon.',
+                        icon: 'success',
+                        customClass: {
+                            container: 'swal-container',
+                            popup: 'swal-popup',
+                            title: 'swal-title',
+                            content: 'swal-content',
+                            confirmButton: 'swal-confirm-button'
+                        }
+                    });
+                },
+                (error) => {
+                    console.log('Failed to send email...', error.text);
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'There was an error sending your message. Please try again.',
+                        icon: 'failure',
+                        customClass: {
+                            container: 'swal-container',
+                            popup: 'swal-popup',
+                            title: 'swal-title',
+                            content: 'swal-content',
+                            confirmButton: 'swal-confirm-button'
+                        }
+                    });
+                },
+            );
 
         setFormData(initialState)
     }
