@@ -1,49 +1,87 @@
-a {
-    font-size: var(--normal-font-size);
-}
-
-.contact__form-div {
-    
-}
-
-label {
-    position: relative;
-    font-size: var(--h3-font-size);
-}
-
-.contact__form-input {
-    font-size: var(--larger-font-size);
-    background-color: var(--body-color);
-    border-style:solid;
-    border-width: 1px;
-    border-color: var(--text-color);
-    border-radius: 0.75rem;
-}
-
-#contact-message {
-    height: 15rem;
-}
-
 .contact__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.contact__media {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .contact__form {
     display: grid;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: 1fr 1fr 4fr 1fr;
     row-gap: 1rem;
 }
 
-.button {
-    font-weight: var(--font-small);
+.contact__form-div {
+    position: relative;
+    margin-bottom: var(--mb-1);
+    height: 4rem;
+}
+
+.contact__form-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background: none;
+    color: var(--text-color);
+    outline: none;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    z-index: 1;
+}
+
+.contact__form-label {
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    font-size: var(--small-font-size);
+    padding: 0.25rem;
+    background-color: var(--body-color);
+    z-index: 10;
+}
+
+#contact-message {
+    height: 20rem;
+
+}
+
+.contact__quote {
+    position: relative;
     display: flex;
+    padding: 2vw;
+    margin-left: 7vw;
+    border-radius: 50%;
+    flex-direction: column;
     justify-content: center;
+    font-size: medium;
+    font-family: 'Lucida Handwriting', cursive;
+    width: 300px; /* adjust as needed */
+}
+
+.contact__quote::before {
+    content: "";
+    position: absolute;
+    top: 130px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow: 
+        0 0 0 10px #f2f2f2, 
+        0 0 0 15px #d9d9d9, 
+        0 0 0 20px #bfbfbf;
+    animation: wobble 5s infinite;
+    width: 320px; /* adjust as needed */
+    height: 320px; /* adjust as needed */
+}
+
+@keyframes wobble {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.contact__quote-author {
+    margin-top: 1rem;
+    font-size: small;
 }
