@@ -8,18 +8,18 @@ const About = () => {
     return (
         <section className="about section" id="about">
             <h2 className="section__title">About Me</h2>
-            <p className="section__subtitle">My Introduction</p>
+            <p className="section__subtitle">{/*My Introduction*/}</p>
 
             <div className="about__container container grid">
                 <img src={AboutImg} alt="" className="about__img" />
 
                 <div className="about__data">
-                    <Info />
+                    {/* <Info /> */}
 
                     <p className="about__description">
-                        I am passionate about learning new technologies and building innovative solutions.
-                        I work on both frontend and backend solutions to help businesses grow.
-                        I have experience in building web applications using HTML5, CSS, JS, React, Node.js, Express, and SQL.
+                        I am passionate about learning new technologies and building robust, elegant, and user-friendly solutions.
+                        I work on both frontend and backend projects to help businesses grow through increasing productivity and efficiency while reducing costs.
+                        I have experience in building web applications using HTML5, CSS, JavaScript, React, Node, Express and SQL.
                     </p>
 
                     <a download='' href={CV} className="button button--flex">Download CV
