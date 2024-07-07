@@ -1,4 +1,5 @@
 import './App.css';
+import PreLoader from './components/loading-screen/PreLoader';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
 import Portfolio from './components/projects/Projects';
@@ -11,6 +12,7 @@ import Footer from './components/footer/Footer';
 function App() {
   return (
     <>
+      <PreLoader />
       <Header/>
 
       <main className='main'>
