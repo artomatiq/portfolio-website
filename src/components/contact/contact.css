@@ -208,6 +208,14 @@ input::-webkit-selection {
 
 }
 
+@media screen and (max-width: 425px) {
+
+    .contact__container .section__subtitle {
+        margin-bottom: 0;
+    }
+
+}
+
 @media screen and (max-width: 350px) {
 
     .contact__quote {

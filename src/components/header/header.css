@@ -12,7 +12,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap: 1rem;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .nav__logo,
