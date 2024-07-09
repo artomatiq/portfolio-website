@@ -188,6 +188,10 @@
         flex-direction: column;
     }
 
+    .home__social {
+        top: 175px;
+    }
+
     .home__data {
         display: flex;
         flex-direction: column;
@@ -254,6 +258,10 @@
         margin: 0;
     }
 
+    .home__social {
+        top: 140px;
+    }
+
     .home__data {
         width: 300px;
         height: 400px;
@@ -293,6 +301,13 @@
     }
 }
 
+@media screen and (max-width: 425px) {
+    .home__social {
+        top: 110px;
+    }
+
+}
+
 @media screen and (max-width: 350px) {
     .home__title {
         font-size: 40px;
@@ -318,5 +333,12 @@
 
     .home__subtitle::after {
         display: none;
+    }
+
+    .home__container .button {
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        width: 200px;
+        align-self: center;
     }
 }

@@ -12,7 +12,7 @@ import Footer from './components/footer/Footer';
 function App() {
   return (
     <>
-      <PreLoader />
+      {/* <PreLoader /> */}
       <Header/>
 
       <main className='main'>
