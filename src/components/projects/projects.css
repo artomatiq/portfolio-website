@@ -1,6 +1,7 @@
 .portfolio {
     margin-top: 10rem;
-    height: 50rem;
+    padding: 0;
+    /* height: clamp(25rem, 175vw, 80rem); */
     overflow: hidden;
 }
 
@@ -11,45 +12,62 @@
     margin-bottom: var(--mb-1-5);
 }
 
-@media screen and (max-width: 992px) {
-}
+@media screen and (max-width: 992px) {}
 
-@media screen and (max-width: 768px) {
-}
+@media screen and (max-width: 768px) {}
 
 @media screen and (max-width: 425px) {
     .portfolio {
         margin-top: 0;
-        height: 30rem;
     }
 
 }
 
-@media screen and (max-width: 576px) {
-}
+@media screen and (max-width: 576px) {}
 
-@media screen and (max-width: 350px) {
-}
+@media screen and (max-width: 350px) {}
 
 #projects {
+    width: 100vw;
+    /* min-height: 625px; */
+    height: clamp(400px, 560px, 560px);
     position: relative;
-    display: flex; 
 }
 
 
 #image-track {
     display: flex;
+    min-width: max-content;
+    height: clamp(400px, 60vmin, 500px);
     gap: 4vmin;
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(0%, 10%);
-
+    top: 10%;
 }
 
-#image-track > .project {
-    width: 40vmin;
-    height: 56vmin;
+#image-track>.project {
+    width: clamp(200px, 40vw, 380px);
+    height: clamp(400px, 60vmin, 500px);
     object-fit: cover;
     object-position: center;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    /* #image-track>.project {
+        width: 400px;
+        height: 560px;
+        object-fit: cover;
+        object-position: center;
+    } */
+}
+
+@media screen and (max-width: 425px) {
+    /* #image-track>.project {
+        width: 400px;
+        height: 560px;
+        object-fit: cover;
+        object-position: center;
+    } */
 }
