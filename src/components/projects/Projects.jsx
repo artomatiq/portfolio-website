@@ -40,10 +40,15 @@ const Portfolio = () => {
     
             track.dataset.percentage = nextPercentage;
     
-            track.style.transform = `translate(-${nextPercentage}%)`;
+            track.animate({
+                transform: `translate(-${nextPercentage}%)`
+            }, { duration: 1200, fill: "forwards"})
 
             for (const project of track.getElementsByClassName('project')) {
-                project.style.objectPosition = `${100 - nextPercentage}% 50%`
+
+                project.animate({
+                    objectPosition: `${100-nextPercentage}% center`
+                }, {duration: 1200, fill: 'forwards'});
             }
         }
 
