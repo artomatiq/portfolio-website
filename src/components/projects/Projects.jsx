@@ -41,6 +41,10 @@ const Portfolio = () => {
             track.dataset.percentage = nextPercentage;
     
             track.style.transform = `translate(-${nextPercentage}%)`;
+
+            for (const project of track.getElementsByClassName('project')) {
+                project.style.objectPosition = `${100 - nextPercentage}% 50%`
+            }
         }
 
         window.onmouseup = () => {
