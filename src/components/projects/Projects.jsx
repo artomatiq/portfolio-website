@@ -33,10 +33,20 @@ const Portfolio = () => {
             const percentage = (mouseDelta / maxDelta) * (100);
 
             let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
-                nextPercentage = Math.max(nextPercentage, 20)
-                nextPercentage = Math.min(nextPercentage, 100)
-            
 
+            if (window.innerWidth > 768) {
+                nextPercentage = Math.max(nextPercentage, 25)
+                nextPercentage = Math.min(nextPercentage, 100)
+            }
+            if (window.innerWidth < 768 && window.innerWidth > 425) {
+                console.log('we here')
+                nextPercentage = Math.max(nextPercentage, 32.5)
+                nextPercentage = Math.min(nextPercentage, 100)
+            }
+            if (window.innerWidth < 425) {
+                nextPercentage = Math.max(nextPercentage, 28)
+                nextPercentage = Math.min(nextPercentage, 100)
+            }
     
             track.dataset.percentage = nextPercentage;
     
@@ -70,7 +80,19 @@ const Portfolio = () => {
             const percentage = (scrollDelta / maxDelta) * 100;
             let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
 
-            nextPercentage = Math.max(Math.min(nextPercentage, 100), 0);
+            if (window.innerWidth > 768) {
+                nextPercentage = Math.max(nextPercentage, 25)
+                nextPercentage = Math.min(nextPercentage, 100)
+            }
+            if (window.innerWidth < 768 && window.innerWidth > 425) {
+                console.log('we here')
+                nextPercentage = Math.max(nextPercentage, 32.5)
+                nextPercentage = Math.min(nextPercentage, 100)
+            }
+            if (window.innerWidth < 425) {
+                nextPercentage = Math.max(nextPercentage, 28)
+                nextPercentage = Math.min(nextPercentage, 100)
+            }
 
             track.dataset.percentage = nextPercentage;
             track.dataset.prevPercentage = nextPercentage;
@@ -100,7 +122,20 @@ const Portfolio = () => {
             const percentage = (touchDelta / maxDelta) * 100;
 
             let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
-            nextPercentage = Math.max(Math.min(nextPercentage, 100), 0);
+            
+            if (window.innerWidth > 768) {
+                nextPercentage = Math.max(nextPercentage, 25)
+                nextPercentage = Math.min(nextPercentage, 100)
+            }
+            if (window.innerWidth < 768 && window.innerWidth > 425) {
+                console.log('we here')
+                nextPercentage = Math.max(nextPercentage, 32.5)
+                nextPercentage = Math.min(nextPercentage, 100)
+            }
+            if (window.innerWidth < 425) {
+                nextPercentage = Math.max(nextPercentage, 28)
+                nextPercentage = Math.min(nextPercentage, 100)
+            }
 
             track.dataset.percentage = nextPercentage;
 
