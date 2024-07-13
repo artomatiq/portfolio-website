@@ -19,11 +19,11 @@ const Portfolio = () => {
         const track = document.getElementById('image-track')
         let lastScrollTop = 0;
 
-        window.onmousedown = e => {
+        track.onmousedown = e => {
             track.dataset.mouseDownAt = e.clientX;
         }
     
-        window.onmousemove = e => {
+        track.onmousemove = e => {
             //if mouse is not clicked, do not move slider
             if(track.dataset.mouseDownAt === "0") return;
     
@@ -91,11 +91,11 @@ const Portfolio = () => {
             window.onscroll = null
         };
 
-        window.ontouchstart = e => {
+        track.ontouchstart = e => {
             track.dataset.mouseDownAt = e.touches[0].clientX;
         };
 
-        window.ontouchmove = e => {
+        track.ontouchmove = e => {
             if (track.dataset.mouseDownAt === "0") return;
 
             const touchDelta = parseFloat(track.dataset.mouseDownAt) - e.touches[0].clientX;
@@ -118,7 +118,7 @@ const Portfolio = () => {
             }
         };
 
-        window.ontouchend = () => {
+        track.ontouchend = () => {
             track.dataset.mouseDownAt = '0';
             track.dataset.prevPercentage = track.dataset.percentage;
         };
