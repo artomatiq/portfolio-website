@@ -91,6 +91,38 @@ const Portfolio = () => {
             window.onscroll = null
         };
 
+        window.ontouchstart = e => {
+            track.dataset.mouseDownAt = e.touches[0].clientX;
+        };
+
+        window.ontouchmove = e => {
+            if (track.dataset.mouseDownAt === "0") return;
+
+            const touchDelta = parseFloat(track.dataset.mouseDownAt) - e.touches[0].clientX;
+            const maxDelta = window.innerWidth / 1.5;
+            const percentage = (touchDelta / maxDelta) * 100;
+
+            let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
+            nextPercentage = Math.max(Math.min(nextPercentage, 100), 0);
+
+            track.dataset.percentage = nextPercentage;
+
+            track.animate({
+                transform: `translateX(-${nextPercentage}%)`
+            }, { duration: 1200, fill: "forwards" });
+
+            for (const project of track.getElementsByClassName('project')) {
+                project.animate({
+                    objectPosition: `${100 - nextPercentage}% center`
+                }, { duration: 1200, fill: 'forwards' });
+            }
+        };
+
+        window.ontouchend = () => {
+            track.dataset.mouseDownAt = '0';
+            track.dataset.prevPercentage = track.dataset.percentage;
+        };
+
 
         window.onscroll = () => {
             const scrollTop = document.documentElement.scrollTop;
