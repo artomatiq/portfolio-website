@@ -33,7 +33,7 @@ const Portfolio = () => {
             const percentage = (mouseDelta / maxDelta) * (100);
 
             let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
-                nextPercentage = Math.max(nextPercentage, 50)
+                nextPercentage = Math.max(nextPercentage, 20)
                 nextPercentage = Math.min(nextPercentage, 100)
             
 
