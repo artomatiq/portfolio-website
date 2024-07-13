@@ -6,6 +6,8 @@ import image2 from '../../assets/img2.png'
 import image3 from '../../assets/img3.png'
 import image4 from '../../assets/img4.png'
 
+import tweetyBird from '../../assets/trimmed.mp4'
+
 import ProjectOne from './ProjectOne';
 import ProjectTwo from './ProjectTwo';
 import ProjectThree from './ProjectThree';
@@ -141,8 +143,7 @@ const Portfolio = () => {
 
             <div id='projects'>
                 <div id='image-track' data-mouse-down-at='0' data-prev-percentage='0'>
-                    <img className='project one' src={image1} alt='project snapshot' draggable="false" />
-                    <img className='project two' src={image2} alt='project snapshot' draggable="false" />
+                    <video className='project two' src={tweetyBird} draggable="false" loop autoPlay muted/>
                     <img className='project three' src={image3} alt='project snapshot' draggable="false" />
                     <img className='project four' src={image4} alt='project snapshot' draggable="false" />
                     <img className='project five' src={image1} alt='project snapshot' draggable="false" />
