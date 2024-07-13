@@ -11,10 +11,6 @@ export const preLoaderAnim = () => {
         css: { overflowY: "hidden" },
         ease: "power3.inOut",
     })
-        .to(".landing", {
-            duration: 0.05,
-            css: { overflowY: "hidden", height: "90vh" },
-        })
         .to(".texts-container", {
             duration: 0,
             opacity: 1,
@@ -48,23 +44,11 @@ export const preLoaderAnim = () => {
                 delay: 1.5,
                 height: "0vh",
                 ease: "Power3.easeOut",
-                onComplete: mobileLanding(),
             },
             "-=2"
         )
         .to(".preloader", {
             duration: 0,
             css: { display: "none" },
-        });
-};
-
-export const mobileLanding = () => {
-    window.innerWidth < 763 &&
-        tl.from(".landing__main2", {
-            duration: 1,
-            delay: 0,
-            opacity: 0,
-            y: 80,
-            ease: "expo.easeOut",
         });
 };
