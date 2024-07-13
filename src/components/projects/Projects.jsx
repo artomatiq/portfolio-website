@@ -44,7 +44,7 @@ const Portfolio = () => {
                 nextPercentage = Math.min(nextPercentage, 100)
             }
             if (window.innerWidth < 425) {
-                nextPercentage = Math.max(nextPercentage, 28)
+                nextPercentage = Math.max(nextPercentage, 27)
                 nextPercentage = Math.min(nextPercentage, 100)
             }
     
