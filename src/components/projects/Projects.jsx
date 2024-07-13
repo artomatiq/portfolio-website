@@ -15,6 +15,7 @@ const Portfolio = () => {
     useEffect ( () => {
 
         const track = document.getElementById('image-track')
+        let lastScrollTop = 0;
 
         window.onmousedown = e => {
             track.dataset.mouseDownAt = e.clientX;
@@ -44,6 +45,8 @@ const Portfolio = () => {
                 transform: `translate(-${nextPercentage}%)`
             }, { duration: 1200, fill: "forwards"})
 
+            window.onscroll = null;
+
             for (const project of track.getElementsByClassName('project')) {
 
                 project.animate({
@@ -59,6 +62,73 @@ const Portfolio = () => {
             //start slider where left off when mouse is clicked again
             track.dataset.prevPercentage = track.dataset.percentage;
         }
+
+        window.onwheel = e => {
+            if (e.deltaY !== 0) return; 
+
+            const scrollDelta = e.deltaX;
+            const maxDelta = window.innerWidth / 0.3;
+            const percentage = (scrollDelta / maxDelta) * 100;
+            let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
+
+            nextPercentage = Math.max(Math.min(nextPercentage, 100), 0);
+
+            track.dataset.percentage = nextPercentage;
+            track.dataset.prevPercentage = nextPercentage;
+
+            track.animate({
+                transform: `translateX(-${nextPercentage}%)`
+            }, { duration: 1200, fill: "forwards" });
+
+            for (const project of track.getElementsByClassName('project')) {
+                project.animate({
+                    objectPosition: `${100 - nextPercentage}% center`
+                }, { duration: 1200, fill: 'forwards' });
+            }
+
+            window.onscroll = null
+        };
+
+
+        window.onscroll = () => {
+            const scrollTop = document.documentElement.scrollTop;
+
+            if (scrollTop > 1700) {
+                console.log('hello');
+                return
+            }
+
+            if (scrollTop <= lastScrollTop) {
+                lastScrollTop = scrollTop;
+                return;
+            }
+
+            const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = (scrollTop / documentHeight) * 100;
+
+            track.dataset.scrollPercentage = scrollPercentage;
+            let nextPercentage = scrollPercentage;
+
+            track.dataset.percentage = nextPercentage;
+            track.dataset.prevPercentage = nextPercentage;
+
+            track.style.transform = `translateX(-${nextPercentage}%)`;
+
+            for (const project of track.getElementsByClassName('project')) {
+                project.style.objectPosition = `${100 - nextPercentage}% center`;
+            }
+
+            lastScrollTop = scrollTop; // Update last scroll position
+        };
+
+        return () => {
+            window.onmousedown = null;
+            window.onmousemove = null;
+            window.onmouseup = null;
+            window.onwheel = null;
+            window.onscroll = null;
+        };
+
     }, [])
 
 
@@ -77,10 +147,10 @@ const Portfolio = () => {
                     <img className='project four' src={image4} alt='project snapshot' draggable="false" />
                     <img className='project five' src={image1} alt='project snapshot' draggable="false" />
                     <img className='project six' src={image2} alt='project snapshot' draggable="false" />
-                    <img className='project seven' src={image3} alt='project snapshot' draggable="false" />
+                    {/* <img className='project seven' src={image3} alt='project snapshot' draggable="false" />
                     <img className='project eight' src={image4} alt='project snapshot' draggable="false" />
                     <img className='project nine' src={image1} alt='project snapshot' draggable="false" />
-                    <img className='project ten' src={image2} alt='project snapshot' draggable="false" />
+                    <img className='project ten' src={image2} alt='project snapshot' draggable="false" /> */}
                 </div>
             </div>
 
