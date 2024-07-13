@@ -118,7 +118,7 @@ const Portfolio = () => {
             if (track.dataset.mouseDownAt === "0") return;
 
             const touchDelta = parseFloat(track.dataset.mouseDownAt) - e.touches[0].clientX;
-            const maxDelta = window.innerWidth / 1.5;
+            const maxDelta = window.innerWidth / 0.25;
             const percentage = (touchDelta / maxDelta) * 100;
 
             let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
