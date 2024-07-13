@@ -143,7 +143,7 @@ const Portfolio = () => {
 
             <div id='projects'>
                 <div id='image-track' data-mouse-down-at='0' data-prev-percentage='0'>
-                    <video className='project two' src={tweetyBird} draggable="false" loop autoPlay muted/>
+                    <video className='project two' src={tweetyBird} draggable="false" loop autoPlay muted playsInline/>
                     <img className='project three' src={image3} alt='project snapshot' draggable="false" />
                     <img className='project four' src={image4} alt='project snapshot' draggable="false" />
                     <img className='project five' src={image1} alt='project snapshot' draggable="false" />
