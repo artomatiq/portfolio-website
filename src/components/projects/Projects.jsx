@@ -8,10 +8,6 @@ import image4 from '../../assets/img4.png'
 
 import tweetyBird from '../../assets/trimmed.mp4'
 
-import ProjectOne from './ProjectOne';
-import ProjectTwo from './ProjectTwo';
-import ProjectThree from './ProjectThree';
-
 const Portfolio = () => {
 
     useEffect ( () => {
