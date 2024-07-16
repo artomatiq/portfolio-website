@@ -81,7 +81,6 @@ const Portfolio = () => {
                 nextPercentage = Math.min(nextPercentage, 100)
             }
             if (window.innerWidth < 768 && window.innerWidth > 425) {
-                console.log('we here')
                 nextPercentage = Math.max(nextPercentage, 32.5)
                 nextPercentage = Math.min(nextPercentage, 100)
             }
@@ -156,7 +155,6 @@ const Portfolio = () => {
             const scrollTop = document.documentElement.scrollTop;
 
             if (scrollTop > 1700) {
-                console.log('hello');
                 return
             }
 
