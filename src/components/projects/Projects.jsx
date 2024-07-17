@@ -14,6 +14,7 @@ const Portfolio = () => {
 
         const track = document.getElementById('image-track')
         let lastScrollTop = 0;
+        let scrolledUp = false;
 
         track.onmousedown = e => {
             track.dataset.mouseDownAt = e.clientX;
@@ -152,6 +153,9 @@ const Portfolio = () => {
 
 
         window.onscroll = () => {
+            
+            if (scrolledUp) return;
+
             const scrollTop = document.documentElement.scrollTop;
 
             if (scrollTop > 1700) {
@@ -159,6 +163,8 @@ const Portfolio = () => {
             }
 
             if (scrollTop <= lastScrollTop) {
+                console.log('scrolled up');
+                scrolledUp = true;
                 lastScrollTop = scrollTop;
                 return;
             }
