@@ -5,6 +5,14 @@ const Header = () => {
 
     const [Toggle, showMenu] = useState(false);
 
+    const scrollToTop = (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <header className="header">
             <nav className="nav">
@@ -13,7 +21,7 @@ const Header = () => {
                 <div className={Toggle ? 'nav__menu show-menu' : 'nav__menu'}>
                     <ul className="nav__list grid">
                         <li className="nav__item">
-                            <a href="#home" className="nav__link active-link">
+                            <a href="#home" className="nav__link active-link" onClick={scrollToTop}>
                                 <i className="uil uil-estate nav__icon"></i>Home
                             </a>
                         </li>
