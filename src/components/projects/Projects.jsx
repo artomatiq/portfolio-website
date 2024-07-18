@@ -154,7 +154,7 @@ const Portfolio = () => {
                             const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
                             const gapWidth = (trackWidth - projectWidth * numberOfProjects) / (numberOfProjects - 1);
 
-                            let slideBy = viewportWidth / 2 + trackWidth / numberOfProjects / 2 + gapWidth / 2;
+                            let slideBy = viewportWidth / 2 + projectWidth / 2 + gapWidth / 2;
                             
                             track.style.transform = `translateX(-${slideBy}px)`;
                             
