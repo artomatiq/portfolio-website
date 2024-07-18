@@ -151,7 +151,7 @@ const Portfolio = () => {
                             numberOfProjects = numberOfProjects;
                             const viewportWidth = window.innerWidth;
                             const trackWidth = parseFloat(getComputedStyle(track).width);
-                            const projectWidth = parseFloat(getComputedStyle(track.getElementByClassName('project')).width);
+                            const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
                             const gapWidth = (trackWidth - projectWidth * numberOfProjects) / (numberOfProjects - 1);
 
                             let slideBy = viewportWidth / 2 + trackWidth / numberOfProjects / 2 + gapWidth / 2;
