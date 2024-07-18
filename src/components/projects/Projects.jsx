@@ -177,7 +177,7 @@ const Portfolio = () => {
                     setTimeout(() => {
                         if (track) {
                             let numberOfProjects = track.getElementsByClassName('project').length;
-                            numberOfProjects = numberOfProjects * 1.1;
+                            numberOfProjects = numberOfProjects * 1.2;
                             const viewportWidth = window.innerWidth;
                             const trackWidth = parseFloat(getComputedStyle(track).width);
                             let slideBy = viewportWidth / 2 + trackWidth / numberOfProjects / 2;
