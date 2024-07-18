@@ -4,10 +4,10 @@ import './preloader.css'
 
 const PreLoader = () => {
 
-    document.body.style.overflowY = 'hidden'
+    document.body.style.overflow = 'hidden'
 
     setTimeout(() => {
-        document.body.style.overflowY = 'auto'
+        document.body.style.overflow = 'auto'
     }, 5500);
 
     useEffect( () => {
