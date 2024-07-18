@@ -47,7 +47,7 @@
 }
 
 #image-track>.project {
-    width: clamp(200px, 40vw, 380px);
+    width: clamp(400px, 60vmin, 500px);
     height: clamp(400px, 60vmin, 500px);
     object-fit: cover;
     object-position: 100% 50%;
