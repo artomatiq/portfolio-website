@@ -115,6 +115,11 @@ const Portfolio = () => {
                 }
         }
 
+
+
+
+
+
         let firstScrollHandled = false;
 
         function disableTouchScroll() {
@@ -134,6 +139,7 @@ const Portfolio = () => {
 
 
         window.ontouchstart = (e) => {
+            disableTouchScroll();
             startY = e.touches[0].clientY;
         };
         
@@ -156,6 +162,10 @@ const Portfolio = () => {
             }
         };
         
+
+
+
+
 
         window.onscroll = () => {
 
@@ -185,6 +195,11 @@ const Portfolio = () => {
                 scrollToPortfolio();
             }
         };
+
+
+
+
+
 
         return () => {
             window.onmousedown = null;
