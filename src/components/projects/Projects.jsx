@@ -185,6 +185,14 @@ const Portfolio = () => {
 
             if (firstScrollHandled) return;
 
+            //disable scrolling
+            document.body.style.overflow = 'hidden';
+
+            //enable scrolling after 5 seconds
+            setTimeout(() => {
+                document.body.style.overflow = 'hidden';
+            }, 5000);
+
             // Check if user has scrolled down
             if (scrollTop > 0) {
                 firstScrollHandled = true;
