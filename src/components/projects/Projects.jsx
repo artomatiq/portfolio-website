@@ -168,18 +168,21 @@ const Portfolio = () => {
 
 
         window.onscroll = () => {
+            console.log(getComputedStyle(track).left);
 
             const scrollTop = document.documentElement.scrollTop;
 
             // Reset the firstScrollHandled flag when scrolled to the top
             if (scrollTop === 0) {
+                console.log('scrolled to the top');
                 firstScrollHandled = false;
 
                 //reset track at the top
-                track.style.left = '100%'
+                track.style.transform = 'none'
                 for (const project of track.getElementsByClassName('project')) {                                
-                    project.style.objectPosition = `50% center`
+                    project.style.transform = `none`
                 }
+                console.log(getComputedStyle(track).left);
             }
 
             if (firstScrollHandled) return;
