@@ -14,6 +14,14 @@ const Portfolio = () => {
 
         const track = document.getElementById('image-track')
 
+
+
+
+
+
+
+
+
         track.onmousedown = e => {
             track.dataset.mouseDownAt = e.clientX;
         }
@@ -123,55 +131,8 @@ const Portfolio = () => {
 
 
 
-
-
-        let firstScrollHandled = false;
-
-        function disableTouchScroll() {
-            window.addEventListener('touchstart', preventDefault, { passive: false });
-            window.addEventListener('touchmove', preventDefault, { passive: false });
-        }
-        function enableTouchScroll() {
-            window.removeEventListener('touchstart', preventDefault);
-            window.removeEventListener('touchmove', preventDefault);
-        }
-        function preventDefault(e) {
-            e.preventDefault();
-        }
-
-        window.onscroll = () => {
-
-
-            
-
-            const scrollTop = document.documentElement.scrollTop;
-
-            //do nothing if not scrolling from top
-            if (firstScrollHandled) return;
-
-            // Reset the firstScrollHandled flag when scrolled to the top
-            if (scrollTop === 0) {
-                firstScrollHandled = false;
-            }
-
-            // Check if user has scrolled down
-            if (scrollTop > 0) {
-                firstScrollHandled = true;
-
-                //disable scrolling
-                document.body.style.overflow = 'hidden';
-                disableTouchScroll();
-
-
-                //enable scrolling after 5 seconds
-                setTimeout(() => {
-                    console.log('enabling scrolling');
-                    document.body.style.overflow = 'auto';
-                    enableTouchScroll();
-                }, 5000);
-
-                // Scroll to the portfolio section
-                const portfolioElement = document.getElementById('portfolio');
+        function scrollToPortfolio() {
+            const portfolioElement = document.getElementById('portfolio');
                 if (portfolioElement) {
                     // Calculate the offset top position of the portfolio element
                     const portfolioOffsetTop = portfolioElement.offsetTop;
@@ -201,8 +162,76 @@ const Portfolio = () => {
                         }
                     }, 1000);
                 }
+        }
 
-                
+        let firstScrollHandled = false;
+
+        function disableTouchScroll() {
+            window.addEventListener('touchstart', preventDefault, { passive: false });
+            window.addEventListener('touchmove', preventDefault, { passive: false });
+        }
+        function enableTouchScroll() {
+            window.removeEventListener('touchstart', preventDefault);
+            window.removeEventListener('touchmove', preventDefault);
+        }
+        function preventDefault(e) {
+            e.preventDefault();
+        }
+
+        let startY = 0;
+        let endY = 0;
+
+
+        window.ontouchstart = (e) => {
+            startY = e.touches[0].clientY;
+        };
+        
+        window.ontouchmove = (e) => {
+            endY = e.touches[0].clientY;
+
+            if (startY > endY) {
+                firstScrollHandled = true;
+
+                //disable scrolling
+                disableTouchScroll();
+
+                //enable scrolling after 5 seconds
+                setTimeout(() => {
+                    enableTouchScroll();
+                }, 5000);
+
+                // Scroll to the portfolio section
+                scrollToPortfolio();
+            }
+        };
+        
+
+        window.onscroll = () => {
+
+            const scrollTop = document.documentElement.scrollTop;
+
+            //do nothing if not scrolling from top
+            if (firstScrollHandled) return;
+
+            // Reset the firstScrollHandled flag when scrolled to the top
+            if (scrollTop === 0) {
+                firstScrollHandled = false;
+            }
+
+            // Check if user has scrolled down
+            if (scrollTop > 0) {
+                firstScrollHandled = true;
+
+                //disable scrolling
+                document.body.style.overflow = 'hidden';
+
+                //enable scrolling after 5 seconds
+                setTimeout(() => {
+                    document.body.style.overflow = 'auto';
+                }, 5000);
+
+                // Scroll to the portfolio section
+                scrollToPortfolio();
             }
 
         };

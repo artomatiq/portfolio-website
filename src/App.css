@@ -75,7 +75,6 @@
   body {
     background-color: var(--body-color);
     color: var(--text-color);  
-    overscroll-behavior: none;
   }
 
   *::selection {
