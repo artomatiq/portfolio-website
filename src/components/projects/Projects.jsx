@@ -94,13 +94,8 @@ const Portfolio = () => {
                     //delay start animation
                     setTimeout(() => {
                         if (track) {
-                            let numberOfProjects = track.getElementsByClassName('project').length;
-                            // numberOfProjects = numberOfProjects;
                             const viewportWidth = window.innerWidth;
-                            // const trackWidth = parseFloat(getComputedStyle(track).width);
                             const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
-                            // const gapWidth = (trackWidth - projectWidth * numberOfProjects) / (numberOfProjects - 1);
-
                             let slideBy = viewportWidth / 2 + projectWidth / 2;
                             
                             track.style.transform = `translateX(-${slideBy}px)`;

@@ -1,7 +1,6 @@
 .portfolio {
     margin-top: 10rem;
     padding: 0;
-    /* height: clamp(25rem, 175vw, 80rem); */
     overflow: hidden;
 }
 
@@ -20,7 +19,6 @@
     .portfolio {
         margin-top: 0;
     }
-
 }
 
 @media screen and (max-width: 576px) {}
@@ -29,7 +27,6 @@
 
 #projects {
     width: 100vw;
-    /* min-height: 625px; */
     height: clamp(40vmin, 80vmin, 80vmin);
     position: relative;
 }
@@ -52,24 +49,10 @@
     height: auto;
     object-fit: cover;
     object-position: 100% 50%;
-    /* transition: transform ease-in-out; */
 }
 
-/* #image-track>#tweetyBird {
-    object-position: 75% 50%;
-} */
-
-
-
 @media screen and (max-width: 768px) {
-    /* #image-track>.project {
-        width: 400px;
-        height: 560px;
-        object-fit: cover;
-        object-position: center;
-    } */
 }
 
 @media screen and (max-width: 425px) {
-
 }
