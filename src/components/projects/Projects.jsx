@@ -170,9 +170,9 @@ const Portfolio = () => {
             if (firstScrollHandled) return;
 
             // Reset the firstScrollHandled flag when scrolled to the top
-            if (scrollTop === 0) {
-                firstScrollHandled = false;
-            }
+            // if (scrollTop === 0) {
+            //     firstScrollHandled = false;
+            // }
 
             // Check if user has scrolled down
             if (scrollTop > 0) {
