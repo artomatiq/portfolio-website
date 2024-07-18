@@ -73,7 +73,7 @@ const Portfolio = () => {
 
 
 
-        
+
 
         // window.onwheel = e => {
         //     if (e.deltaY !== 0) return;
@@ -173,13 +173,17 @@ const Portfolio = () => {
 
 
         let firstScrollHandled = false;
+        let lastScrollTop = 0;
 
         window.onscroll = () => {
-            if (firstScrollHandled) return;
-
             const scrollTop = document.documentElement.scrollTop;
 
-            if (scrollTop === 0) firstScrollHandled = false;
+            // Reset the firstScrollHandled flag when scrolled to the top
+            if (scrollTop === 0) {
+                firstScrollHandled = false;
+            }
+
+            if (firstScrollHandled) return;
 
             // Check if user has scrolled down
             if (scrollTop > 0) {
@@ -189,10 +193,20 @@ const Portfolio = () => {
                 const portfolioElement = document.getElementById('portfolio');
                 if (portfolioElement) {
                     console.log('scrolling to portfolio');
-                    portfolioElement.scrollIntoView({ behavior: 'smooth' });
+
+                    // Calculate the offset top position of the portfolio element
+                    const portfolioOffsetTop = portfolioElement.offsetTop;
+                    console.log(`Portfolio Offset Top: ${portfolioOffsetTop}`);
+
+                    // Scroll to the calculated position
+                    window.scrollTo({
+                        top: portfolioOffsetTop,
+                        behavior: 'smooth'
+                    });
                 }
 
                 // Additional logic to animate track (if needed)
+                const track = document.getElementById('image-track');
                 if (track) {
                     let nextPercentage = 50; // Example percentage for animation
 
@@ -212,7 +226,14 @@ const Portfolio = () => {
                 }, 1000); // Adjust this timeout to match your animation duration
             }
 
+            if (scrollTop <= lastScrollTop) {
+                lastScrollTop = scrollTop;
+                return;
+            }
+
+            lastScrollTop = scrollTop; // Update last scroll position
         };
+
 
 
 
