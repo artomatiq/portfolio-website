@@ -6,6 +6,9 @@ const Header = () => {
     const [Toggle, showMenu] = useState(false);
 
     const scrollToTop = (e) => {
+        if (e) {
+            e.preventDefault();
+        }
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
