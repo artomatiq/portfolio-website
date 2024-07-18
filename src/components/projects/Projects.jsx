@@ -130,6 +130,10 @@ const Portfolio = () => {
         let firstScrollHandled = false;
 
         window.onscroll = () => {
+
+
+            
+
             const scrollTop = document.documentElement.scrollTop;
 
             //do nothing if not scrolling from top
@@ -140,10 +144,13 @@ const Portfolio = () => {
                 firstScrollHandled = false;
             }
 
-
+            console.log(getComputedStyle(track).left);
             // Check if user has scrolled down
             if (scrollTop > 0) {
                 firstScrollHandled = true;
+
+                //disable scrolling
+                document.body.style.overflow = 'hidden';
 
                 //enable scrolling after 5 seconds
                 setTimeout(() => {
@@ -165,26 +172,26 @@ const Portfolio = () => {
                         top: portfolioOffsetTop,
                         behavior: 'smooth'
                     });
+
+                    //delay start animation
+                    setTimeout(() => {
+                        if (track) {
+                            track.style.transform = `translateX(-50%)`;
+                            // let nextPercentage = 50; // Example percentage for animation
+        
+                            // track.dataset.percentage = nextPercentage;
+                            // track.dataset.prevPercentage = nextPercentage;
+        
+                            // track.style.transform = `translateX(-${nextPercentage}%)`;
+        
+                            // for (const project of track.getElementsByClassName('project')) {
+                            //     project.style.objectPosition = `${100 - nextPercentage}% center`;
+                            // }
+                        }
+                    }, 1000);
                 }
 
-                //disable scrolling
-                document.body.style.overflow = 'hidden';
-
-                // Additional logic to animate track (if needed)
-                const track = document.getElementById('image-track');
-                if (track) {
-                    let nextPercentage = 50; // Example percentage for animation
-
-                    track.dataset.percentage = nextPercentage;
-                    track.dataset.prevPercentage = nextPercentage;
-
-                    track.style.transform = `translateX(-${nextPercentage}%)`;
-
-                    for (const project of track.getElementsByClassName('project')) {
-                        project.style.objectPosition = `${100 - nextPercentage}% center`;
-                    }
-                }
-
+                
             }
 
         };
