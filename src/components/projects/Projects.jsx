@@ -75,51 +75,6 @@ const Portfolio = () => {
 
 
 
-        // window.onwheel = e => {
-        //     if (e.deltaY !== 0) return;
-
-        //     const scrollDelta = e.deltaX;
-        //     const maxDelta = window.innerWidth / 0.3;
-        //     const percentage = (scrollDelta / maxDelta) * 100;
-        //     let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
-
-        //     if (window.innerWidth > 768) {
-        //         nextPercentage = Math.max(nextPercentage, 25)
-        //         nextPercentage = Math.min(nextPercentage, 100)
-        //     }
-        //     if (window.innerWidth < 768 && window.innerWidth > 425) {
-        //         nextPercentage = Math.max(nextPercentage, 32.5)
-        //         nextPercentage = Math.min(nextPercentage, 100)
-        //     }
-        //     if (window.innerWidth < 425) {
-        //         nextPercentage = Math.max(nextPercentage, 28)
-        //         nextPercentage = Math.min(nextPercentage, 100)
-        //     }
-
-        //     track.dataset.percentage = nextPercentage;
-        //     track.dataset.prevPercentage = nextPercentage;
-
-        //     track.animate({
-        //         transform: `translateX(-${nextPercentage}%)`
-        //     }, { duration: 1200, fill: "forwards" });
-
-        //     for (const project of track.getElementsByClassName('project')) {
-        //         project.animate({
-        //             objectPosition: `${100 - nextPercentage}% center`
-        //         }, { duration: 1200, fill: 'forwards' });
-        //     }
-
-        //     window.onscroll = null
-        // };
-
-
-
-
-
-
-
-
-
         track.ontouchstart = e => {
             track.dataset.mouseDownAt = e.touches[0].clientX;
         };
@@ -235,48 +190,10 @@ const Portfolio = () => {
         };
 
 
-
-
-        // window.onscroll = () => {
-
-        //     if (scrolledUp) return;
-
-        //     const scrollTop = document.documentElement.scrollTop;
-
-        //     if (scrollTop > 1700) {
-        //         return
-        //     }
-
-        //     if (scrollTop <= lastScrollTop) {
-        //         console.log('scrolled up');
-        //         scrolledUp = true;
-        //         lastScrollTop = scrollTop;
-        //         return;
-        //     }
-
-        //     const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-        //     const scrollPercentage = (scrollTop / documentHeight) * 100;
-
-        //     track.dataset.scrollPercentage = scrollPercentage;
-        //     let nextPercentage = scrollPercentage;
-
-        //     track.dataset.percentage = nextPercentage;
-        //     track.dataset.prevPercentage = nextPercentage;
-
-        //     track.style.transform = `translateX(-${nextPercentage}%)`;
-
-        //     for (const project of track.getElementsByClassName('project')) {
-        //         project.style.objectPosition = `${100 - nextPercentage}% center`;
-        //     }
-
-        //     lastScrollTop = scrollTop; // Update last scroll position
-        // };
-
         return () => {
             window.onmousedown = null;
             window.onmousemove = null;
             window.onmouseup = null;
-            window.onwheel = null;
             window.onscroll = null;
         };
 
