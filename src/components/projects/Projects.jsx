@@ -34,7 +34,6 @@ const Portfolio = () => {
                 nextPercentage = Math.min(nextPercentage, 100)
             }
             if (window.innerWidth < 768 && window.innerWidth > 425) {
-                console.log('we here')
                 nextPercentage = Math.max(nextPercentage, 32.5)
                 nextPercentage = Math.min(nextPercentage, 100)
             }
@@ -93,7 +92,6 @@ const Portfolio = () => {
                 nextPercentage = Math.min(nextPercentage, 100)
             }
             if (window.innerWidth < 768 && window.innerWidth > 425) {
-                console.log('we here')
                 nextPercentage = Math.max(nextPercentage, 32.5)
                 nextPercentage = Math.min(nextPercentage, 100)
             }
@@ -129,6 +127,18 @@ const Portfolio = () => {
 
         let firstScrollHandled = false;
 
+        function disableTouchScroll() {
+            window.addEventListener('touchstart', preventDefault, { passive: false });
+            window.addEventListener('touchmove', preventDefault, { passive: false });
+        }
+        function enableTouchScroll() {
+            window.removeEventListener('touchstart', preventDefault);
+            window.removeEventListener('touchmove', preventDefault);
+        }
+        function preventDefault(e) {
+            e.preventDefault();
+        }
+
         window.onscroll = () => {
 
 
@@ -144,28 +154,27 @@ const Portfolio = () => {
                 firstScrollHandled = false;
             }
 
-            console.log(getComputedStyle(track).left);
             // Check if user has scrolled down
             if (scrollTop > 0) {
                 firstScrollHandled = true;
 
                 //disable scrolling
                 document.body.style.overflow = 'hidden';
+                disableTouchScroll();
+
 
                 //enable scrolling after 5 seconds
                 setTimeout(() => {
                     console.log('enabling scrolling');
                     document.body.style.overflow = 'auto';
+                    enableTouchScroll();
                 }, 5000);
 
                 // Scroll to the portfolio section
                 const portfolioElement = document.getElementById('portfolio');
                 if (portfolioElement) {
-                    console.log('scrolling to portfolio');
-
                     // Calculate the offset top position of the portfolio element
                     const portfolioOffsetTop = portfolioElement.offsetTop;
-                    console.log(`Portfolio Offset Top: ${portfolioOffsetTop}`);
 
                     // Scroll to the calculated position
                     window.scrollTo({
@@ -184,10 +193,7 @@ const Portfolio = () => {
                             
                             track.style.transform = `translateX(-${slideBy}px)`;
                             
-                            for (const project of track.getElementsByClassName('project')) {
-
-                                console.log('123');
-                                
+                            for (const project of track.getElementsByClassName('project')) {                                
                                 project.animate({
                                     objectPosition: `50% center`
                                 }, { duration: 2000, fill: 'forwards', easing: 'ease-in-out' });
