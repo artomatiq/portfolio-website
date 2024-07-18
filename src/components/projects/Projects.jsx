@@ -18,10 +18,6 @@ const Portfolio = () => {
 
 
 
-
-
-
-
         track.onmousedown = e => {
             track.dataset.mouseDownAt = e.clientX;
         }
@@ -76,7 +72,13 @@ const Portfolio = () => {
 
 
 
-
+        window.onload = () => {
+            //reset track at the top
+            track.style.transform = 'none'
+            for (const project of track.getElementsByClassName('project')) {                                
+                project.style.transform = `none`
+            }
+        }
 
 
         function scrollToPortfolio() {

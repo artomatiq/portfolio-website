@@ -17,7 +17,7 @@ const Header = () => {
 
     window.onload = () => {
         scrollToTop();
-    }
+    };
 
     return (
         <header className="header">
