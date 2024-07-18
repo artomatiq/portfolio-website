@@ -10,20 +10,18 @@ import tweetyBird from '../../assets/trimmed.mp4'
 
 const Portfolio = () => {
 
-    useEffect ( () => {
+    useEffect(() => {
 
         const track = document.getElementById('image-track')
-        let lastScrollTop = 0;
-        let scrolledUp = false;
 
         track.onmousedown = e => {
             track.dataset.mouseDownAt = e.clientX;
         }
-    
+
         track.onmousemove = e => {
             //if mouse is not clicked, do not move slider
-            if(track.dataset.mouseDownAt === "0") return;
-    
+            if (track.dataset.mouseDownAt === "0") return;
+
             //convert mouse down distance to percentage by which slider should move
             const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
             const maxDelta = window.innerWidth / 1.5;
@@ -44,20 +42,20 @@ const Portfolio = () => {
                 nextPercentage = Math.max(nextPercentage, 27)
                 nextPercentage = Math.min(nextPercentage, 100)
             }
-    
+
             track.dataset.percentage = nextPercentage;
-    
+
             track.animate({
                 transform: `translate(-${nextPercentage}%)`
-            }, { duration: 1200, fill: "forwards"})
+            }, { duration: 1200, fill: "forwards" })
 
             window.onscroll = null;
 
             for (const project of track.getElementsByClassName('project')) {
 
                 project.animate({
-                    objectPosition: `${100-nextPercentage}% center`
-                }, {duration: 1200, fill: 'forwards'});
+                    objectPosition: `${100 - nextPercentage}% center`
+                }, { duration: 1200, fill: 'forwards' });
             }
         }
 
@@ -69,42 +67,58 @@ const Portfolio = () => {
             track.dataset.prevPercentage = track.dataset.percentage;
         }
 
-        window.onwheel = e => {
-            if (e.deltaY !== 0) return; 
 
-            const scrollDelta = e.deltaX;
-            const maxDelta = window.innerWidth / 0.3;
-            const percentage = (scrollDelta / maxDelta) * 100;
-            let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
 
-            if (window.innerWidth > 768) {
-                nextPercentage = Math.max(nextPercentage, 25)
-                nextPercentage = Math.min(nextPercentage, 100)
-            }
-            if (window.innerWidth < 768 && window.innerWidth > 425) {
-                nextPercentage = Math.max(nextPercentage, 32.5)
-                nextPercentage = Math.min(nextPercentage, 100)
-            }
-            if (window.innerWidth < 425) {
-                nextPercentage = Math.max(nextPercentage, 28)
-                nextPercentage = Math.min(nextPercentage, 100)
-            }
 
-            track.dataset.percentage = nextPercentage;
-            track.dataset.prevPercentage = nextPercentage;
 
-            track.animate({
-                transform: `translateX(-${nextPercentage}%)`
-            }, { duration: 1200, fill: "forwards" });
 
-            for (const project of track.getElementsByClassName('project')) {
-                project.animate({
-                    objectPosition: `${100 - nextPercentage}% center`
-                }, { duration: 1200, fill: 'forwards' });
-            }
 
-            window.onscroll = null
-        };
+        
+
+        // window.onwheel = e => {
+        //     if (e.deltaY !== 0) return;
+
+        //     const scrollDelta = e.deltaX;
+        //     const maxDelta = window.innerWidth / 0.3;
+        //     const percentage = (scrollDelta / maxDelta) * 100;
+        //     let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
+
+        //     if (window.innerWidth > 768) {
+        //         nextPercentage = Math.max(nextPercentage, 25)
+        //         nextPercentage = Math.min(nextPercentage, 100)
+        //     }
+        //     if (window.innerWidth < 768 && window.innerWidth > 425) {
+        //         nextPercentage = Math.max(nextPercentage, 32.5)
+        //         nextPercentage = Math.min(nextPercentage, 100)
+        //     }
+        //     if (window.innerWidth < 425) {
+        //         nextPercentage = Math.max(nextPercentage, 28)
+        //         nextPercentage = Math.min(nextPercentage, 100)
+        //     }
+
+        //     track.dataset.percentage = nextPercentage;
+        //     track.dataset.prevPercentage = nextPercentage;
+
+        //     track.animate({
+        //         transform: `translateX(-${nextPercentage}%)`
+        //     }, { duration: 1200, fill: "forwards" });
+
+        //     for (const project of track.getElementsByClassName('project')) {
+        //         project.animate({
+        //             objectPosition: `${100 - nextPercentage}% center`
+        //         }, { duration: 1200, fill: 'forwards' });
+        //     }
+
+        //     window.onscroll = null
+        // };
+
+
+
+
+
+
+
+
 
         track.ontouchstart = e => {
             track.dataset.mouseDownAt = e.touches[0].clientX;
@@ -118,7 +132,7 @@ const Portfolio = () => {
             const percentage = (touchDelta / maxDelta) * 100;
 
             let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
-            
+
             if (window.innerWidth > 768) {
                 nextPercentage = Math.max(nextPercentage, 25)
                 nextPercentage = Math.min(nextPercentage, 100)
@@ -152,40 +166,90 @@ const Portfolio = () => {
         };
 
 
+
+
+
+
+
+
+        let firstScrollHandled = false;
+
         window.onscroll = () => {
-            
-            if (scrolledUp) return;
+            if (firstScrollHandled) return;
 
             const scrollTop = document.documentElement.scrollTop;
 
-            if (scrollTop > 1700) {
-                return
+            if (scrollTop === 0) firstScrollHandled = false;
+
+            // Check if user has scrolled down
+            if (scrollTop > 0) {
+                firstScrollHandled = true;
+
+                // Scroll to the portfolio section
+                const portfolioElement = document.getElementById('portfolio');
+                if (portfolioElement) {
+                    console.log('scrolling to portfolio');
+                    portfolioElement.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                // Additional logic to animate track (if needed)
+                if (track) {
+                    let nextPercentage = 50; // Example percentage for animation
+
+                    track.dataset.percentage = nextPercentage;
+                    track.dataset.prevPercentage = nextPercentage;
+
+                    track.style.transform = `translateX(-${nextPercentage}%)`;
+
+                    for (const project of track.getElementsByClassName('project')) {
+                        project.style.objectPosition = `${100 - nextPercentage}% center`;
+                    }
+                }
+
+                // Wait for the animation to complete before allowing further interaction
+                setTimeout(() => {
+                    document.body.style.overflow = 'auto';
+                }, 1000); // Adjust this timeout to match your animation duration
             }
 
-            if (scrollTop <= lastScrollTop) {
-                console.log('scrolled up');
-                scrolledUp = true;
-                lastScrollTop = scrollTop;
-                return;
-            }
-
-            const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercentage = (scrollTop / documentHeight) * 100;
-
-            track.dataset.scrollPercentage = scrollPercentage;
-            let nextPercentage = scrollPercentage;
-
-            track.dataset.percentage = nextPercentage;
-            track.dataset.prevPercentage = nextPercentage;
-
-            track.style.transform = `translateX(-${nextPercentage}%)`;
-
-            for (const project of track.getElementsByClassName('project')) {
-                project.style.objectPosition = `${100 - nextPercentage}% center`;
-            }
-
-            lastScrollTop = scrollTop; // Update last scroll position
         };
+
+
+
+        // window.onscroll = () => {
+
+        //     if (scrolledUp) return;
+
+        //     const scrollTop = document.documentElement.scrollTop;
+
+        //     if (scrollTop > 1700) {
+        //         return
+        //     }
+
+        //     if (scrollTop <= lastScrollTop) {
+        //         console.log('scrolled up');
+        //         scrolledUp = true;
+        //         lastScrollTop = scrollTop;
+        //         return;
+        //     }
+
+        //     const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+        //     const scrollPercentage = (scrollTop / documentHeight) * 100;
+
+        //     track.dataset.scrollPercentage = scrollPercentage;
+        //     let nextPercentage = scrollPercentage;
+
+        //     track.dataset.percentage = nextPercentage;
+        //     track.dataset.prevPercentage = nextPercentage;
+
+        //     track.style.transform = `translateX(-${nextPercentage}%)`;
+
+        //     for (const project of track.getElementsByClassName('project')) {
+        //         project.style.objectPosition = `${100 - nextPercentage}% center`;
+        //     }
+
+        //     lastScrollTop = scrollTop; // Update last scroll position
+        // };
 
         return () => {
             window.onmousedown = null;
@@ -198,7 +262,7 @@ const Portfolio = () => {
     }, [])
 
 
-    
+
 
     return (
         <section className="portfolio section" id='portfolio'>
@@ -207,7 +271,7 @@ const Portfolio = () => {
 
             <div id='projects'>
                 <div id='image-track' data-mouse-down-at='0' data-prev-percentage='0'>
-                    <video className='project two' id='tweetyBird' src={tweetyBird} draggable="false" loop autoPlay muted playsInline/>
+                    <video className='project two' id='tweetyBird' src={tweetyBird} draggable="false" loop autoPlay muted playsInline />
                     <img className='project three' src={image3} alt='project snapshot' draggable="false" />
                     <img className='project four' src={image4} alt='project snapshot' draggable="false" />
                     <img className='project five' src={image1} alt='project snapshot' draggable="false" />
@@ -219,7 +283,7 @@ const Portfolio = () => {
                 </div>
             </div>
 
-            
+
         </section>
     );
 }
