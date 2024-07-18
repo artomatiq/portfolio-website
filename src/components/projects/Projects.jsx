@@ -81,12 +81,14 @@ const Portfolio = () => {
 
 
 
-
         track.ontouchstart = e => {
+            e.preventDefault();
             track.dataset.mouseDownAt = e.touches[0].clientX;
         };
 
         track.ontouchmove = e => {
+            e.preventDefault();
+
             if (track.dataset.mouseDownAt === "0") return;
 
             const touchDelta = parseFloat(track.dataset.mouseDownAt) - e.touches[0].clientX;
@@ -233,9 +235,7 @@ const Portfolio = () => {
                 // Scroll to the portfolio section
                 scrollToPortfolio();
             }
-
         };
-
 
         return () => {
             window.onmousedown = null;
