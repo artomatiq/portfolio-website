@@ -43,7 +43,7 @@
     position: absolute;
     left: 100%;
     top: 10%;
-    transition: transform 1s ease-in-out;
+    transition: transform 2s ease-in-out;
 }
 
 #image-track>.project {
@@ -51,6 +51,7 @@
     height: clamp(400px, 60vmin, 500px);
     object-fit: cover;
     object-position: 100% 50%;
+    /* transition: transform ease-in-out; */
 }
 
 /* #image-track>#tweetyBird {

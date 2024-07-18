@@ -176,17 +176,22 @@ const Portfolio = () => {
                     //delay start animation
                     setTimeout(() => {
                         if (track) {
-                            track.style.transform = `translateX(-50%)`;
-                            // let nextPercentage = 50; // Example percentage for animation
-        
-                            // track.dataset.percentage = nextPercentage;
-                            // track.dataset.prevPercentage = nextPercentage;
-        
-                            // track.style.transform = `translateX(-${nextPercentage}%)`;
-        
-                            // for (const project of track.getElementsByClassName('project')) {
-                            //     project.style.objectPosition = `${100 - nextPercentage}% center`;
-                            // }
+                            let numberOfProjects = track.getElementsByClassName('project').length;
+                            numberOfProjects = numberOfProjects * 1.1;
+                            const viewportWidth = window.innerWidth;
+                            const trackWidth = parseFloat(getComputedStyle(track).width);
+                            let slideBy = viewportWidth / 2 + trackWidth / numberOfProjects / 2;
+                            
+                            track.style.transform = `translateX(-${slideBy}px)`;
+                            
+                            for (const project of track.getElementsByClassName('project')) {
+
+                                console.log('123');
+                                
+                                project.animate({
+                                    objectPosition: `50% center`
+                                }, { duration: 2000, fill: 'forwards', easing: 'ease-in-out' });
+                            }
                         }
                     }, 1000);
                 }
