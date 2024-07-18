@@ -79,59 +79,6 @@ const Portfolio = () => {
 
 
 
-
-
-        // track.ontouchstart = e => {
-        //     track.dataset.mouseDownAt = e.touches[0].clientX;
-        // };
-
-        // track.ontouchmove = e => {
-        //     e.preventDefault();
-
-        //     if (track.dataset.mouseDownAt === "0") return;
-
-        //     const touchDelta = parseFloat(track.dataset.mouseDownAt) - e.touches[0].clientX;
-        //     const maxDelta = window.innerWidth / 0.25;
-        //     const percentage = (touchDelta / maxDelta) * 100;
-
-        //     let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
-
-        //     if (window.innerWidth > 768) {
-        //         nextPercentage = Math.max(nextPercentage, 25)
-        //         nextPercentage = Math.min(nextPercentage, 100)
-        //     }
-        //     if (window.innerWidth < 768 && window.innerWidth > 425) {
-        //         nextPercentage = Math.max(nextPercentage, 32.5)
-        //         nextPercentage = Math.min(nextPercentage, 100)
-        //     }
-        //     if (window.innerWidth < 425) {
-        //         nextPercentage = Math.max(nextPercentage, 28)
-        //         nextPercentage = Math.min(nextPercentage, 100)
-        //     }
-
-        //     track.dataset.percentage = nextPercentage;
-
-        //     track.animate({
-        //         transform: `translateX(-${nextPercentage}%)`
-        //     }, { duration: 1200, fill: "forwards" });
-
-        //     for (const project of track.getElementsByClassName('project')) {
-        //         project.animate({
-        //             objectPosition: `${100 - nextPercentage}% center`
-        //         }, { duration: 1200, fill: 'forwards' });
-        //     }
-        // };
-
-        // track.ontouchend = () => {
-        //     track.dataset.mouseDownAt = '0';
-        //     track.dataset.prevPercentage = track.dataset.percentage;
-        // };
-
-
-
-
-
-
         function scrollToPortfolio() {
             const portfolioElement = document.getElementById('portfolio');
                 if (portfolioElement) {
