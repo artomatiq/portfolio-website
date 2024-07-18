@@ -120,7 +120,7 @@ const Portfolio = () => {
 
 
 
-        
+
 
         // function disableTouchScroll() {
         //     window.addEventListener('touchstart', preventDefault, { passive: false });
@@ -171,13 +171,12 @@ const Portfolio = () => {
 
             const scrollTop = document.documentElement.scrollTop;
 
-            //do nothing if not scrolling from top
-            if (firstScrollHandled) return;
-
             // Reset the firstScrollHandled flag when scrolled to the top
-            // if (scrollTop === 0) {
-            //     firstScrollHandled = false;
-            // }
+            if (scrollTop === 0) {
+                firstScrollHandled = false;
+            }
+
+            if (firstScrollHandled) return;
 
             // Check if user has scrolled down
             if (scrollTop > 0) {
@@ -189,7 +188,7 @@ const Portfolio = () => {
                 //enable scrolling after 5 seconds
                 setTimeout(() => {
                     document.body.style.overflow = 'auto';
-                }, 4000);
+                }, 3000);
 
                 // Scroll to the portfolio section
                 scrollToPortfolio();
