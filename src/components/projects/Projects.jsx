@@ -173,29 +173,28 @@ const Portfolio = () => {
 
 
         let firstScrollHandled = false;
-        let lastScrollTop = 0;
 
         window.onscroll = () => {
             const scrollTop = document.documentElement.scrollTop;
+
+            //do nothing if not scrolling from top
+            if (firstScrollHandled) return;
 
             // Reset the firstScrollHandled flag when scrolled to the top
             if (scrollTop === 0) {
                 firstScrollHandled = false;
             }
 
-            if (firstScrollHandled) return;
-
-            //disable scrolling
-            document.body.style.overflow = 'hidden';
-
-            //enable scrolling after 5 seconds
-            setTimeout(() => {
-                document.body.style.overflow = 'hidden';
-            }, 5000);
 
             // Check if user has scrolled down
             if (scrollTop > 0) {
                 firstScrollHandled = true;
+
+                //enable scrolling after 5 seconds
+                setTimeout(() => {
+                    console.log('enabling scrolling');
+                    document.body.style.overflow = 'hidden';
+                }, 5000);
 
                 // Scroll to the portfolio section
                 const portfolioElement = document.getElementById('portfolio');
@@ -213,6 +212,9 @@ const Portfolio = () => {
                     });
                 }
 
+                //disable scrolling
+                document.body.style.overflow = 'hidden';
+
                 // Additional logic to animate track (if needed)
                 const track = document.getElementById('image-track');
                 if (track) {
@@ -228,18 +230,8 @@ const Portfolio = () => {
                     }
                 }
 
-                // Wait for the animation to complete before allowing further interaction
-                setTimeout(() => {
-                    document.body.style.overflow = 'auto';
-                }, 1000); // Adjust this timeout to match your animation duration
             }
 
-            if (scrollTop <= lastScrollTop) {
-                lastScrollTop = scrollTop;
-                return;
-            }
-
-            lastScrollTop = scrollTop; // Update last scroll position
         };
 
 
