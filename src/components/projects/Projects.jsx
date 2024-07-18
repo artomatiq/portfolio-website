@@ -174,6 +174,12 @@ const Portfolio = () => {
             // Reset the firstScrollHandled flag when scrolled to the top
             if (scrollTop === 0) {
                 firstScrollHandled = false;
+
+                //reset track at the top
+                track.style.left = '100%'
+                for (const project of track.getElementsByClassName('project')) {                                
+                    project.style.objectPosition = `50% center`
+                }
             }
 
             if (firstScrollHandled) return;
