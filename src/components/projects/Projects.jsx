@@ -82,7 +82,6 @@ const Portfolio = () => {
 
 
         track.ontouchstart = e => {
-            e.preventDefault();
             track.dataset.mouseDownAt = e.touches[0].clientX;
         };
 
@@ -149,10 +148,13 @@ const Portfolio = () => {
                     setTimeout(() => {
                         if (track) {
                             let numberOfProjects = track.getElementsByClassName('project').length;
-                            numberOfProjects = numberOfProjects * 1.06;
+                            numberOfProjects = numberOfProjects;
                             const viewportWidth = window.innerWidth;
                             const trackWidth = parseFloat(getComputedStyle(track).width);
-                            let slideBy = viewportWidth / 2 + trackWidth / numberOfProjects / 2;
+                            const projectWidth = parseFloat(getComputedStyle(track.getElementByClassName('project')).width);
+                            const gapWidth = (trackWidth - projectWidth * numberOfProjects) / (numberOfProjects - 1);
+
+                            let slideBy = viewportWidth / 2 + trackWidth / numberOfProjects / 2 + gapWidth / 2;
                             
                             track.style.transform = `translateX(-${slideBy}px)`;
                             
