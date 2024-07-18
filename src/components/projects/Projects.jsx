@@ -117,45 +117,50 @@ const Portfolio = () => {
 
         let firstScrollHandled = false;
 
-        function disableTouchScroll() {
-            window.addEventListener('touchstart', preventDefault, { passive: false });
-            window.addEventListener('touchmove', preventDefault, { passive: false });
-        }
-        function enableTouchScroll() {
-            window.removeEventListener('touchstart', preventDefault);
-            window.removeEventListener('touchmove', preventDefault);
-        }
-        function preventDefault(e) {
-            e.preventDefault();
-        }
-
-        let startY = 0;
-        let endY = 0;
 
 
-        window.ontouchstart = (e) => {
-            disableTouchScroll();
-            startY = e.touches[0].clientY;
-        };
+
         
-        window.ontouchmove = (e) => {
-            endY = e.touches[0].clientY;
 
-            if (startY > endY) {
-                firstScrollHandled = true;
+        // function disableTouchScroll() {
+        //     window.addEventListener('touchstart', preventDefault, { passive: false });
+        //     window.addEventListener('touchmove', preventDefault, { passive: false });
+        // }
+        // function enableTouchScroll() {
+        //     window.removeEventListener('touchstart', preventDefault);
+        //     window.removeEventListener('touchmove', preventDefault);
+        // }
+        // function preventDefault(e) {
+        //     e.preventDefault();
+        // }
 
-                //disable scrolling
-                disableTouchScroll();
+        // let startY = 0;
+        // let endY = 0;
 
-                //enable scrolling after 5 seconds
-                setTimeout(() => {
-                    enableTouchScroll();
-                }, 4000);
 
-                // Scroll to the portfolio section
-                scrollToPortfolio();
-            }
-        };
+        // window.ontouchstart = (e) => {
+        //     disableTouchScroll();
+        //     startY = e.touches[0].clientY;
+        // };
+        
+        // window.ontouchmove = (e) => {
+        //     endY = e.touches[0].clientY;
+
+        //     if (startY > endY) {
+        //         firstScrollHandled = true;
+
+        //         //disable scrolling
+        //         disableTouchScroll();
+
+        //         //enable scrolling after 5 seconds
+        //         setTimeout(() => {
+        //             enableTouchScroll();
+        //         }, 4000);
+
+        //         // Scroll to the portfolio section
+        //         scrollToPortfolio();
+        //     }
+        // };
         
 
 
