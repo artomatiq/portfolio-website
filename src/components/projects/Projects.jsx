@@ -193,7 +193,7 @@ const Portfolio = () => {
                 //enable scrolling after 5 seconds
                 setTimeout(() => {
                     console.log('enabling scrolling');
-                    document.body.style.overflow = 'hidden';
+                    document.body.style.overflow = 'auto';
                 }, 5000);
 
                 // Scroll to the portfolio section
