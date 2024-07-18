@@ -74,7 +74,11 @@ const Portfolio = () => {
 
         window.onload = () => {
             //reset track at the top
+            track.style.transition = 'none'
             track.style.transform = 'none'
+            setTimeout(() => {
+                track.style.transition = 'transform 2s ease-in-out'
+            }, 0);
             for (const project of track.getElementsByClassName('project')) {                                
                 project.style.transform = `none`
             }
