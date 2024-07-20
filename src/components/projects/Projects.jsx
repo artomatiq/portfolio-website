@@ -33,18 +33,28 @@ const Portfolio = () => {
 
             let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
 
-            if (window.innerWidth > 768) {
-                nextPercentage = Math.max(nextPercentage, 25)
-                nextPercentage = Math.min(nextPercentage, 100)
-            }
-            if (window.innerWidth < 768 && window.innerWidth > 425) {
-                nextPercentage = Math.max(nextPercentage, 32.5)
-                nextPercentage = Math.min(nextPercentage, 100)
-            }
-            if (window.innerWidth < 425) {
-                nextPercentage = Math.max(nextPercentage, 27)
-                nextPercentage = Math.min(nextPercentage, 100)
-            }
+            // if (window.innerWidth > 768) {
+            //     nextPercentage = Math.max(nextPercentage, 25)
+            //     nextPercentage = Math.min(nextPercentage, 100)
+            // }
+            // if (window.innerWidth < 768 && window.innerWidth > 425) {
+            //     nextPercentage = Math.max(nextPercentage, 32.5)
+            //     nextPercentage = Math.min(nextPercentage, 100)
+            // }
+            // if (window.innerWidth < 425) {
+            //     nextPercentage = Math.max(nextPercentage, 27)
+            //     nextPercentage = Math.min(nextPercentage, 100)
+            // }
+
+            const viewportWidth = window.innerWidth;
+            const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
+            const trackWidth = parseFloat(getComputedStyle(track).width);
+            const firstSlideBy = viewportWidth / 2 + projectWidth / 2;
+            const finalSlideBy = trackWidth - firstSlideBy + viewportWidth - firstSlideBy;
+
+            // nextPercentage = Math.max(nextPercentage, slideBy / trackWidth * 100)
+            nextPercentage = Math.max(nextPercentage, 0)
+            nextPercentage = Math.min(nextPercentage, finalSlideBy / trackWidth * 100)
 
             track.dataset.percentage = nextPercentage;
 
@@ -79,41 +89,48 @@ const Portfolio = () => {
             setTimeout(() => {
                 track.style.transition = 'transform 2s ease-in-out'
             }, 0);
-            for (const project of track.getElementsByClassName('project')) {                                
+            for (const project of track.getElementsByClassName('project')) {
                 project.style.transform = `none`
             }
         }
 
 
         function scrollToPortfolio() {
+            track.style.transition = 'transform 2s ease-in-out'
+            const viewportWidth = window.innerWidth;
+            const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
+            let slideBy = viewportWidth / 2 + projectWidth / 2;
             const portfolioElement = document.getElementById('portfolio');
-                if (portfolioElement) {
-                    // Calculate the offset top position of the portfolio element
-                    const portfolioOffsetTop = portfolioElement.offsetTop;
 
-                    // Scroll to the calculated position
-                    window.scrollTo({
-                        top: portfolioOffsetTop,
-                        behavior: 'smooth'
-                    });
+            if (portfolioElement) {
+                // Calculate the offset top position of the portfolio element
+                const portfolioOffsetTop = portfolioElement.offsetTop;
 
-                    //delay start animation
-                    setTimeout(() => {
-                        if (track) {
-                            const viewportWidth = window.innerWidth;
-                            const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
-                            let slideBy = viewportWidth / 2 + projectWidth / 2;
-                            
-                            track.style.transform = `translateX(-${slideBy}px)`;
-                            
-                            for (const project of track.getElementsByClassName('project')) {                                
-                                project.animate({
-                                    objectPosition: `50% center`
-                                }, { duration: 2000, fill: 'forwards', easing: 'ease-in-out' });
-                            }
+                // Scroll to the calculated position
+                window.scrollTo({
+                    top: portfolioOffsetTop,
+                    behavior: 'smooth'
+                });
+
+                //delay start animation
+                setTimeout(() => {
+                    if (track) {
+                        track.style.transform = `translateX(-${slideBy}px)`;
+
+                        for (const project of track.getElementsByClassName('project')) {
+                            project.animate({
+                                objectPosition: `50% center`
+                            }, { duration: 2000, fill: 'forwards', easing: 'ease-in-out' });
                         }
-                    }, 1000);
-                }
+                    }
+                }, 1000);
+
+                setTimeout(() => {
+                    track.style.left = `${track.getBoundingClientRect().left}px`;
+                    track.style.transition = 'transform 0s'
+                    track.style.transform = 'none'
+                }, 3100);
+            }
         }
 
 
@@ -148,7 +165,7 @@ const Portfolio = () => {
         //     disableTouchScroll();
         //     startY = e.touches[0].clientY;
         // };
-        
+
         // window.ontouchmove = (e) => {
         //     endY = e.touches[0].clientY;
 
@@ -167,7 +184,7 @@ const Portfolio = () => {
         //         scrollToPortfolio();
         //     }
         // };
-        
+
 
 
 
@@ -183,7 +200,7 @@ const Portfolio = () => {
 
                 //reset track at the top
                 track.style.transform = 'none'
-                for (const project of track.getElementsByClassName('project')) {                                
+                for (const project of track.getElementsByClassName('project')) {
                     project.style.transform = `none`
                 }
                 console.log(getComputedStyle(track).left);
