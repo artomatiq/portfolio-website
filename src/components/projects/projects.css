@@ -46,6 +46,7 @@
 
 #image-track>.project {
     aspect-ratio: 1/1;
+    position: relative;
     width: auto;
     height: auto;
     object-fit: cover;

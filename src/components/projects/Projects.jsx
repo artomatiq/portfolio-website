@@ -33,19 +33,6 @@ const Portfolio = () => {
 
             let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
 
-            // if (window.innerWidth > 768) {
-            //     nextPercentage = Math.max(nextPercentage, 25)
-            //     nextPercentage = Math.min(nextPercentage, 100)
-            // }
-            // if (window.innerWidth < 768 && window.innerWidth > 425) {
-            //     nextPercentage = Math.max(nextPercentage, 32.5)
-            //     nextPercentage = Math.min(nextPercentage, 100)
-            // }
-            // if (window.innerWidth < 425) {
-            //     nextPercentage = Math.max(nextPercentage, 27)
-            //     nextPercentage = Math.min(nextPercentage, 100)
-            // }
-
             const viewportWidth = window.innerWidth;
             const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
             const trackWidth = parseFloat(getComputedStyle(track).width);
@@ -65,9 +52,9 @@ const Portfolio = () => {
             window.onscroll = null;
 
             for (const project of track.getElementsByClassName('project')) {
-
+                let projectNextPercentage = Math.min(nextPercentage* 50 / 100, 50);
                 project.animate({
-                    objectPosition: `${100 - nextPercentage}% center`
+                    objectPosition: `${50 - projectNextPercentage}% center`
                 }, { duration: 1200, fill: 'forwards' });
             }
         }
@@ -129,6 +116,12 @@ const Portfolio = () => {
                     track.style.left = `${track.getBoundingClientRect().left}px`;
                     track.style.transition = 'transform 0s'
                     track.style.transform = 'none'
+
+                    for (const project of track.getElementsByClassName('project')) {
+                        project.style.objectPosition = `50% center`
+                        project.style.transition = 'object-position 0s'
+                        project.style.transform = `none`
+                    }
                 }, 3100);
             }
         }
