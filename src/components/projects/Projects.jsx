@@ -62,7 +62,7 @@ const Portfolio = () => {
             }
         }
 
-        window.onmouseup = () => {
+        track.onmouseup = () => {
             //stop the slider when the mouse is up
             track.dataset.mouseDownAt = '0';
 
