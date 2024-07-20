@@ -174,8 +174,6 @@ const Portfolio = () => {
 
 
         window.onscroll = () => {
-            console.log(getComputedStyle(track).left);
-
             const scrollTop = document.documentElement.scrollTop;
 
             // Reset the firstScrollHandled flag when scrolled to the top
