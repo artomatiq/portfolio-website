@@ -12,10 +12,52 @@ const Portfolio = () => {
 
     const isTouchDevice = navigator.maxTouchPoints > 0;
 
-    useEffect(() => {
+    function handleArrowClick(e) {
         const track = document.getElementById('image-track')
+        if (!track) return;
+
+        const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
+
+        console.log('arrow clicked');
+        //delay start animation
+        setTimeout(() => {
+                //slide track to the left
+                
+                track.style.transform = `translateX(-${projectWidth}px)`;
 
 
+
+                //slide windows
+
+                //get current position
+                let currentPosition = getComputedStyle(track.getElementsByClassName('project')[0]).objectPosition
+                currentPosition = currentPosition.split(' ')[0]
+                currentPosition = parseFloat(currentPosition.replace('%', ''))
+                //stop at the end of track
+                if (currentPosition === 0 || currentPosition === 100) return;
+
+                const numberOfSteps = track.getElementsByClassName('project').length - 1;
+                let newPosition = e.target.classList.contains('left') ? currentPosition - 50/numberOfSteps : currentPosition + 50/numberOfSteps;
+
+                for (const project of track.getElementsByClassName('project')) {
+                    project.animate({
+                        objectPosition: `${newPosition}% center`
+                    }, { duration: 2000, easing: 'ease-in-out', fill: 'forwards' });
+                }
+        }, 1000);
+
+    }
+
+
+    useEffect(() => {
+
+        const track = document.getElementById('image-track')
+        const viewportWidth = window.innerWidth;
+        const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
+        const slideBy = viewportWidth / 2 + projectWidth / 2;
+
+
+        // const arrowDistance = parseFloat(getComputedStyle(track.querySelector('.project')).width) - projectWidth * track.querySelectorAll('.project').length;
 
 
         track.onmousedown = e => {
@@ -71,11 +113,6 @@ const Portfolio = () => {
 
 
 
-
-
-
-
-
         window.onload = () => {
             //reset track to initial
             track.style.left = `100vw`;
@@ -99,9 +136,6 @@ const Portfolio = () => {
 
         function scrollToPortfolio() {
             track.style.transition = 'transform 2s ease-in-out'
-            const viewportWidth = window.innerWidth;
-            const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
-            let slideBy = viewportWidth / 2 + projectWidth / 2;
             const portfolioElement = document.getElementById('portfolio');
 
             if (portfolioElement) {
@@ -249,8 +283,8 @@ const Portfolio = () => {
 
             {isTouchDevice &&
                 <div className="arrow-container">
-                    <svg className='arrow' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{"fill": "#rgba(169, 169, 169, 0.405)"}}><path d="m12.707 7.707-1.414-1.414L5.586 12l5.707 5.707 1.414-1.414L8.414 12z"></path><path d="M16.293 6.293 10.586 12l5.707 5.707 1.414-1.414L13.414 12l4.293-4.293z"></path></svg>
-                    <svg className='arrow' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{"fill": "#rgba(169, 169, 169, 0.405)"}}><path d="M10.296 7.71 14.621 12l-4.325 4.29 1.408 1.42L17.461 12l-5.757-5.71z"></path><path d="M6.704 6.29 5.296 7.71 9.621 12l-4.325 4.29 1.408 1.42L12.461 12z"></path></svg>                
+                    <svg className='arrow left' onClick={handleArrowClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ "fill": "#rgba(169, 169, 169, 0.405)" }}><path d="m12.707 7.707-1.414-1.414L5.586 12l5.707 5.707 1.414-1.414L8.414 12z"></path><path d="M16.293 6.293 10.586 12l5.707 5.707 1.414-1.414L13.414 12l4.293-4.293z"></path></svg>
+                    <svg className='arrow right' onClick={handleArrowClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ "fill": "#rgba(169, 169, 169, 0.405)" }}><path d="M10.296 7.71 14.621 12l-4.325 4.29 1.408 1.42L17.461 12l-5.757-5.71z"></path><path d="M6.704 6.29 5.296 7.71 9.621 12l-4.325 4.29 1.408 1.42L12.461 12z"></path></svg>
                 </div>
             }
 
