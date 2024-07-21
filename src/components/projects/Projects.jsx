@@ -84,7 +84,7 @@ const Portfolio = () => {
             const mouseDelta = parseFloat(track.dataset.mouseDownAt) - currentX;
         
             // Introduce a threshold to reduce sensitivity
-            const sensitivityThreshold = 5; 
+            const sensitivityThreshold = 2; 
         
             if (Math.abs(mouseDelta) < sensitivityThreshold) return;
         
