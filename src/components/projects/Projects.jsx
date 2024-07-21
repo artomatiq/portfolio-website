@@ -8,10 +8,15 @@ import image4 from '../../assets/img4.png'
 
 import tweetyBird from '../../assets/trimmed.mp4'
 
+import smoothscroll from 'smoothscroll-polyfill';
+
+// kick off the polyfill
+smoothscroll.polyfill();
+
+
 const Portfolio = () => {
 
     useEffect(() => {
-        window.scrollTo({top: 0})
         const track = document.getElementById('image-track')
 
 
@@ -100,12 +105,8 @@ const Portfolio = () => {
             if (portfolioElement) {
                 // Calculate the offset top position of the portfolio element
                 const portfolioOffsetTop = portfolioElement.offsetTop;
-
                 // Scroll to the calculated position
-                window.scrollTo({
-                    top: portfolioOffsetTop,
-                    behavior: 'smooth'
-                });
+                smoothScrollTo(portfolioOffsetTop, 200);
 
                 //delay start animation
                 setTimeout(() => {
@@ -134,6 +135,29 @@ const Portfolio = () => {
                     }
                 }, 3100);
             }
+        }
+
+        function smoothScrollTo(targetY, duration) {
+            const startY = window.scrollY;
+            const distanceY = targetY - startY;
+            let startTime = null;
+        
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = ease(timeElapsed, startY, distanceY, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+        
+            function ease(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+        
+            requestAnimationFrame(animation);
         }
 
 
