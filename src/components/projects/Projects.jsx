@@ -68,6 +68,62 @@ const Portfolio = () => {
 
 
 
+
+
+
+        track.ontouchstart = e => {
+            track.dataset.mouseDownAt = e.touches[0].clientX;
+        };
+        
+        track.ontouchmove = e => {
+            if (track.dataset.mouseDownAt === "0") return;
+        
+            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.touches[0].clientX;
+            const maxDelta = window.innerWidth / 1.5;
+            const percentage = (mouseDelta / maxDelta) * 100;
+        
+            let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
+        
+            const viewportWidth = window.innerWidth;
+            const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
+            const trackWidth = parseFloat(getComputedStyle(track).width);
+            const firstSlideBy = viewportWidth / 2 + projectWidth / 2;
+            const finalSlideBy = trackWidth - firstSlideBy + viewportWidth - firstSlideBy;
+        
+            nextPercentage = Math.max(nextPercentage, 0);
+            nextPercentage = Math.min(nextPercentage, finalSlideBy / trackWidth * 100);
+        
+            track.dataset.percentage = nextPercentage;
+        
+            track.animate({
+                transform: `translate(-${nextPercentage}%)`
+            }, { duration: 1200, fill: "forwards" });
+        
+            window.onscroll = null;
+        
+            for (const project of track.getElementsByClassName('project')) {
+                let projectNextPercentage = Math.min(nextPercentage * 50 / 100, 50);
+                project.animate({
+                    objectPosition: `${50 - projectNextPercentage}% center`
+                }, { duration: 1200, fill: 'forwards' });
+            }
+        };
+        
+        track.ontouchend = () => {
+            track.dataset.mouseDownAt = '0';
+            track.dataset.prevPercentage = track.dataset.percentage;
+        };
+
+
+
+
+
+
+
+        
+
+
+
         window.onload = () => {
             //reset track to initial
             track.style.left = `100vw`;
