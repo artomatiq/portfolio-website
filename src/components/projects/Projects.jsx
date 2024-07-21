@@ -70,14 +70,18 @@ const Portfolio = () => {
 
 
         window.onload = () => {
-            //reset track at the top
+            //reset track to initial
+            track.style.left = `100vw`;
             track.style.transition = 'transform 0s'
             track.style.transform = 'none'
             setTimeout(() => {
                 track.style.transition = 'transform 2s ease-in-out'
             }, 0);
+            //reset projects to initial
             for (const project of track.getElementsByClassName('project')) {
-                project.style.objectPosition = `100% center`
+                project.animate({
+                    objectPosition: `100% center`
+                }, { duration: 0, fill: 'forwards'});
             }
         }
 
@@ -156,7 +160,6 @@ const Portfolio = () => {
                 }, 0);
                 //reset projects to initial
                 for (const project of track.getElementsByClassName('project')) {
-                    console.log(`resetting ${project}`);
                     project.animate({
                         objectPosition: `100% center`
                     }, { duration: 0, fill: 'forwards'});
