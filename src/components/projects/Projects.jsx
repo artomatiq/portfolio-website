@@ -8,12 +8,6 @@ import image4 from '../../assets/img4.png'
 
 import tweetyBird from '../../assets/trimmed.mp4'
 
-import smoothscroll from 'smoothscroll-polyfill';
-
-// kick off the polyfill
-smoothscroll.polyfill();
-
-
 const Portfolio = () => {
 
     useEffect(() => {
