@@ -71,13 +71,13 @@ const Portfolio = () => {
 
         window.onload = () => {
             //reset track at the top
-            track.style.transition = 'none'
+            track.style.transition = 'transform 0s'
             track.style.transform = 'none'
             setTimeout(() => {
                 track.style.transition = 'transform 2s ease-in-out'
             }, 0);
             for (const project of track.getElementsByClassName('project')) {
-                project.style.transform = `none`
+                project.style.objectPosition = `100% center`
             }
         }
 
@@ -192,11 +192,15 @@ const Portfolio = () => {
                 firstScrollHandled = false;
 
                 //reset track at the top
+                track.style.left = `100vw`;
+                track.style.transition = 'transform 0s'
                 track.style.transform = 'none'
+                setTimeout(() => {
+                    track.style.transition = 'transform 2s ease-in-out'
+                }, 0);
                 for (const project of track.getElementsByClassName('project')) {
-                    project.style.transform = `none`
+                    project.style.objectPosition = `100% center`
                 }
-                console.log(getComputedStyle(track).left);
             }
 
             if (firstScrollHandled) return;
