@@ -10,9 +10,10 @@ import tweetyBird from '../../assets/trimmed.mp4'
 
 const Portfolio = () => {
 
+    const isTouchDevice = navigator.maxTouchPoints > 0;
+
     useEffect(() => {
         const track = document.getElementById('image-track')
-
 
 
 
@@ -51,7 +52,7 @@ const Portfolio = () => {
             window.onscroll = null;
 
             for (const project of track.getElementsByClassName('project')) {
-                let projectNextPercentage = Math.min(nextPercentage* 50 / 100, 50);
+                let projectNextPercentage = Math.min(nextPercentage * 50 / 100, 50);
                 project.animate({
                     objectPosition: `${50 - projectNextPercentage}% center`
                 }, { duration: 1200, fill: 'forwards' });
@@ -71,62 +72,6 @@ const Portfolio = () => {
 
 
 
-        track.ontouchstart = e => {
-            track.dataset.mouseDownAt = e.touches[0].clientX;
-        };
-        
-        track.ontouchmove = e => {
-            if (track.dataset.mouseDownAt === "0") return;
-
-            e.preventDefault();
-        
-            const currentX = e.touches[0].clientX;
-            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - currentX;
-        
-            // Introduce a threshold to reduce sensitivity
-            const sensitivityThreshold = 2; 
-        
-            if (Math.abs(mouseDelta) < sensitivityThreshold) return;
-        
-            const maxDelta = window.innerWidth / 1.5;
-            const percentage = (mouseDelta / maxDelta) * 100;
-        
-            let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
-        
-            const viewportWidth = window.innerWidth;
-            const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
-            const trackWidth = parseFloat(getComputedStyle(track).width);
-            const firstSlideBy = viewportWidth / 2 + projectWidth / 2;
-            const finalSlideBy = trackWidth - firstSlideBy + viewportWidth - firstSlideBy;
-        
-            nextPercentage = Math.max(nextPercentage, 0);
-            nextPercentage = Math.min(nextPercentage, finalSlideBy / trackWidth * 100);
-        
-            track.dataset.percentage = nextPercentage;
-        
-            track.animate({
-                transform: `translate(-${nextPercentage}%)`
-            }, { duration: 1200, fill: "forwards" });
-        
-            window.onscroll = null;
-        
-            for (const project of track.getElementsByClassName('project')) {
-                let projectNextPercentage = Math.min(nextPercentage * 50 / 100, 50);
-                project.animate({
-                    objectPosition: `${50 - projectNextPercentage}% center`
-                }, { duration: 1200, fill: 'forwards' });
-            }
-        
-            // Update mouseDownAt to the current position to avoid cumulative small changes
-            track.dataset.mouseDownAt = currentX;
-        };
-        
-        track.ontouchend = () => {
-            track.dataset.mouseDownAt = '0';
-            track.dataset.prevPercentage = track.dataset.percentage;
-        };        
-
-
 
 
 
@@ -143,7 +88,7 @@ const Portfolio = () => {
             for (const project of track.getElementsByClassName('project')) {
                 project.animate({
                     objectPosition: `100% center`
-                }, { duration: 0, fill: 'forwards'});
+                }, { duration: 0, fill: 'forwards' });
             }
         }
 
@@ -198,7 +143,7 @@ const Portfolio = () => {
             const startY = window.scrollY;
             const distanceY = targetY - startY;
             let startTime = null;
-        
+
             function animation(currentTime) {
                 if (startTime === null) startTime = currentTime;
                 const timeElapsed = currentTime - startTime;
@@ -206,14 +151,14 @@ const Portfolio = () => {
                 window.scrollTo(0, run);
                 if (timeElapsed < duration) requestAnimationFrame(animation);
             }
-        
+
             function ease(t, b, c, d) {
                 t /= d / 2;
                 if (t < 1) return c / 2 * t * t + b;
                 t--;
                 return -c / 2 * (t * (t - 2) - 1) + b;
             }
-        
+
             requestAnimationFrame(animation);
         }
 
@@ -243,7 +188,7 @@ const Portfolio = () => {
                 for (const project of track.getElementsByClassName('project')) {
                     project.animate({
                         objectPosition: `100% center`
-                    }, { duration: 0, fill: 'forwards'});
+                    }, { duration: 0, fill: 'forwards' });
                 }
             }
 
@@ -301,6 +246,13 @@ const Portfolio = () => {
                     <img className='project ten' src={image2} alt='project snapshot' draggable="false" /> */}
                 </div>
             </div>
+
+            {isTouchDevice &&
+                <div className="arrow-container">
+                    <svg className='arrow' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{"fill": "#rgba(169, 169, 169, 0.405)"}}><path d="m12.707 7.707-1.414-1.414L5.586 12l5.707 5.707 1.414-1.414L8.414 12z"></path><path d="M16.293 6.293 10.586 12l5.707 5.707 1.414-1.414L13.414 12l4.293-4.293z"></path></svg>
+                    <svg className='arrow' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{"fill": "#rgba(169, 169, 169, 0.405)"}}><path d="M10.296 7.71 14.621 12l-4.325 4.29 1.408 1.42L17.461 12l-5.757-5.71z"></path><path d="M6.704 6.29 5.296 7.71 9.621 12l-4.325 4.29 1.408 1.42L12.461 12z"></path></svg>                
+                </div>
+            }
 
 
         </section>

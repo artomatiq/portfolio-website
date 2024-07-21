@@ -11,20 +11,6 @@
     margin-bottom: var(--mb-1-5);
 }
 
-@media screen and (max-width: 992px) {}
-
-@media screen and (max-width: 768px) {}
-
-@media screen and (max-width: 425px) {
-    .portfolio {
-        margin-top: 0;
-    }
-}
-
-@media screen and (max-width: 576px) {}
-
-@media screen and (max-width: 350px) {}
-
 #projects {
     width: 100vw;
     height: clamp(40vmin, 80vmin, 80vmin);
@@ -53,8 +39,40 @@
     object-position: 100% 50%;
 }
 
-@media screen and (max-width: 768px) {
+.arrow-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+    margin: auto;
 }
 
+.arrow {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.258);
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.arrow:active {
+    outline: none;
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 768px) {}
+
 @media screen and (max-width: 425px) {
+    .portfolio {
+        margin-top: 0;
+    }
 }
