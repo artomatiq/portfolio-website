@@ -82,6 +82,10 @@ const Portfolio = () => {
         }
 
 
+
+
+
+
         function scrollToPortfolio() {
             track.style.transition = 'transform 2s ease-in-out'
             const viewportWidth = window.innerWidth;
@@ -102,8 +106,9 @@ const Portfolio = () => {
                 //delay start animation
                 setTimeout(() => {
                     if (track) {
+                        //slide track to the left
                         track.style.transform = `translateX(-${slideBy}px)`;
-
+                        //slide windows
                         for (const project of track.getElementsByClassName('project')) {
                             project.animate({
                                 objectPosition: `50% center`
@@ -113,10 +118,11 @@ const Portfolio = () => {
                 }, 1000);
 
                 setTimeout(() => {
+                    //update track position so animation can consinue
                     track.style.left = `${track.getBoundingClientRect().left}px`;
                     track.style.transition = 'transform 0s'
                     track.style.transform = 'none'
-
+                    //update window position so animation can continue
                     for (const project of track.getElementsByClassName('project')) {
                         project.style.objectPosition = `50% center`
                         project.style.transition = 'object-position 0s'
@@ -133,56 +139,6 @@ const Portfolio = () => {
 
         let firstScrollHandled = false;
 
-
-
-
-
-
-        // function disableTouchScroll() {
-        //     window.addEventListener('touchstart', preventDefault, { passive: false });
-        //     window.addEventListener('touchmove', preventDefault, { passive: false });
-        // }
-        // function enableTouchScroll() {
-        //     window.removeEventListener('touchstart', preventDefault);
-        //     window.removeEventListener('touchmove', preventDefault);
-        // }
-        // function preventDefault(e) {
-        //     e.preventDefault();
-        // }
-
-        // let startY = 0;
-        // let endY = 0;
-
-
-        // window.ontouchstart = (e) => {
-        //     disableTouchScroll();
-        //     startY = e.touches[0].clientY;
-        // };
-
-        // window.ontouchmove = (e) => {
-        //     endY = e.touches[0].clientY;
-
-        //     if (startY > endY) {
-        //         firstScrollHandled = true;
-
-        //         //disable scrolling
-        //         disableTouchScroll();
-
-        //         //enable scrolling after 5 seconds
-        //         setTimeout(() => {
-        //             enableTouchScroll();
-        //         }, 4000);
-
-        //         // Scroll to the portfolio section
-        //         scrollToPortfolio();
-        //     }
-        // };
-
-
-
-
-
-
         window.onscroll = () => {
             const scrollTop = document.documentElement.scrollTop;
 
@@ -191,15 +147,19 @@ const Portfolio = () => {
                 console.log('scrolled to the top');
                 firstScrollHandled = false;
 
-                //reset track at the top
+                //reset track to initial
                 track.style.left = `100vw`;
                 track.style.transition = 'transform 0s'
                 track.style.transform = 'none'
                 setTimeout(() => {
                     track.style.transition = 'transform 2s ease-in-out'
                 }, 0);
+                //reset projects to initial
                 for (const project of track.getElementsByClassName('project')) {
+                    console.log(`resetting ${project}`);
                     project.style.objectPosition = `100% center`
+                    project.style.transition = 'object-position 0s'
+                    project.style.transform = `none`
                 }
             }
 
