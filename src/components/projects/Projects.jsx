@@ -11,7 +11,7 @@ import tweetyBird from '../../assets/trimmed.mp4'
 const Portfolio = () => {
 
     useEffect(() => {
-
+        window.scrollTo({top: 0})
         const track = document.getElementById('image-track')
 
 
