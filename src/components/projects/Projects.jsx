@@ -157,9 +157,9 @@ const Portfolio = () => {
                 //reset projects to initial
                 for (const project of track.getElementsByClassName('project')) {
                     console.log(`resetting ${project}`);
-                    project.style.objectPosition = `100% center`
-                    project.style.transition = 'object-position 0s'
-                    project.style.transform = `none`
+                    project.animate({
+                        objectPosition: `100% center`
+                    }, { duration: 0, fill: 'forwards'});
                 }
             }
 
