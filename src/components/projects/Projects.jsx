@@ -77,8 +77,17 @@ const Portfolio = () => {
         
         track.ontouchmove = e => {
             if (track.dataset.mouseDownAt === "0") return;
+
+            e.preventDefault();
         
-            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.touches[0].clientX;
+            const currentX = e.touches[0].clientX;
+            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - currentX;
+        
+            // Introduce a threshold to reduce sensitivity
+            const sensitivityThreshold = 5; 
+        
+            if (Math.abs(mouseDelta) < sensitivityThreshold) return;
+        
             const maxDelta = window.innerWidth / 1.5;
             const percentage = (mouseDelta / maxDelta) * 100;
         
@@ -107,20 +116,18 @@ const Portfolio = () => {
                     objectPosition: `${50 - projectNextPercentage}% center`
                 }, { duration: 1200, fill: 'forwards' });
             }
+        
+            // Update mouseDownAt to the current position to avoid cumulative small changes
+            track.dataset.mouseDownAt = currentX;
         };
         
         track.ontouchend = () => {
             track.dataset.mouseDownAt = '0';
             track.dataset.prevPercentage = track.dataset.percentage;
-        };
+        };        
 
 
 
-
-
-
-
-        
 
 
 
