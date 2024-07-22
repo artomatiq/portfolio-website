@@ -29,7 +29,7 @@ const Portfolio = () => {
 
                 //slide track to the left
                 const currentTrackPosition = parseFloat(getComputedStyle(track).left.replace('px', ''));
-                const newTrackPosition = e.target.classList.contains('right') ? currentTrackPosition - projectWidth : currentTrackPosition + projectWidth;
+                const newTrackPosition = e.target.classList.contains('right') ? currentTrackPosition - slideStep : currentTrackPosition + slideStep;
                 
                 track.animate({
                     left: `${newTrackPosition}px`
@@ -42,16 +42,17 @@ const Portfolio = () => {
                 let currentPosition = getComputedStyle(track.getElementsByClassName('project')[0]).objectPosition
                 currentPosition = currentPosition.split(' ')[0]
                 currentPosition = parseFloat(currentPosition.replace('%', ''))
+
                 //stop at the end of track
                 if (currentPosition === 0 || currentPosition === 100) return;
 
-                let newPosition = e.target.classList.contains('left') ? currentPosition - slideStep : currentPosition + slideStep;
+                // let newPosition = e.target.classList.contains('left') ? currentPosition - slideStep : currentPosition + slideStep;
 
-                for (const project of track.getElementsByClassName('project')) {
-                    project.animate({
-                        objectPosition: `${newPosition}% center`
-                    }, { duration: 2000, easing: 'ease-in-out', fill: 'forwards' });
-                }
+                // for (const project of track.getElementsByClassName('project')) {
+                //     project.animate({
+                //         objectPosition: `${newPosition}% center`
+                //     }, { duration: 2000, easing: 'ease-in-out', fill: 'forwards' });
+                // }
         }, 1000);
 
     }
