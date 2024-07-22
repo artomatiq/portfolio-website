@@ -13,18 +13,27 @@ const Portfolio = () => {
     const isTouchDevice = navigator.maxTouchPoints > 0;
 
     function handleArrowClick(e) {
+
         const track = document.getElementById('image-track')
         if (!track) return;
 
+        const trackWidth = parseFloat(getComputedStyle(track).width);
         const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
+        const numberOfSteps = track.getElementsByClassName('project').length - 1;
+        let slideStep = trackWidth - projectWidth;
+        slideStep = slideStep / numberOfSteps;
 
-        console.log('arrow clicked');
+
         //delay start animation
         setTimeout(() => {
-                //slide track to the left
-                
-                track.style.transform = `translateX(-${projectWidth}px)`;
 
+                //slide track to the left
+                const currentTrackPosition = parseFloat(getComputedStyle(track).left.replace('px', ''));
+                const newTrackPosition = e.target.classList.contains('right') ? currentTrackPosition - projectWidth : currentTrackPosition + projectWidth;
+                
+                track.animate({
+                    left: `${newTrackPosition}px`
+                }, { duration: 2000, easing: 'ease-in-out', fill: 'forwards' });
 
 
                 //slide windows
@@ -36,8 +45,7 @@ const Portfolio = () => {
                 //stop at the end of track
                 if (currentPosition === 0 || currentPosition === 100) return;
 
-                const numberOfSteps = track.getElementsByClassName('project').length - 1;
-                let newPosition = e.target.classList.contains('left') ? currentPosition - 50/numberOfSteps : currentPosition + 50/numberOfSteps;
+                let newPosition = e.target.classList.contains('left') ? currentPosition - slideStep : currentPosition + slideStep;
 
                 for (const project of track.getElementsByClassName('project')) {
                     project.animate({
@@ -55,10 +63,6 @@ const Portfolio = () => {
         const viewportWidth = window.innerWidth;
         const projectWidth = parseFloat(getComputedStyle(track.querySelector('.project')).width);
         const slideBy = viewportWidth / 2 + projectWidth / 2;
-
-
-        // const arrowDistance = parseFloat(getComputedStyle(track.querySelector('.project')).width) - projectWidth * track.querySelectorAll('.project').length;
-
 
         track.onmousedown = e => {
             track.dataset.mouseDownAt = e.clientX;
