@@ -23,17 +23,31 @@ const Portfolio = () => {
         let slideStep = trackWidth - projectWidth;
         slideStep = slideStep / numberOfSteps;
 
+        const currentTrackPosition = parseFloat(getComputedStyle(track).left.replace('px', ''));
+        const leftEdge = currentTrackPosition;
+        const rightEdge = parseFloat(getComputedStyle(track).right.replace('px', ''));
+        const middleOfThePage = window.innerWidth / 2;
+        const newTrackPosition = e.target.classList.contains('right') ? currentTrackPosition - slideStep : currentTrackPosition + slideStep;
+
+        //stop at the end of track
+        if ( e.target.classList.contains('left') && Math.abs(middleOfThePage - leftEdge) < projectWidth) {
+            console.log('at the left end of track');
+            return
+        };
+
+        if ( e.target.classList.contains('right') && Math.abs(middleOfThePage - rightEdge) < projectWidth) {
+            console.log('at the end of track');
+            return
+        }
 
         //delay start animation
         setTimeout(() => {
 
-                //slide track to the left
-                const currentTrackPosition = parseFloat(getComputedStyle(track).left.replace('px', ''));
-                const newTrackPosition = e.target.classList.contains('right') ? currentTrackPosition - slideStep : currentTrackPosition + slideStep;
-                
+                //slide track
+                console.log(newTrackPosition);
                 track.animate({
                     left: `${newTrackPosition}px`
-                }, { duration: 2000, easing: 'ease-in-out', fill: 'forwards' });
+                }, { duration: 1000, easing: 'ease-in-out', fill: 'forwards' });
 
 
                 //slide windows
@@ -43,9 +57,6 @@ const Portfolio = () => {
                 currentPosition = currentPosition.split(' ')[0]
                 currentPosition = parseFloat(currentPosition.replace('%', ''))
 
-                //stop at the end of track
-                if (currentPosition === 0 || currentPosition === 100) return;
-
                 // let newPosition = e.target.classList.contains('left') ? currentPosition - slideStep : currentPosition + slideStep;
 
                 // for (const project of track.getElementsByClassName('project')) {
@@ -53,7 +64,7 @@ const Portfolio = () => {
                 //         objectPosition: `${newPosition}% center`
                 //     }, { duration: 2000, easing: 'ease-in-out', fill: 'forwards' });
                 // }
-        }, 1000);
+        }, 250);
 
     }
 
