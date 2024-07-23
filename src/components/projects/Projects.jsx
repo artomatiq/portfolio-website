@@ -236,7 +236,8 @@ const Portfolio = () => {
                 firstScrollHandled = false;
 
                 //reset track to initial
-                track.style.left = `100vw`;
+                track.style.left = `100%`;
+                console.log('left of track', track.style.left);
                 track.style.transition = 'transform 0s'
                 track.style.transform = 'none'
                 setTimeout(() => {
