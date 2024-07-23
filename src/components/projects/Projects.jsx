@@ -27,28 +27,36 @@ const Portfolio = () => {
         const leftEdge = currentTrackPosition;
         const rightEdge = parseFloat(getComputedStyle(track).right.replace('px', ''));
         const middleOfThePage = window.innerWidth / 2;
-        const newTrackPosition = e.target.classList.contains('right') ? currentTrackPosition - slideStep : currentTrackPosition + slideStep;
 
         //stop at the end of track
-        if ( e.target.classList.contains('left') && Math.abs(middleOfThePage - leftEdge) < projectWidth) {
-            console.log('at the left end of track');
-            return
+        if ( e.target.classList.contains('left')) {
+            console.log('starting left logic');
+            console.log('currentTrackPosition', currentTrackPosition);
+            console.log('slideStep', slideStep);
+            if (Math.abs(middleOfThePage - leftEdge) < projectWidth) {
+                console.log('at the left end of track');
+                return;
+            };
+            track.animate({
+                left: `${currentTrackPosition + slideStep}px`
+            }, { duration: 1000, easing: 'ease-in-out', fill: 'forwards' });
         };
 
-        if ( e.target.classList.contains('right') && Math.abs(middleOfThePage - rightEdge) < projectWidth) {
-            console.log('at the end of track');
-            return
+        if ( e.target.classList.contains('right')) {
+            console.log('starting right logic');
+            console.log('current position', currentTrackPosition);
+            console.log('slide step', slideStep);
+            if (Math.abs(middleOfThePage - rightEdge) < projectWidth) {
+                console.log('at the right end of track');
+                return
+            };
+            track.animate({
+                left: `${currentTrackPosition - slideStep}px`
+            }, { duration: 1000, easing: 'ease-in-out', fill: 'forwards' });
         }
 
         //delay start animation
         setTimeout(() => {
-
-                //slide track
-                console.log(newTrackPosition);
-                track.animate({
-                    left: `${newTrackPosition}px`
-                }, { duration: 1000, easing: 'ease-in-out', fill: 'forwards' });
-
 
                 //slide windows
 
@@ -64,7 +72,7 @@ const Portfolio = () => {
                 //         objectPosition: `${newPosition}% center`
                 //     }, { duration: 2000, easing: 'ease-in-out', fill: 'forwards' });
                 // }
-        }, 250);
+        }, 100);
 
     }
 
