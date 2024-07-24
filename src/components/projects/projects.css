@@ -12,59 +12,39 @@
 }
 
 #projects {
-    width: 100vw;
-    height: clamp(40vmin, 80vmin, 80vmin);
-    position: relative;
-}
-
-
-#image-track {
     display: flex;
-    position: absolute;
-    min-width: max-content;
-    height: clamp(40vmin, 60vmin, 80vmin);
-    gap: 4vmin;
-    position: absolute;
-    left: 100%;
-    top: 10%;
-    transition: transform 2s ease-in-out;
+    flex-direction: column;
 }
 
-#image-track>.project {
-    aspect-ratio: 1/1.1;
-    position: relative;
-    width: auto;
-    height: auto;
-    object-fit: cover;
-    object-position: 100% 50%;
-}
-
-.arrow-container {
+.project-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 10rem;
-    margin: auto;
+    flex-direction: column;
+    margin-top: 5rem;
 }
 
-.arrow {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(128, 128, 128, 0.258);
-    color: white;
-    font-size: 18px;
-    border-radius: 50%;
-    cursor: pointer;
-    outline: none;
-    transition: transform 0.2s, background-color 0.2s;
+.project {
+    max-height: 65vh;
+    max-width: 80vw;
+    align-self: center;
+    border-radius: 16px;
 }
 
-.arrow:active {
-    outline: none;
-    transform: scale(1.2);
+.project-title {
+    padding: 2rem;
+    text-align: center;
+    font-size: 5vmin;
+}
+
+.project-description {
+    align-self: center;
+    text-align: center;
+    padding: 3vw;
+    font-size: 2vmin;
+    width: 50vw;
+}
+
+.project-info {
+
 }
 
 @media screen and (max-width: 992px) {}
