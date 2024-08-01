@@ -21,17 +21,23 @@ const Header = () => {
         const hiddenHeaderElements = document.querySelectorAll('.header-hidden');
 
         hiddenHeaderElements.forEach(element => {
-            console.log('hello', element);
             setTimeout(() => {
                 element.classList.add('header-show');
             }, 5500);
         })
+
+        const logo = document.querySelector('.nav__logo')
+
+        setTimeout(() => {
+            logo.classList.add('nav__logo-show');
+        }, 5500);
+
     }, []);
 
     return (
         <header className="header">
             <nav className="nav">
-                <a href="index.html" className="nav__logo">artomatiq</a>
+                <a href="index.html" className="nav__logo nav__logo-hidden">artomatiq</a>
 
                 <div className={Toggle ? 'nav__menu show-menu' : 'nav__menu'}>
                     <ul className="nav__list grid">
