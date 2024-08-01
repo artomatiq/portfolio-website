@@ -52,6 +52,19 @@
     margin-left: 0.5rem;
 }
 
+.header-hidden {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(-100%);
+    transition: all 1s;
+}
+
+.header-show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
 @media screen and (max-width: 768px) {
     .header {
         top: initial;
