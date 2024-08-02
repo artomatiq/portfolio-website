@@ -68,15 +68,15 @@
 .nav__logo-hidden {
     opacity: 0;
     filter: blur(6px);
-    transform: translateX(-100%);
+    transform: translateY(-100%);
     transition: all 1s;
 }
 
 .nav__logo-show {
     opacity: 1;
     filter: blur(0);
-    transform: translateX(0);
-    transition-delay: 800ms;
+    transform: translateY(0);
+    /* transition-delay: 800ms; */
 }
 
 @media screen and (max-width: 768px) {

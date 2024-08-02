@@ -69,6 +69,42 @@
     font-size: 1rem;
 }
 
+.home__title.hide {
+    opacity: 0;
+    transition: all 2s;
+}
+
+.home__title.show {
+    opacity: 1;
+}
+
+.home__subtitle.hide {
+    opacity: 0;
+    transition: all 2s;
+}
+
+.home__subtitle.show {
+    opacity: 1;
+}
+
+.home__description.hide {
+    opacity: 0;
+    transition: all 2s;
+}
+
+.home__description.show {
+    opacity: 1;
+}
+
+.home__container .button.hide {
+    opacity: 0;
+    transition: all 2.25s;
+}
+
+.home__container .button.show {
+    opacity: 1;
+}
+
 .home__img {
     background: url(../../assets//profile.jpg);
     background-repeat: no-repeat;
@@ -80,7 +116,16 @@
 
     width: 400px;
     height: 400px;
-    animation: profile__animate 8s ease-in-out infinite 1s;
+    /* animation: profile__animate 8s ease-in-out infinite 1s; */
+}
+
+.home__img.hide {
+    filter: blur(5px);
+    transition: all 3s;
+}
+
+.home__img.show {
+    filter: blur(0);
 }
 
 .home__scroll {

@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <PreLoader />
+      {/* <PreLoader /> */}
       <Header/>
 
       <main className='main'>

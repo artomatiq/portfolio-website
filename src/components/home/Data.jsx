@@ -1,9 +1,37 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 const Data = () => {
+
+    useEffect(() => {
+        const homeData = document.querySelector(".home__data");
+
+        setTimeout(() => {
+            homeData.querySelector(".home__title").classList.add("show");
+        }, 6500);
+
+        setTimeout(() => {
+            homeData.querySelector(".home__subtitle").classList.add("show");
+        }, 6900);
+
+        setTimeout(() => {
+            homeData.querySelector(".home__description").classList.add("show");
+        }, 7300);
+
+        setTimeout(() => {
+            homeData.querySelectorAll(".button").forEach((button) => {
+                console.log(button);
+                button.classList.add("show");
+            })
+        }, 8200);
+    }, []);
+
+    
+
+
+
     return (
         <div className="home__data">
-            <h1 className="home__title">Art
+            <h1 className="home__title hide">Art
                 {/* <svg
                     width="24"
                     height="24"
@@ -54,17 +82,17 @@ const Data = () => {
                     ></path>
                 </svg> */}
             </h1>
-            <h3 className="home__subtitle">
+            <h3 className="home__subtitle hide">
                 Fullstack Developer
             </h3>
-            <p className="home__description">
+            <p className="home__description hide">
                 Hello, I'm Art. I'm a fullstack software developer from Charlotte, NC.
                 <br />
                 <br />
                 Let your stumbling upon this website be the start of something great!
             </p>
 
-            <a href="#contact" className="button button--flex">
+            <a href="#contact" className="button button--flex hide">
                 Say Hello
                 <svg
                     className="button__icon"
@@ -85,7 +113,7 @@ const Data = () => {
                 </svg>
             </a>
 
-            <a href="#projects" className="button button--flex">
+            <a href="#projects" className="button button--flex hide">
                 View My Work
                 <svg
                     className="button__icon"
