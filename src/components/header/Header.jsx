@@ -27,9 +27,11 @@ const Header = () => {
         })
 
         const logo = document.querySelector('.nav__logo')
+        const toggle = document.querySelector('.nav__toggle')
 
         setTimeout(() => {
-            logo.classList.add('nav__logo-show');
+            logo.classList.add('show');
+            toggle.classList.add('show');
         }, 5500);
 
     }, []);
@@ -37,7 +39,7 @@ const Header = () => {
     return (
         <header className="header">
             <nav className="nav">
-                <a href="index.html" className="nav__logo nav__logo-hidden">artomatiq</a>
+                <a href="index.html" className="nav__logo hide">artomatiq</a>
 
                 <div className={Toggle ? 'nav__menu show-menu' : 'nav__menu'}>
                     <ul className="nav__list grid">
@@ -81,7 +83,7 @@ const Header = () => {
                     <i className='uil uil-times nav__close' onClick={() => showMenu(!Toggle)}></i>
                 </div>
 
-                <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
+                <div className="nav__toggle hide" onClick={() => showMenu(!Toggle)}>
                     <i className='uil uil-apps'></i>
                 </div>
             </nav>

@@ -65,17 +65,31 @@
     transform: translateY(0);
 }
 
-.nav__logo-hidden {
+.nav__logo.hide {
     opacity: 0;
     filter: blur(6px);
-    transform: translateY(-100%);
+    transform: translateX(-100%);
     transition: all 1s;
 }
 
-.nav__logo-show {
+.nav__logo.show {
     opacity: 1;
     filter: blur(0);
-    transform: translateY(0);
+    transform: translateX(0);
+    /* transition-delay: 800ms; */
+}
+
+.nav__toggle.hide {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.nav__toggle.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
     /* transition-delay: 800ms; */
 }
 
