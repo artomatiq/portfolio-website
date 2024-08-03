@@ -10,9 +10,42 @@ import tweetyBird from '../../assets/trimmed.mp4'
 
 const Portfolio = () => {
 
+    useEffect(() => {
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const project = entry.target.querySelector('.project');
+                const title = entry.target.querySelector('.project-title');
+                const description = entry.target.querySelector('.project-description');
+                const buttons = entry.target.querySelector('.project-buttons');
+                if (entry.isIntersecting) {
+                    project.classList.add('show')
+                    title.classList.add('show')
+                    description.classList.add('show')
+                    buttons.classList.add('show')
+                } else {
+                    project.classList.remove('show')
+                    title.classList.remove('show')
+                    description.classList.remove('show')
+                    buttons.classList.remove('show')
+                }
+            })
+        })
 
+        const projectContainers = document.querySelectorAll('.project-container')
 
+        projectContainers.forEach(container => {
+            observer.observe(container)
+        });
+
+        return () => {
+            projectContainers.forEach(container => {
+                observer.unobserve(container);
+            });
+            observer.disconnect();
+        };
+
+    }, []);
 
 
     return (
@@ -23,56 +56,56 @@ const Portfolio = () => {
             <div id='projects'>
                 <div className='project-container'>
                     <div className="project-image">
-                        <video className='project project-hide' id='tweetyBird' src={tweetyBird} draggable="false" loop autoPlay muted playsInline />
+                        <video className='project hide' id='tweetyBird' src={tweetyBird} draggable="false" loop autoPlay muted playsInline />
                     </div>
                     <div className="project-info">
-                        <h2 className='project-title project-title-hide'>Tweety Bird: The X-Scape</h2>
-                        <p className='project-description project-description-hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
-                        <div className="project-buttons">
-                            <a href="https://github.com/artomatiq/tweetie-bird" class="project-button project-button-hide" rel="noreferrer" target="_blank">CODE   <i class="uil uil-github-alt"></i></a>
-                            <a href="https://tweety-bird.vercel.app/" class="project-button project-button-hide" rel="noreferrer" target="_blank">DEMO   <i class="uil uil-eye"></i></a>
+                        <h2 className='project-title hide'>Tweety Bird: The X-Scape</h2>
+                        <p className='project-description hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
+                        <div className="project-buttons hide">
+                            <a href="https://github.com/artomatiq/tweetie-bird" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
+                            <a href="https://tweety-bird.vercel.app/" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div className='project-container'>
                     <div className="project-image">
-                        <img className='project project-hide' src={image2} alt='project snapshot' draggable="false" />
+                        <img className='project hide' src={image2} alt='project snapshot' draggable="false" />
                     </div>
                     <div className="project-info">
-                        <h2 className='project-title project-title-hide'>Tweety Bird: The X-Scape</h2>
-                        <p className='project-description project-description-hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
-                        <div className="project-buttons">
-                            <a href="https://github.com/artomatiq" class="project-button project-button-hide" rel="noreferrer" target="_blank">CODE   <i class="uil uil-github-alt"></i></a>
-                            <a href="https://github.com/artomatiq" class="project-button project-button-hide" rel="noreferrer" target="_blank">DEMO   <i class="uil uil-eye"></i></a>
+                        <h2 className='project-title hide'>Tweety Bird: The X-Scape</h2>
+                        <p className='project-description hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
+                        <div className="project-buttons hide">
+                            <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
+                            <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div className='project-container'>
                     <div className="project-image">
-                        <img className='project project-hide' src={image2} alt='project snapshot' draggable="false" />
+                        <img className='project hide' src={image2} alt='project snapshot' draggable="false" />
                     </div>
                     <div className="project-info">
-                        <h2 className='project-title project-title-hide'>Tweety Bird: The X-Scape</h2>
-                        <p className='project-description project-description-hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
-                        <div className="project-buttons">
-                            <a href="https://github.com/artomatiq" class="project-button project-button-hide" rel="noreferrer" target="_blank">CODE   <i class="uil uil-github-alt"></i></a>
-                            <a href="https://github.com/artomatiq" class="project-button project-button-hide" rel="noreferrer" target="_blank">DEMO   <i class="uil uil-eye"></i></a>
+                        <h2 className='project-title hide'>Tweety Bird: The X-Scape</h2>
+                        <p className='project-description hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
+                        <div className="project-buttons hide">
+                            <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
+                            <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div className='project-container'>
                     <div className="project-image">
-                        <img className='project project-hide' src={image2} alt='project snapshot' draggable="false" />
+                        <img className='project hide' src={image2} alt='project snapshot' draggable="false" />
                     </div>
                     <div className="project-info">
-                        <h2 className='project-title project-title-hide'>Tweety Bird: The X-Scape</h2>
-                        <p className='project-description project-description-hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
-                        <div className="project-buttons">
-                            <a href="https://github.com/artomatiq" class="project-button project-button-hide" rel="noreferrer" target="_blank">CODE   <i class="uil uil-github-alt"></i></a>
-                            <a href="https://github.com/artomatiq" class="project-button project-button-hide" rel="noreferrer" target="_blank">DEMO   <i class="uil uil-eye"></i></a>
+                        <h2 className='project-title hide'>Tweety Bird: The X-Scape</h2>
+                        <p className='project-description hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
+                        <div className="project-buttons hide">
+                            <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
+                            <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
                         </div>
                     </div>
                 </div>

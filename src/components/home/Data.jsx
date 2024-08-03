@@ -19,7 +19,6 @@ const Data = () => {
 
         setTimeout(() => {
             homeData.querySelectorAll(".button").forEach((button) => {
-                console.log(button);
                 button.classList.add("show");
             })
         }, 8200);
