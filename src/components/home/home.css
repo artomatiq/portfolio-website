@@ -20,7 +20,7 @@
 
 .home__social {
     position: absolute;
-    top: 250px;
+    top: 35%;
     left: 20px;
     display: grid;
     grid-template-columns: max-content;
@@ -98,11 +98,13 @@
 
 .home__container .button.hide {
     opacity: 0;
-    transition: all 2.25s;
+    filter: blur(5px);
+    transition: all 1.75s;
 }
 
 .home__container .button.show {
     opacity: 1;
+    filter: blur(0);
 }
 
 .home__img {
