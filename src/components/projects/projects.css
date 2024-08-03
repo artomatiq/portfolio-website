@@ -1,9 +1,12 @@
 .portfolio {
     margin-top: 10rem;
-    padding: 0;
     /* overflow: hidden; */
     /* background: black; */
     /* color: white; */
+}
+
+.portfolio .section__title {
+    margin-bottom: 0;
 }
 
 #projects {

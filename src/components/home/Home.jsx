@@ -4,6 +4,8 @@ import Social from "./Social";
 import Data from "./Data";
 import ScrollDown from "./ScrollDown";
 
+import profilePic from '../../assets/profile.jpg'
+
 const Home = () => {
 
     useEffect(() => {
@@ -11,7 +13,7 @@ const Home = () => {
 
         setTimeout(() => {
             profilePic.classList.add("show");
-        }, 6500);
+        }, 5000);
     }, []);
 
     return (
@@ -19,7 +21,9 @@ const Home = () => {
             <Social />
 
             <div className="home__container">
-                <div className="home__img hide"></div>
+                <div className="home__img hide">
+                    <img src={profilePic} alt="profile pic"/>
+                </div>
                 <Data />
             </div>
 
