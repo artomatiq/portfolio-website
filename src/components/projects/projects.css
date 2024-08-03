@@ -148,7 +148,114 @@
 
 @media screen and (max-width: 992px) {}
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+    .project-container {
+        flex-direction: column;
+        /* justify-content: space-between; */
+        height: 80vh;
+        gap: 2rem;
+    }
+
+    .project-image {
+        width: clamp(50vw, 90vw, 90vw);
+    }
+    
+    .project-info {
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* justify-content: space-between; */
+        gap: 1.5rem;
+        max-width: 85vw;
+        height: 100%;
+        order: 1;
+    }
+    
+    .project {
+        /* max-height: 100%;
+        max-width: 100%;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px; */
+    }
+    
+    .project-title {
+        /* position: relative;
+        width: 100%; */
+        padding: 0.5rem 2rem 0 1rem;
+        text-align: left;
+        /* font-size: clamp(1vmin, 3vmin, 4vmin); */
+        font-size: 5vw;
+    }
+    
+    .project-description {
+        /* position: relative; */
+        /* width: 75%; */
+        align-self: flex-start;
+        text-align: left;
+        /* padding-right: 2rem; */
+        padding-left: 1rem;
+        font-size: clamp(1vw, 3vw, 3vw);
+        line-height: clamp(2vw, 7vw, 9vw);
+    }
+    
+    .project-buttons {
+        /* display: flex; */
+        /* flex-direction: column; */
+        align-items: flex-start;
+        padding-left: 1rem;
+    }
+    
+    .project-button {
+        /* position: relative; */
+        font-size: clamp(3vw, 3vw, 3vw);
+        padding-left: 0;
+    }
+
+    .project-button:hover {
+        border: none;
+    }
+
+
+
+
+    .project-title.hide {
+        filter: blur(6px);
+        transform: translateX(-100%);
+        transition: all 2s;
+    }
+    
+    .project-title.show {
+        filter: blur(0);
+        transform: translateX(0);
+        transition: all 2s;
+        transition-delay: 1s;
+    }
+    
+    .project-description.hide {
+        filter: blur(6px);
+        transform: translateX(-100%);
+        transition: all 2s;
+    }   
+    
+    .project-description.show {
+        filter: blur(0);
+        transform: translateX(0);
+        transition: all 2s;
+        transition-delay: 2s;
+    }
+    
+    .project-buttons.hide {
+        filter: blur(6px);
+        transform: translateX(-30%);
+        transition: all 2s;
+    }
+    
+    .project-buttons.show {
+        filter: blur(0);
+        transform: translateX(0);
+        transition: all 2s;
+        transition-delay: 3s;
+    }
+}
 
 @media screen and (max-width: 425px) {
     .portfolio {
