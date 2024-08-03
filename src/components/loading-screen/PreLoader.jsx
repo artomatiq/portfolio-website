@@ -4,11 +4,11 @@ import './preloader.css'
 
 const PreLoader = () => {
 
-    document.body.style.overflow = 'hidden'
+    // document.body.style.overflowY = 'hidden'
 
-    setTimeout(() => {
-        document.body.style.overflow = 'auto'
-    }, 5500);
+    // setTimeout(() => {
+    //     document.body.style.overflowY = 'auto'
+    // }, 3000);
 
     useEffect( () => {
         preLoaderAnim()
