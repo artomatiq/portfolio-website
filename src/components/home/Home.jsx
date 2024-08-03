@@ -22,7 +22,7 @@ const Home = () => {
 
             <div className="home__container">
                 <div className="home__img hide">
-                    <img src={profilePic} alt="profile pic"/>
+                    {/* <img src={profilePic} alt="profile pic"/> */}
                 </div>
                 <Data />
             </div>
