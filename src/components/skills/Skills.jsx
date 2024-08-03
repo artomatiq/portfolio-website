@@ -5,11 +5,11 @@ import Backend from './Backend';
 
 const Skills = () => {
     return (
-        <section className="skills section #sills">
-            <h2 className="section__title" id='skills'>Skills</h2>
+        <section className="skills section" id='skills'>
+            <h2 className="section__title hide" ><span className='hide'>Skills</span></h2>
             <span className="section__subtitle">{/*My Technical Level*/}</span>
 
-            <div className="skills__container container grid">
+            <div className="skills__container container grid subsection hide">
                 <Frontend/>
                 <Backend/>
             </div>

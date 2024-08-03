@@ -60,10 +60,10 @@ const Contact = () => {
 
     return (
         <section className="contact section" id="contact">
-            <h2 className="section__title">Get In Touch</h2>
+            <h2 className="section__title hide"><span className='hide'>Get In Touch</span></h2>
             <span className="section__subtitle">{/*Contact Me*/}</span>
 
-            <div className="contact__container container grid">
+            <div className="contact__container container grid subsection hide">
                 {/* <div className="contact__content"> */}
                 <div className="contact__quote">
                     "Networking is not about hunting. It is about farming. It's about cultivating relationships."

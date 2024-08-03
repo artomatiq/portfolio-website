@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import './App.css';
 import PreLoader from './components/loading-screen/PreLoader';
 import Header from './components/header/Header';
@@ -10,6 +11,31 @@ import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 
 function App() {
+
+  const sectionTitleObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show')
+      }
+      else {
+        entry.target.classList.remove('show')
+      }
+    })
+  })
+
+  useEffect(() => {
+    const sectionTitles = document.querySelectorAll('.section__title span')
+
+    sectionTitles.forEach(title => {
+      sectionTitleObserver.observe(title)
+    })
+
+    return () => {
+      sectionTitles.forEach(title => {
+        sectionTitleObserver.unobserve(title)
+      })
+    }
+  }, []);
 
   return (
     <>

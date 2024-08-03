@@ -2,19 +2,16 @@ import React from "react";
 import './about.css'
 import AboutImg from '../../assets/about.jpg'
 import CV from '../../assets/cv.pdf'
-import Info from "./Info";
 
 const About = () => {
     return (
         <section className="about section" id="about">
-            <h2 className="section__title">About Me</h2>
-            <p className="section__subtitle">{/*My Introduction*/}</p>
+            <h2 className="section__title hide"><span className="hide">About Me</span></h2>
 
-            <div className="about__container container grid">
+            <div className="about__container container subsection grid hide">
                 <img src={AboutImg} alt="" className="about__img" />
 
                 <div className="about__data">
-                    {/* <Info /> */}
 
                     <p className="about__description">
                         I am passionate about learning new technologies and building robust, elegant, and user-friendly solutions.

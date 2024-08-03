@@ -30,7 +30,7 @@ const Portfolio = () => {
                     buttons.classList.remove('show')
                 }
             })
-        })
+        }, { threshold: 0.75 })
 
         const projectContainers = document.querySelectorAll('.project-container')
 
@@ -50,8 +50,7 @@ const Portfolio = () => {
 
     return (
         <section className="portfolio section" id='portfolio'>
-            <h2 className="section__title">Projects</h2>
-            <span className="section__subtitle">Things I've Built</span>
+            <h2 className="section__title hide"><span className='hide'>My Projects</span></h2>
 
             <div id='projects'>
                 <div className='project-container'>

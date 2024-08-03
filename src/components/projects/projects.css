@@ -13,7 +13,7 @@
 
 .project-container {
     margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 8rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -94,7 +94,7 @@
 .project.hide {
     filter: blur(6px);
     transform: translateX(-100%);
-    
+    transition: all 2s;
 }
 
 .project.show {
@@ -106,6 +106,7 @@
 .project-title.hide {
     filter: blur(6px);
     transform: translateX(100%);
+    transition: all 2s;
 }
 
 .project-title.show {
@@ -118,6 +119,7 @@
 .project-description.hide {
     filter: blur(6px);
     transform: translateX(100%);
+    transition: all 2s;
 }   
 
 .project-description.show {
@@ -130,6 +132,7 @@
 .project-buttons.hide {
     filter: blur(6px);
     transform: translateX(30%);
+    transition: all 2s;
 }
 
 .project-buttons.show {
