@@ -121,12 +121,12 @@ const Qualification = () => {
                     >
                         <div className="qualification__data">
                             <div className='qualification__left'>
-                                <h3 className="qualification__title">Product Designer</h3>
+                                <h3 className="qualification__title">Freelance Software Dev</h3>
                                 <span className="qualification__subtitle">
-                                    sub one
+                                    Artomatiq
                                 </span>
                                 <div className="qualification__calendar">
-                                    <i className="uil uil-calendar-alt"></i> 2021 - present
+                                    <i className="uil uil-calendar-alt"></i> Feb '24 - present
                                 </div>
                             </div>
 
@@ -145,12 +145,12 @@ const Qualification = () => {
                             </div>
 
                             <div className='qualification__right'>
-                                <h3 className="qualification__title">UX Designer</h3>
+                                <h3 className="qualification__title">Soul Searcher</h3>
                                 <span className="qualification__subtitle">
-                                    Apple Inc - Spain
+                                    Earth
                                 </span>
                                 <div className="qualification__calendar">
-                                    <i className="uil uil-calendar-alt"></i> 2021 - present
+                                    <i className="uil uil-calendar-alt"></i> Sep '99 - ∞
                                 </div>
                             </div>
 
@@ -159,12 +159,12 @@ const Qualification = () => {
                         <div className="qualification__data">
 
                             <div className='qualification__left'>
-                                <h3 className="qualification__title">Web Designer</h3>
+                                <h3 className="qualification__title">Restaurant Tech Manager</h3>
                                 <span className="qualification__subtitle">
-                                    Figma - Spain
+                                    Ararat 17
                                 </span>
                                 <div className="qualification__calendar">
-                                    <i className="uil uil-calendar-alt"></i> 2021 - present
+                                    <i className="uil uil-calendar-alt"></i> Mar '20 - Feb '22
                                 </div>
                             </div>
 
