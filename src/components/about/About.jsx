@@ -16,7 +16,7 @@ const About = () => {
                     <p className="about__description">
                         I am passionate about learning new technologies and building robust, elegant, and user-friendly solutions.
                         I work on both frontend and backend projects to help businesses grow through increasing productivity and efficiency while reducing costs.
-                        I have experience in building web applications using HTML5, CSS, JavaScript, React, Node, Express and SQL.
+                        I have experience in building web applications using HTML, CSS, JavaScript, React, Node, Express and SQL.
                     </p>
 
                     <a download='' href={CV} className="button button--flex">Download CV
