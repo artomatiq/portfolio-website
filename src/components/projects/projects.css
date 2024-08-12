@@ -50,8 +50,13 @@
     padding-right: 2rem;
     padding-top: 0.5rem;
     text-align: right;
-    /* font-size: clamp(1vmin, 3vmin, 4vmin); */
     font-size: 2vw;
+}
+
+.project-title h2 {
+    width: 100%;
+    font-size: 1.4vw;
+    margin-top: 1rem;
 }
 
 .project-description {
@@ -60,8 +65,16 @@
     align-self: flex-end;
     text-align: right;
     padding-right: 2rem;
-    font-size: clamp(1vw, 0.75vw, 1vw);
-    line-height: clamp(0.75vw, 3vw, 5vw);
+    font-size: clamp(0.75vw, 1.5rem, 1vw);
+    line-height: clamp(0.75vw, 2rem, 5vw);
+}
+
+.project-description.ccs-expedited {
+    font-size: 0.75rem;
+    /* line-height: clamp(1vw, 2vw, 5vw); */
+    width: 90%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .project-buttons {
@@ -198,6 +211,18 @@
         padding-left: 1rem;
         font-size: clamp(1vw, 3vw, 3vw);
         line-height: clamp(2vw, 7vw, 9vw);
+    }
+
+    .project-description.ccs-expedited {
+        font-size: 0.6rem;
+        line-height: clamp(2vw, 1.5rem, 9vw);
+        width: 95%;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-title h2 {
+        font-size: 1rem;
     }
     
     .project-buttons {
