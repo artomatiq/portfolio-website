@@ -61,7 +61,7 @@ const Portfolio = () => {
                         Courier Admin Dash
                         <h2>in progress...</h2>
                     </h2>
-                    <p className='project-description ccs-expedited hide'>An admin panel for Carolina's Courier Services. The frontend is built with HTML, CSS, JavaScript and React. On the backend, we have Node, Express and MySQL. The driver version of the app implements clock-in functionality, generating time logs in a MySQL database, which the admin then uses for gauging activity and generating reports in real time. The admin can also assign hourly rates to drivers and easily manage payroll.</p>
+                    <p className='project-description ccs-expedited hide'>An admin panel for Carolina's Courier Services. The frontend is built with HTML, CSS, JavaScript and React. On the backend, we have Node, Express and MySQL. The driver version of the app implements clock-in functionality, generating time logs in a MySQL database, which the admin then uses to track real-time activity and generate reports. The admin can also assign hourly rates to drivers and easily manage accounts payable.</p>
                     <div className="project-buttons hide">
                         <a href="https://github.com/artomatiq/ccs-expedited" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
                         <a href="https://ccs-expedited.vercel.app/" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
