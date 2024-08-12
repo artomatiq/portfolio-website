@@ -78,7 +78,7 @@ const Qualification = () => {
                             <div className='qualification__right'>
                                 <h3 className="qualification__title">Full Stack Web Development</h3>
                                 <span className="qualification__subtitle">
-                                    Bloomtech Institute of Technology
+                                    Bloom Institute of Technology
                                 </span>
                                 <div className="qualification__calendar">
                                     <i className="uil uil-calendar-alt"></i> Apr '23 - Feb '24
