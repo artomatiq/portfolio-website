@@ -101,7 +101,7 @@ const Portfolio = () => {
 
                 <div className='project-container hrf'>
                     <div className="project-image">
-                        <video className='project hide' id='hrf-vid' src={hrfVid} draggable="false" loop autoPlay muted playsInline />
+                        <video className='project hide' id='hrf-vid' src={hrfVid} draggable="false" loop autoPlay muted playsInline onClick={openModal}/>
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Human Rights First</h2>
@@ -137,7 +137,7 @@ const Portfolio = () => {
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Activity API</h2>
-                        <p className='project-description activity hide'>A single-page React application made using Redux for generating random activities from an API based on the number of participants, activity type, and price. Middleware are used to create asynchronous action creators and integrate conditional rendering of multiple interdependent components.</p>
+                        <p className='project-description activity hide'>A single-page React application made using Redux for generating random activities from an API based on the number of participants, activity type, and price. Middleware are used for creating asynchronous action creators and implementing conditional rendering of multiple interdependent components.</p>
                         <div className="project-buttons hide">
                             <a href="https://github.com/artomatiq/web-module-project-async-redux" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
                             {/* <a href="#" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a> */}

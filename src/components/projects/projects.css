@@ -13,7 +13,8 @@
 #projects {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    overflow-y: hidden;
 }
 
 .project-container {
@@ -22,7 +23,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-height: 60vh;
+    /* max-height: 60vh; */
 }
 
 .project-image {
@@ -203,12 +204,10 @@
     transition-delay: 3s;
 }
 
-@media screen and (max-width: 992px) {}
-
 @media screen and (max-width: 992px) {
 
-    #projects {
-        height: 5000px;
+    .portfolio.section {
+        overflow-y: hidden;
     }
 
     .project-container {
@@ -219,13 +218,13 @@
     }
 
     .project-image {
-        width: clamp(50vw, 90vw, 90vw);
+        width: 75vw;
     }
     
     .project-info {
         gap: 1.5rem;
         max-width: 85vw;
-        height: 100%;
+        /* height: 100%; */
         order: 1;
     }
     
@@ -233,7 +232,7 @@
         padding: 0.5rem 2rem 0 1rem;
         text-align: left;
         /* font-size: clamp(1vmin, 3vmin, 4vmin); */
-        font-size: 5vw;
+        font-size: 2rem;
     }
     
     .project-description {
@@ -295,21 +294,14 @@
         /* display: flex; */
         /* flex-direction: column; */
         align-items: flex-start;
-        padding-left: 1rem;
+        padding-left: 0.5rem;
     }
     
     .project-button {
         /* position: relative; */
-        font-size: clamp(3vw, 3vw, 3vw);
-        padding-left: 0;
+        font-size: 1.5rem;
+        
     }
-
-    .project-button:hover {
-        border: none;
-    }
-
-
-
 
     .project-title.hide {
         filter: blur(6px);
@@ -351,14 +343,24 @@
     }
 }
 
+@media screen and (max-width: 776px ) {
+    project-button:hover {
+        border: none;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .portfolio {
         margin-top: 0;
     }
 
+    .project-image {
+        width: 90vw;
+    }
+
     .project-button {
         /* position: relative; */
         font-size: 1rem;
-        padding-left: 0;
+        padding-left: 0.5rem;
     }
 }
