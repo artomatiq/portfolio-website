@@ -33,6 +33,10 @@
     cursor: pointer;
 }
 
+.ccs-expedited img {
+    cursor: pointer;
+}
+
 .project-info {
     display: flex;
     flex-direction: column;
@@ -84,6 +88,22 @@
 }
 
 .project-description.hrf {
+    font-size: 0.75rem;
+    /* line-height: clamp(1vw, 2vw, 5vw); */
+    width: 90%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-description.friendslist {
+    font-size: 0.75rem;
+    /* line-height: clamp(1vw, 2vw, 5vw); */
+    width: 90%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-description.activity {
     font-size: 0.75rem;
     /* line-height: clamp(1vw, 2vw, 5vw); */
     width: 90%;

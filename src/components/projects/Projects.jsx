@@ -21,6 +21,10 @@ const Portfolio = () => {
         window.open('https://tweety-bird.vercel.app/', '_blank');
     };
 
+    const handleCcsClick = () => {
+        window.open('https://ccs-expedited.vercel.app/', '_blank');
+    };
+
     useEffect(() => {
 
         const observer = new IntersectionObserver((entries) => {
@@ -78,9 +82,9 @@ const Portfolio = () => {
                     </div>
                 </div>
 
-                <div className='project-container'>
+                <div className='project-container ccs-expedited'>
                     <div className="project-image">
-                        <img className='project hide' src={ccsExpeditedImg} alt='project snapshot' draggable="false" />
+                        <img className='project hide' src={ccsExpeditedImg} alt='project snapshot' draggable="false" onClick={handleCcsClick}/>
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>
