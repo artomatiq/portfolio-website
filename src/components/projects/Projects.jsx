@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import './projects.css';
 
-import image1 from '../../assets/ccs-expedited.png'
-import image2 from '../../assets/activity-brainstorm.png'
-import image3 from '../../assets/img3.png'
+import ccsExpeditedImg from '../../assets/ccs-expedited.png'
+import activityImg from '../../assets/activity-brainstorm.png'
+import hrfImg from '../../assets/hrf-screenshot.png'
+import friendslistImg from '../../assets/auth-friendslist.png'
 
 
-import tweetyBird from '../../assets/trimmed.mp4'
+import tweetyBirdVid from '../../assets/trimmed.mp4'
+// import hrfVid from '../../assets/'
+import friendslistVid from '../../assets/auth-friendslist.mp4'
 
 const Portfolio = () => {
 
@@ -54,7 +57,7 @@ const Portfolio = () => {
 
             <div className='project-container'>
                 <div className="project-image">
-                    <img className='project hide' src={image1} alt='project snapshot' draggable="false" />
+                    <img className='project hide' src={ccsExpeditedImg} alt='project snapshot' draggable="false" />
                 </div>
                 <div className="project-info">
                     <h2 className='project-title hide'>
@@ -72,7 +75,7 @@ const Portfolio = () => {
             <div id='projects'>
                 <div className='project-container'>
                     <div className="project-image">
-                        <video className='project hide' id='tweetyBird' src={tweetyBird} draggable="false" loop autoPlay muted playsInline />
+                        <video className='project hide' id='tweetyBird' src={tweetyBirdVid} draggable="false" loop autoPlay muted playsInline />
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Tweety Bird: The X-Scape</h2>
@@ -86,11 +89,13 @@ const Portfolio = () => {
 
                 <div className='project-container'>
                     <div className="project-image">
-                        <img className='project hide' src={image2} alt='project snapshot' draggable="false" />
+                        <img className='project hide' src={hrfImg} alt='project snapshot' draggable="false" />
                     </div>
                     <div className="project-info">
-                        <h2 className='project-title hide'>Tweety Bird: The X-Scape</h2>
-                        <p className='project-description hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
+                        <h2 className='project-title hide'>Human Rights First</h2>
+                        <p className='project-description hrf hide'>Human Rights First is a non-profit organization which provides data visualizations for asylum data in the US.<br/>
+
+I implemented complete auth from start to finish using the third-party microservice Auto0. I then substituted hardcoded asylum data by integrating the app with 2 API endpoints, the responses from which were combined while maintaining structural similarity before being supplied to the data visualization modules. </p>
                         <div className="project-buttons hide">
                             <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
                             <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
@@ -100,7 +105,21 @@ const Portfolio = () => {
 
                 <div className='project-container'>
                     <div className="project-image">
-                        <img className='project hide' src={image2} alt='project snapshot' draggable="false" />
+                    <video className='project hide' id='tweetyBird' src={friendslistVid} draggable="false" loop autoPlay muted playsInline />
+                    </div>
+                    <div className="project-info">
+                        <h2 className='project-title hide'>Auth Friendslist</h2>
+                        <p className='project-description hide'>Features client authorization using localStorage and CRUD functional operations. After logging in, a user is able to fetch a list of friends from the server and add custom friends using a form. For testing of the routes, HTTPie was used.</p>
+                        <div className="project-buttons hide">
+                            <a href="https://github.com/artomatiq/web-module-project-client-auth" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
+                            {/* <a href="#" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a> */}
+                        </div>
+                    </div>
+                </div>
+
+                <div className='project-container'>
+                    <div className="project-image">
+                        <img className='project hide' src={activityImg} alt='project snapshot' draggable="false" />
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Activity API</h2>
