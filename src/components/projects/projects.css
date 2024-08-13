@@ -13,6 +13,7 @@
 #projects {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-container {
@@ -79,8 +80,16 @@
     line-height: clamp(0.75vw, 2rem, 5vw);
 }
 
+.project-description.tweety {
+    font-size: 1rem;
+    /* line-height: clamp(1vw, 2vw, 5vw); */
+    width: 90%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .project-description.ccs-expedited {
-    font-size: 0.75rem;
+    font-size: 1rem;
     /* line-height: clamp(1vw, 2vw, 5vw); */
     width: 90%;
     margin-top: 2rem;
@@ -88,7 +97,7 @@
 }
 
 .project-description.hrf {
-    font-size: 0.75rem;
+    font-size: 1rem;
     /* line-height: clamp(1vw, 2vw, 5vw); */
     width: 90%;
     margin-top: 2rem;
@@ -96,7 +105,7 @@
 }
 
 .project-description.friendslist {
-    font-size: 0.75rem;
+    font-size: 1rem;
     /* line-height: clamp(1vw, 2vw, 5vw); */
     width: 90%;
     margin-top: 2rem;
@@ -104,7 +113,7 @@
 }
 
 .project-description.activity {
-    font-size: 0.75rem;
+    font-size: 1rem;
     /* line-height: clamp(1vw, 2vw, 5vw); */
     width: 90%;
     margin-top: 2rem;
@@ -194,17 +203,18 @@
     transition-delay: 3s;
 }
 
-
-
-.project-info {}
-
 @media screen and (max-width: 992px) {}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
+
+    #projects {
+        height: 5000px;
+    }
+
     .project-container {
         flex-direction: column;
         /* justify-content: space-between; */
-        height: 80vh;
+        /* height: 80vh; */
         gap: 2rem;
     }
 
@@ -213,25 +223,13 @@
     }
     
     .project-info {
-        /* display: flex; */
-        /* flex-direction: column; */
-        /* justify-content: space-between; */
         gap: 1.5rem;
         max-width: 85vw;
         height: 100%;
         order: 1;
     }
     
-    .project {
-        /* max-height: 100%;
-        max-width: 100%;
-        border-top-right-radius: 16px;
-        border-bottom-right-radius: 16px; */
-    }
-    
     .project-title {
-        /* position: relative;
-        width: 100%; */
         padding: 0.5rem 2rem 0 1rem;
         text-align: left;
         /* font-size: clamp(1vmin, 3vmin, 4vmin); */
@@ -247,6 +245,14 @@
         padding-left: 1rem;
         font-size: 0.9rem;
         line-height: clamp(2vw, 7vw, 9vw);
+    }
+
+    .project-description.tweety {
+        font-size: 0.9rem;
+        line-height: 2rem;
+        width: 95%;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     .project-description.ccs-expedited {

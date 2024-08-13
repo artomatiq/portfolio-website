@@ -68,13 +68,13 @@ const Portfolio = () => {
             <h2 className="section__title hide"><span className='hide'>My Projects</span></h2>
 
             <div id='projects'>
-                <div className='project-container'>
+                <div className='project-container tweety'>
                     <div className="project-image">
                         <video className='project hide' id='tweety-bird' src={tweetyBirdVid} draggable="false" loop autoPlay muted playsInline onClick={handleTweetyClick}/>
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Tweety Bird: The X-Scape</h2>
-                        <p className='project-description tweety-bird hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
+                        <p className='project-description tweety hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
                         <div className="project-buttons hide">
                             <a href="https://github.com/artomatiq/tweetie-bird" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
                             <a href="https://tweety-bird.vercel.app/" className="project-button hide" rel="noreferrer" target="_blank">TRY IT   <i className="uil uil-play"></i></a>
@@ -117,7 +117,7 @@ const Portfolio = () => {
                     </div>
                 </div>
 
-                <div className='project-container'>
+                <div className='project-container friendslist'>
                     <div className="project-image">
                         <video className='project hide' id='tweetyBird' src={friendslistVid} draggable="false" loop autoPlay muted playsInline />
                     </div>
@@ -131,7 +131,7 @@ const Portfolio = () => {
                     </div>
                 </div>
 
-                <div className='project-container'>
+                <div className='project-container activity'>
                     <div className="project-image">
                         <img className='project hide' src={activityImg} alt='project snapshot' draggable="false" />
                     </div>

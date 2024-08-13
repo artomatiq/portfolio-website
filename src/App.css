@@ -212,6 +212,12 @@
       padding: 2rem 0 4rem;
     }
 
+    .portfolio.section {
+      /* display: flex;
+      flex-direction: column; */
+      /* height: 5200px; */
+    }
+
     .section__subtitle {
       margin-bottom: var(--mb-3);
     }
