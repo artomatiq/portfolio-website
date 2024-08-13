@@ -1,17 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './projects.css';
 
 import ccsExpeditedImg from '../../assets/ccs-expedited.png'
 import activityImg from '../../assets/activity-brainstorm.png'
-import hrfImg from '../../assets/hrf-screenshot.png'
-import friendslistImg from '../../assets/auth-friendslist.png'
-
 
 import tweetyBirdVid from '../../assets/trimmed.mp4'
 import hrfVid from '../../assets/hrf-vid.mp4'
 import friendslistVid from '../../assets/auth-friendslist.mp4'
 
+import VideoModal from './video-modal/VideoModal';
+
 const Portfolio = () => {
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const openModal = (e) => { setModalIsOpen(true) }
+    const closeModal = (e) => { setModalIsOpen(false) }
+
+    const handleTweetyClick = () => {
+        window.open('https://tweety-bird.vercel.app/', '_blank');
+    };
 
     useEffect(() => {
 
@@ -58,14 +66,14 @@ const Portfolio = () => {
             <div id='projects'>
                 <div className='project-container'>
                     <div className="project-image">
-                        <video className='project hide' id='tweetyBird' src={tweetyBirdVid} draggable="false" loop autoPlay muted playsInline />
+                        <video className='project hide' id='tweety-bird' src={tweetyBirdVid} draggable="false" loop autoPlay muted playsInline onClick={handleTweetyClick}/>
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Tweety Bird: The X-Scape</h2>
                         <p className='project-description tweety-bird hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
                         <div className="project-buttons hide">
                             <a href="https://github.com/artomatiq/tweetie-bird" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
-                            <a href="https://tweety-bird.vercel.app/" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
+                            <a href="https://tweety-bird.vercel.app/" className="project-button hide" rel="noreferrer" target="_blank">TRY IT   <i className="uil uil-play"></i></a>
                         </div>
                     </div>
                 </div>
@@ -82,12 +90,12 @@ const Portfolio = () => {
                         <p className='project-description ccs-expedited hide'>An admin panel for Carolina's Courier Services. The frontend is built with HTML, CSS, JavaScript and React. On the backend, we have Node, Express and MySQL. The driver version of the app implements clock-in functionality, generating time logs in a MySQL database, which the admin then uses to track real-time activity and generate reports. The admin can also assign hourly rates to drivers and easily manage accounts payable.</p>
                         <div className="project-buttons hide">
                             <a href="https://github.com/artomatiq/ccs-expedited" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
-                            <a href="https://ccs-expedited.vercel.app/" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
+                            <a href="https://ccs-expedited.vercel.app/" className="project-button hide" rel="noreferrer" target="_blank">TRY IT   <i className="uil uil-eye"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div className='project-container'>
+                <div className='project-container hrf'>
                     <div className="project-image">
                         <video className='project hide' id='hrf-vid' src={hrfVid} draggable="false" loop autoPlay muted playsInline />
                     </div>
@@ -98,6 +106,8 @@ const Portfolio = () => {
                             I implemented complete auth from start to finish using the third-party microservice Auto0. I then substituted hardcoded asylum data by integrating the app with 2 API endpoints, the responses from which were combined while maintaining structural similarity before being supplied to the data visualization modules. </p>
                         <div className="project-buttons hide">
                             <a href="https://github.com/artomatiq/asylum-rg-fe-starter" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
+                            <button className="project-button hide" onClick={openModal}>WATCH   <i className="uil uil-eye"></i></button>
+                            <VideoModal videoId='8YX8JEcdstI' isOpen={modalIsOpen} onRequestClose={closeModal} />
                             {/* <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a> */}
                         </div>
                     </div>
