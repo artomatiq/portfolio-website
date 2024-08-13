@@ -8,7 +8,7 @@ import friendslistImg from '../../assets/auth-friendslist.png'
 
 
 import tweetyBirdVid from '../../assets/trimmed.mp4'
-// import hrfVid from '../../assets/'
+import hrfVid from '../../assets/hrf-vid.mp4'
 import friendslistVid from '../../assets/auth-friendslist.mp4'
 
 const Portfolio = () => {
@@ -89,13 +89,13 @@ const Portfolio = () => {
 
                 <div className='project-container'>
                     <div className="project-image">
-                        <img className='project hide' src={hrfImg} alt='project snapshot' draggable="false" />
+                        <video className='project hide' id='hrf-vid' src={hrfVid} draggable="false" loop autoPlay muted playsInline />
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Human Rights First</h2>
-                        <p className='project-description hrf hide'>Human Rights First is a non-profit organization which provides data visualizations for asylum data in the US.<br/>
+                        <p className='project-description hrf hide'>Human Rights First is a non-profit organization which provides data visualizations for asylum data in the US.<br />
 
-I implemented complete auth from start to finish using the third-party microservice Auto0. I then substituted hardcoded asylum data by integrating the app with 2 API endpoints, the responses from which were combined while maintaining structural similarity before being supplied to the data visualization modules. </p>
+                            I implemented complete auth from start to finish using the third-party microservice Auto0. I then substituted hardcoded asylum data by integrating the app with 2 API endpoints, the responses from which were combined while maintaining structural similarity before being supplied to the data visualization modules. </p>
                         <div className="project-buttons hide">
                             <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
                             <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
@@ -105,7 +105,7 @@ I implemented complete auth from start to finish using the third-party microserv
 
                 <div className='project-container'>
                     <div className="project-image">
-                    <video className='project hide' id='tweetyBird' src={friendslistVid} draggable="false" loop autoPlay muted playsInline />
+                        <video className='project hide' id='tweetyBird' src={friendslistVid} draggable="false" loop autoPlay muted playsInline />
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Auth Friendslist</h2>
