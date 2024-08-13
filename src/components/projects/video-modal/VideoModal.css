@@ -1,0 +1,10 @@
+.modal {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.modal-content {
+    border-radius: 10px !important;
+}

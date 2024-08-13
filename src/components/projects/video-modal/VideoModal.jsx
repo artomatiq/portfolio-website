@@ -13,14 +13,12 @@ function VideoModal({ videoId, isOpen, onRequestClose }) {
             style={{
                 content: {
                     position: 'fixed',
-                    width: '100%',
-                    hight: '100%',
-                    top: '50%',
-                    left: '0',
-                    right: 'auto',
-                    bottom: 'auto',
-                    marginRight: '-50%',
-                    transform: 'translate(-50%, -50%)',
+                    borderRadius: '10px',
+                },
+                overlay: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                    backdropFilter: 'blur(5px)',
+                    zIndex: '999',
                 },
             }}
         >
