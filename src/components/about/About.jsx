@@ -19,7 +19,7 @@ const About = () => {
                         I have experience in building web applications using HTML, CSS, JavaScript, React, Node, Express and SQL.
                     </p>
 
-                    <a download='' href={CV} className="button button--flex">Download CV
+                    <a download='' href={CV} className="button button--flex download-cv">Download CV
                         <svg
                             className="button__icon"
                             xmlns="http://www.w3.org/2000/svg"

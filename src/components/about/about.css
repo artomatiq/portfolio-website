@@ -23,6 +23,11 @@
     padding: 0 4rem 0 0;
     margin-bottom: var(--mb-2-5);
     font-size: 1rem;
+    line-height: 2rem;
+}
+
+.download-cv {
+    font-size: 1.5rem;
 }
 
 @media screen and (max-width: 992px) {
@@ -65,13 +70,18 @@
     }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 500px) {
     
-    .about__info {
+    /* .about__info {
         grid-template-columns: repeat(2, 1fr);
-    }
+    } */
     .about__description {
+        font-size: 0.85rem;
+        line-height: 1.5rem;
+        /* padding: 2rem */
+    }
+
+    .download-cv {
         font-size: 1rem;
-        padding: 2rem
     }
 }
