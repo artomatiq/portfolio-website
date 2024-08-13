@@ -84,7 +84,7 @@ const Header = () => {
                 </div>
 
                 <div className="nav__toggle hide" onClick={() => showMenu(!Toggle)}>
-                    <i className='uil uil-apps'></i>
+                    <i className='uil uil-apps apps-icon' ></i>
                 </div>
             </nav>
         </header>
