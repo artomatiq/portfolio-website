@@ -53,7 +53,8 @@
     font-size: 2vw;
 }
 
-.project-title h2 {
+.project-title p {
+    font-weight: normal;
     width: 100%;
     font-size: 1.4vw;
     margin-top: 1rem;
@@ -221,7 +222,7 @@
         margin-bottom: 0.5rem;
     }
 
-    .project-title h2 {
+    .project-title p {
         font-size: 1rem;
     }
     

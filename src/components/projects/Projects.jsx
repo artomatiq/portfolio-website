@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './projects.css';
 
 import image1 from '../../assets/ccs-expedited.png'
-import image2 from '../../assets/img2.png'
+import image2 from '../../assets/activity-brainstorm.png'
 import image3 from '../../assets/img3.png'
 
 
@@ -59,7 +59,7 @@ const Portfolio = () => {
                 <div className="project-info">
                     <h2 className='project-title hide'>
                         Courier Admin Dash
-                        <h2>in progress...</h2>
+                        <p>in progress...</p>
                     </h2>
                     <p className='project-description ccs-expedited hide'>An admin panel for Carolina's Courier Services. The frontend is built with HTML, CSS, JavaScript and React. On the backend, we have Node, Express and MySQL. The driver version of the app implements clock-in functionality, generating time logs in a MySQL database, which the admin then uses to track real-time activity and generate reports. The admin can also assign hourly rates to drivers and easily manage accounts payable.</p>
                     <div className="project-buttons hide">
@@ -103,11 +103,11 @@ const Portfolio = () => {
                         <img className='project hide' src={image2} alt='project snapshot' draggable="false" />
                     </div>
                     <div className="project-info">
-                        <h2 className='project-title hide'>Tweety Bird: The X-Scape</h2>
-                        <p className='project-description hide'>A Twitter vs Elon Musk's X rivalry themed clone of the popular game Flappy Bird—developed using HTML, CSS and JavaScript.</p>
+                        <h2 className='project-title hide'>Activity API</h2>
+                        <p className='project-description hide'>A single-page React application made using Redux for generating random activities from an API based on the number of participants, activity type, and price. Middleware are used to create asynchronous action creators and integrate conditional rendering of multiple interdependent components.</p>
                         <div className="project-buttons hide">
-                            <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
-                            <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
+                            <a href="https://github.com/artomatiq/web-module-project-async-redux" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
+                            {/* <a href="#" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a> */}
                         </div>
                     </div>
                 </div>
