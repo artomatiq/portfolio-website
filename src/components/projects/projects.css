@@ -223,7 +223,7 @@
     }
 
     .project-description.ccs-expedited {
-        font-size: 0.6rem;
+        font-size: 0.9rem;
         line-height: clamp(2vw, 1.5rem, 9vw);
         width: 95%;
         margin-top: 0.5rem;
@@ -231,8 +231,24 @@
     }
 
     .project-description.hrf {
-        font-size: 0.6rem;
+        font-size: 0.9rem;
         line-height: clamp(2vw, 1.5rem, 9vw);
+        width: 95%;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-description.friendslist {
+        font-size: 0.9rem;
+        line-height: 2rem;
+        width: 95%;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-description.activity {
+        font-size: 0.9rem;
+        line-height: 2rem;
         width: 95%;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
@@ -302,8 +318,14 @@
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
     .portfolio {
         margin-top: 0;
+    }
+
+    .project-button {
+        /* position: relative; */
+        font-size: 1rem;
+        padding-left: 0;
     }
 }

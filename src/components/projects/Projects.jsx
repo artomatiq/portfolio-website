@@ -55,23 +55,6 @@ const Portfolio = () => {
         <section className="portfolio section" id='portfolio'>
             <h2 className="section__title hide"><span className='hide'>My Projects</span></h2>
 
-            <div className='project-container'>
-                <div className="project-image">
-                    <img className='project hide' src={ccsExpeditedImg} alt='project snapshot' draggable="false" />
-                </div>
-                <div className="project-info">
-                    <h2 className='project-title hide'>
-                        Courier Admin Dash
-                        <p>in progress...</p>
-                    </h2>
-                    <p className='project-description ccs-expedited hide'>An admin panel for Carolina's Courier Services. The frontend is built with HTML, CSS, JavaScript and React. On the backend, we have Node, Express and MySQL. The driver version of the app implements clock-in functionality, generating time logs in a MySQL database, which the admin then uses to track real-time activity and generate reports. The admin can also assign hourly rates to drivers and easily manage accounts payable.</p>
-                    <div className="project-buttons hide">
-                        <a href="https://github.com/artomatiq/ccs-expedited" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
-                        <a href="https://ccs-expedited.vercel.app/" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-
             <div id='projects'>
                 <div className='project-container'>
                     <div className="project-image">
@@ -89,6 +72,23 @@ const Portfolio = () => {
 
                 <div className='project-container'>
                     <div className="project-image">
+                        <img className='project hide' src={ccsExpeditedImg} alt='project snapshot' draggable="false" />
+                    </div>
+                    <div className="project-info">
+                        <h2 className='project-title hide'>
+                            Courier Admin Dash
+                            <p>still in development...</p>
+                        </h2>
+                        <p className='project-description ccs-expedited hide'>An admin panel for Carolina's Courier Services. The frontend is built with HTML, CSS, JavaScript and React. On the backend, we have Node, Express and MySQL. The driver version of the app implements clock-in functionality, generating time logs in a MySQL database, which the admin then uses to track real-time activity and generate reports. The admin can also assign hourly rates to drivers and easily manage accounts payable.</p>
+                        <div className="project-buttons hide">
+                            <a href="https://github.com/artomatiq/ccs-expedited" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
+                            <a href="https://ccs-expedited.vercel.app/" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='project-container'>
+                    <div className="project-image">
                         <video className='project hide' id='hrf-vid' src={hrfVid} draggable="false" loop autoPlay muted playsInline />
                     </div>
                     <div className="project-info">
@@ -97,8 +97,8 @@ const Portfolio = () => {
 
                             I implemented complete auth from start to finish using the third-party microservice Auto0. I then substituted hardcoded asylum data by integrating the app with 2 API endpoints, the responses from which were combined while maintaining structural similarity before being supplied to the data visualization modules. </p>
                         <div className="project-buttons hide">
-                            <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
-                            <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a>
+                            <a href="https://github.com/artomatiq/asylum-rg-fe-starter" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
+                            {/* <a href="https://github.com/artomatiq" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a> */}
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@ const Portfolio = () => {
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Auth Friendslist</h2>
-                        <p className='project-description hide'>Features client authorization using localStorage and CRUD functional operations. After logging in, a user is able to fetch a list of friends from the server and add custom friends using a form. For testing of the routes, HTTPie was used.</p>
+                        <p className='project-description friendslist hide'>Features client authorization using localStorage and CRUD functional operations. After logging in, a user is able to fetch a list of friends from the server and add custom friends using a form. For testing of the routes, HTTPie was used.</p>
                         <div className="project-buttons hide">
                             <a href="https://github.com/artomatiq/web-module-project-client-auth" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
                             {/* <a href="#" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a> */}
@@ -123,7 +123,7 @@ const Portfolio = () => {
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Activity API</h2>
-                        <p className='project-description hide'>A single-page React application made using Redux for generating random activities from an API based on the number of participants, activity type, and price. Middleware are used to create asynchronous action creators and integrate conditional rendering of multiple interdependent components.</p>
+                        <p className='project-description activity hide'>A single-page React application made using Redux for generating random activities from an API based on the number of participants, activity type, and price. Middleware are used to create asynchronous action creators and integrate conditional rendering of multiple interdependent components.</p>
                         <div className="project-buttons hide">
                             <a href="https://github.com/artomatiq/web-module-project-async-redux" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
                             {/* <a href="#" className="project-button hide" rel="noreferrer" target="_blank">DEMO   <i className="uil uil-eye"></i></a> */}
