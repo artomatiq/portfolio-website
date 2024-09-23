@@ -45,7 +45,7 @@ const Portfolio = () => {
                     buttons.classList.remove('show')
                 }
             })
-        }, { threshold: 0.75 })
+        }, { threshold: 0.20 })
 
         const projectContainers = document.querySelectorAll('.project-container')
 
