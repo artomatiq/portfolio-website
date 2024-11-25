@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
 
             <div className="footer__copy">
-                    &#169; Artomatiq. All right reserved.
+                    &#169; Artomatiq. All rights reserved.
             </div>
         </footer>
     );
