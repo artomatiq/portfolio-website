@@ -5,6 +5,7 @@ import ccsExpeditedImg from '../../assets/ccs-expedited.png'
 import activityImg from '../../assets/activity-brainstorm.png'
 
 import tweetyBirdVid from '../../assets/trimmed.mp4'
+import ccsWebsiteDemoVid from '../../assets/CCS_Website_Demo.mp4'
 import hrfVid from '../../assets/hrf-vid.mp4'
 import friendslistVid from '../../assets/auth-friendslist.mp4'
 
@@ -20,6 +21,10 @@ const Portfolio = () => {
     const handleTweetyClick = () => {
         window.open('https://tweety-bird.vercel.app/', '_blank');
     };
+
+    const handleCcsWebsiteClick = () => {
+        window.open('https://carolinascourier.com/', '_blank')
+    }
 
     const handleCcsClick = () => {
         window.open('https://ccs-expedited.vercel.app/', '_blank');
@@ -78,6 +83,20 @@ const Portfolio = () => {
                         <div className="project-buttons hide">
                             <a href="https://github.com/artomatiq/tweetie-bird" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
                             <a href="https://tweety-bird.vercel.app/" className="project-button hide" rel="noreferrer" target="_blank">TRY IT   <i className="uil uil-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='project-container ccs-website'>
+                    <div className="project-image">
+                        <video className='project hide' id='ccs-website' src={ccsWebsiteDemoVid} draggable="false" loop autoPlay muted playsInline onClick={handleCcsWebsiteClick}/>
+                    </div>
+                    <div className="project-info">
+                        <h2 className='project-title hide'>Courier Business Website</h2>
+                        <p className='project-description tweety hide'>A website for a real local courier business with a fully responsive, modern design optimized for seamless user experience across mobile, tablet, and desktop devices. Features animations, a contact form, and a dynamic quote request form with scheduling validation and address autocomplete powered by the Google Maps API.</p>
+                        <div className="project-buttons hide">
+                            <a href="https://github.com/artomatiq/ccs-website" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
+                            <a href="https://carolinascourier.com/" className="project-button hide" rel="noreferrer" target="_blank">TRY IT   <i className="uil uil-play"></i></a>
                         </div>
                     </div>
                 </div>
