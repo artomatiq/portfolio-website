@@ -42,14 +42,17 @@
 }
 
 .home__subtitle {
+    letter-spacing: 2px;
+
     position: relative;
     font-size: var(--h3-font-size);
-    padding-left: 5.4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     font-weight: var(--font-normal);
     margin-bottom: var(--mb-1);
 }
 
-.home__subtitle::before {
+/* .home__subtitle::before {
     content: '';
     position: absolute;
     width: 70px;
@@ -57,12 +60,19 @@
     background-color: var(--text-color);
     left: 0;
     top: 1rem;
-}
+} */
 
 .home__description {
     font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.75;
+    
     max-width: 400px;
     margin-bottom: var(--mb-3);
+
+    border: 3px solid gray;
+    padding: 1rem;
+    border-radius: 15px;
 }
 
 .home__container .button {
