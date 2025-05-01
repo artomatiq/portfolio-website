@@ -50,12 +50,12 @@ const Qualification = () => {
                     >
                         <div className="qualification__data">
                             <div className='qualification__left'>
-                                <h3 className="qualification__title">Self-Taught</h3>
+                                <h3 className="qualification__title">Associate Cloud Solutions Architect</h3>
                                 <span className="qualification__subtitle">
-                                    YouTube & ChatGPT University : D
+                                    Amazon Web Services
                                 </span>
                                 <div className="qualification__calendar">
-                                    <i className="uil uil-calendar-alt"></i> Feb '24 - present
+                                    <i className="uil uil-calendar-alt"></i> Feb '25 - Apr '25
                                 </div>
                             </div>
 
