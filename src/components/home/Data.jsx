@@ -22,7 +22,7 @@ const Data = () => {
             homeData.querySelectorAll(".button").forEach((button) => {
                 button.classList.add("show");
             })
-        }, 8200);
+        }, 5000);
     }, []);
 
     
