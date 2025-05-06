@@ -1,7 +1,14 @@
 .skills__container {
-    grid-template-columns: repeat(2, 350px);
-    column-gap: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
     justify-content: center;
+}
+
+.full-stack {
+    display: grid;
+    /* grid-template-rows: 1fr 1fr; */
+    gap: 2rem;
 }
 
 .skills__content {
@@ -20,8 +27,20 @@
 
 .skills__box {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     column-gap: 2.5rem;
+
+    
+}
+
+.skills__box.cloud {
+    height: 100%;
+    justify-content: space-evenly;
+    gap: 2rem;
+    
+    a {
+        width: fit-content;
+    }
 }
 
 .skills__group {
@@ -76,6 +95,10 @@
 @media screen and (max-width: 576px) {
     .skills__container {
         grid-template-columns: initial;
+    }
+
+    .skills__content.skills__cloud {
+        height: fit-content;
     }
 }
 

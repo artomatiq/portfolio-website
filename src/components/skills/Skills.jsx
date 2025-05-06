@@ -11,9 +11,11 @@ const Skills = () => {
             <span className="section__subtitle">{/*My Technical Level*/}</span>
 
             <div className="skills__container container grid subsection hide">
-                <Frontend/>
-                <Backend/>
-                <Cloud/>
+                <div className="full-stack">
+                    <Frontend />
+                    <Backend />
+                </div>
+                <Cloud />
             </div>
 
         </section>
