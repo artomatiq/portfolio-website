@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 import './contact.css'
@@ -11,12 +11,58 @@ const Contact = () => {
     }
     const [formData, setFormData] = useState(initialState)
 
+    function validateEmailOrAlert(formData) {
+        const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
+        if (!isValid) {
+            Swal.fire({
+                title: 'Invalid Email',
+                text: 'Please enter a valid email address.',
+                icon: 'warning'
+            });
+        }
+        return isValid;
+    }
+
+    function validateMessageOrAlert(formData) {
+        const minLength = 15;
+        if (!formData.message || formData.message.trim().length < minLength) {
+            Swal.fire({
+                title: 'Message Too Short',
+                text: `Please enter at least ${minLength} characters in your message.`,
+                icon: 'warning'
+            });
+            return false
+        }
+        return true
+    }
+
+    function validateNameOrAlert(formData) {
+        if (!formData.name) {
+            Swal.fire({
+                title: 'No Name Entered',
+                text: `Please include your name.`,
+                icon: 'warning'
+            });
+            return false
+        }
+        return true
+    }
+
+
+
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const isEmailValid = validateEmailOrAlert(formData);
+        const isMessageValid = validateMessageOrAlert(formData);
+        const isNameValid = validateNameOrAlert(formData);
+
+        if (!isEmailValid || !isMessageValid || !isNameValid) return;
 
         emailjs
             .send('service_41u1fhd', 'template_cra28yw', formData, {
