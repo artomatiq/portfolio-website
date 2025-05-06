@@ -41,6 +41,7 @@
     a {
         width: fit-content;
         margin-bottom: 2rem;
+        align-self: center;
     }
 }
 
