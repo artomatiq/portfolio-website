@@ -183,14 +183,20 @@ input::-webkit-selection {
 
 @media screen and (max-width: 576px) {
 
+    .contact__container {
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+    }
+
     .contact__quote {
-        font-size: medium;
+        font-size: 1.2rem;
+        height: 100%;
     }
 
     .contact__quote::before {
         content: "";
         position: absolute;
-        top: 10rem;
+        top: 1rem;
         left: 1rem;
         right: auto;
         bottom: -0.75rem;
@@ -204,6 +210,10 @@ input::-webkit-selection {
         animation: wobble 5s infinite;
         width: 17rem;
         height: 17rem;
+    }
+
+    .contact__form {
+        margin-top: 2rem;
     }
 
 }
