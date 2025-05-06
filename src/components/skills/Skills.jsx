@@ -2,6 +2,7 @@ import React from 'react';
 import './skills.css';
 import Frontend from './Frontend';
 import Backend from './Backend';
+import Cloud from './Cloud';
 
 const Skills = () => {
     return (
@@ -12,6 +13,7 @@ const Skills = () => {
             <div className="skills__container container grid subsection hide">
                 <Frontend/>
                 <Backend/>
+                <Cloud/>
             </div>
 
         </section>
