@@ -44,9 +44,9 @@ function App() {
 
       <main className='main'>
         <Home/>
+        <Skills/>
         <Portfolio/>
         <About/>
-        <Skills/>
         <Qualification/>
         <Contact/>
         <Footer/>
