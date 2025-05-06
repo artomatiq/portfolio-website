@@ -34,17 +34,17 @@ const Portfolio = () => {
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                const project = entry.target.querySelector('.project');
+                // const project = entry.target.querySelector('.project');
                 const title = entry.target.querySelector('.project-title');
                 const description = entry.target.querySelector('.project-description');
                 const buttons = entry.target.querySelector('.project-buttons');
                 if (entry.isIntersecting) {
-                    project.classList.add('show')
+                    // project.classList.add('show')
                     title.classList.add('show')
                     description.classList.add('show')
                     buttons.classList.add('show')
                 } else {
-                    project.classList.remove('show')
+                    // project.classList.remove('show')
                     title.classList.remove('show')
                     description.classList.remove('show')
                     buttons.classList.remove('show')
@@ -75,7 +75,8 @@ const Portfolio = () => {
             <div id='projects'>
                 <div className='project-container tweety'>
                     <div className="project-image">
-                        <video className='project hide' id='tweety-bird' src={tweetyBirdVid} draggable="false" loop autoPlay muted playsInline onClick={handleTweetyClick}/>
+                        {/* <video className='project hide' id='tweety-bird' src={tweetyBirdVid} draggable="false" loop autoPlay muted playsInline onClick={handleTweetyClick} /> */}
+                        <video className='project' id='tweety-bird' src={tweetyBirdVid} draggable="false" loop autoPlay muted playsInline onClick={handleTweetyClick} />
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Tweety Bird: The X-Scape</h2>
@@ -89,7 +90,8 @@ const Portfolio = () => {
 
                 <div className='project-container ccs-website'>
                     <div className="project-image">
-                        <video className='project hide' id='ccs-website' src={ccsWebsiteDemoVid} draggable="false" loop autoPlay muted playsInline onClick={handleCcsWebsiteClick}/>
+                        {/* <video className='project hide' id='ccs-website' src={ccsWebsiteDemoVid} draggable="false" loop autoPlay muted playsInline onClick={handleCcsWebsiteClick} /> */}
+                        <video className='project' id='ccs-website' src={ccsWebsiteDemoVid} draggable="false" loop autoPlay muted playsInline onClick={handleCcsWebsiteClick} />
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Courier Business Website</h2>
@@ -103,7 +105,8 @@ const Portfolio = () => {
 
                 <div className='project-container ccs-expedited'>
                     <div className="project-image">
-                        <img className='project hide' src={ccsExpeditedImg} alt='project snapshot' draggable="false" onClick={handleCcsClick}/>
+                        {/* <img className='project hide' src={ccsExpeditedImg} alt='project snapshot' draggable="false" onClick={handleCcsClick} /> */}
+                        <img className='project' src={ccsExpeditedImg} alt='project snapshot' draggable="false" onClick={handleCcsClick} />
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>
@@ -120,7 +123,8 @@ const Portfolio = () => {
 
                 <div className='project-container hrf'>
                     <div className="project-image">
-                        <video className='project hide' id='hrf-vid' src={hrfVid} draggable="false" loop autoPlay muted playsInline onClick={openModal}/>
+                        {/* <video className='project hide' id='hrf-vid' src={hrfVid} draggable="false" loop autoPlay muted playsInline onClick={openModal} /> */}
+                        <video className='project' id='hrf-vid' src={hrfVid} draggable="false" loop autoPlay muted playsInline onClick={openModal} />
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Human Rights First</h2>
@@ -138,7 +142,8 @@ const Portfolio = () => {
 
                 <div className='project-container friendslist'>
                     <div className="project-image">
-                        <video className='project hide' id='tweetyBird' src={friendslistVid} draggable="false" loop autoPlay muted playsInline />
+                        {/* <video className='project hide' id='tweetyBird' src={friendslistVid} draggable="false" loop autoPlay muted playsInline /> */}
+                        <video className='project' id='tweetyBird' src={friendslistVid} draggable="false" loop autoPlay muted playsInline />
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Auth Friendslist</h2>
@@ -152,7 +157,8 @@ const Portfolio = () => {
 
                 <div className='project-container activity'>
                     <div className="project-image">
-                        <img className='project hide' src={activityImg} alt='project snapshot' draggable="false" />
+                        {/* <img className='project hide' src={activityImg} alt='project snapshot' draggable="false" /> */}
+                        <img className='project' src={activityImg} alt='project snapshot' draggable="false" />
                     </div>
                     <div className="project-info">
                         <h2 className='project-title hide'>Activity API</h2>
