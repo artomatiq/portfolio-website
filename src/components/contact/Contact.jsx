@@ -17,7 +17,14 @@ const Contact = () => {
             Swal.fire({
                 title: 'Invalid Email',
                 text: 'Please enter a valid email address.',
-                icon: 'warning'
+                icon: 'warning',
+                customClass: {
+                    container: 'swal-container',
+                    popup: 'swal-popup',
+                    title: 'swal-title',
+                    content: 'swal-content',
+                    confirmButton: 'swal-confirm-button'
+                }
             });
         }
         return isValid;
@@ -29,7 +36,14 @@ const Contact = () => {
             Swal.fire({
                 title: 'Message Too Short',
                 text: `Please enter at least ${minLength} characters in your message.`,
-                icon: 'warning'
+                icon: 'warning',
+                customClass: {
+                    container: 'swal-container',
+                    popup: 'swal-popup',
+                    title: 'swal-title',
+                    content: 'swal-content',
+                    confirmButton: 'swal-confirm-button'
+                }
             });
             return false
         }
@@ -41,7 +55,14 @@ const Contact = () => {
             Swal.fire({
                 title: 'No Name Entered',
                 text: `Please include your name.`,
-                icon: 'warning'
+                icon: 'warning',
+                customClass: {
+                    container: 'swal-container',
+                    popup: 'swal-popup',
+                    title: 'swal-title',
+                    content: 'swal-content',
+                    confirmButton: 'swal-confirm-button'
+                }
             });
             return false
         }
