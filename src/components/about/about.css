@@ -59,6 +59,9 @@
 }
 
 @media screen and (max-width: 576px) {
+    .about.section {
+        margin: 0;
+    }
     
     .about__info {
         grid-template-columns: repeat(3, 1fr);

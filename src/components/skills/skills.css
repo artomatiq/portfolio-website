@@ -94,6 +94,10 @@
 }
 
 @media screen and (max-width: 576px) {
+    .skills.section {
+        margin: 0;
+    }
+
     .skills__container {
         grid-template-columns: initial;
     }
