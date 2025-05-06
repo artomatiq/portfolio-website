@@ -36,10 +36,13 @@ const Data = () => {
                 Fullstack Developer
             </h3>
             <p className="home__description hide">
-                Hello, I'm Art. I'm a fullstack software developer from Charlotte, NC.
+                Hello, I'm Art.
                 <br />
                 <br />
-                Let your stumbling upon this website be the start of something great!
+                I'm a fullstack software engineer & cloud enthusiast from Charlotte, NC.
+                <br />
+                <br />
+                Let your stumbling upon this page be the start of something great!
             </p>
 
             <a href="#contact" className="button button--flex hide say-hello">
