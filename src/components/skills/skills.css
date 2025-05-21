@@ -106,6 +106,10 @@
     .skills__content.skills__cloud {
         height: fit-content;
     }
+
+    .skills__box {
+        align-items: center;
+    }
 }
 
 @media screen and (max-width: 350px) {
@@ -114,6 +118,6 @@
     }
 
     .skills__name {
-        font-size: var(--small-font-size);
+        /* font-size: var(--small-font-size); */
     }
 }
