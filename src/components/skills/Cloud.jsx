@@ -10,7 +10,23 @@ const Cloud = () => {
                     <div className="skills__data">
                         <i className="bx bx-badge-check"></i>
                         <div className="skills__pair">
-                            <h3 className="skills__name">EC2, Lambda, S3, DynamoDB, RDS, VPC, etc.</h3>
+                            <h3 className="skills__name">EC2, Lambda, ECS, EKS</h3>
+                            {/* <span className="skills__level">proficient</span> */}
+                        </div>
+                    </div>
+
+                    <div className="skills__data">
+                        <i className="bx bx-badge-check"></i>
+                        <div className="skills__pair">
+                            <h3 className="skills__name">S3, DynamoDB, RDS</h3>
+                            {/* <span className="skills__level">proficient</span> */}
+                        </div>
+                    </div>
+
+                    <div className="skills__data">
+                        <i className="bx bx-badge-check"></i>
+                        <div className="skills__pair">
+                            <h3 className="skills__name">Networking & VPC</h3>
                             {/* <span className="skills__level">proficient</span> */}
                         </div>
                     </div>
