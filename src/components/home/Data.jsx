@@ -33,7 +33,7 @@ const Data = () => {
         <div className="home__data">
             <h1 className="home__title hide">Art</h1>
             <h3 className="home__subtitle hide">
-                Fullstack Developer
+                Software Engineer
             </h3>
             <p className="home__description hide">
                 Hello, I'm Art.
