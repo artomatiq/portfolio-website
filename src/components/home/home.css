@@ -275,6 +275,7 @@
         margin: 0;
         display: flex;
         justify-content: center;
+        margin-top: 1.5rem;
     }
 
     .home__scroll {
@@ -326,6 +327,7 @@
         font-size: 0.75rem;
         width: 200px;
         align-self: center;
+        margin-top: 1.5rem;
     }
 
     .button__icon {
