@@ -8,6 +8,8 @@
     width: 350px;
     border-radius: 1.5rem;
     justify-self: center;
+    align-self: flex-start;
+    margin-top: 1rem;
 }
 
 .about__title {

@@ -14,9 +14,9 @@ const About = () => {
                 <div className="about__data">
 
                     <p className="about__description">
-                        I am passionate about learning new technologies and building robust, elegant, and user-friendly solutions.
-                        I work on both frontend and backend projects to help businesses grow through increasing productivity and efficiency while reducing costs.
-                        I have experience in building web applications using HTML, CSS, JavaScript, React, Node, Express and SQL.
+                        I am passionate about learning new technologies and building robust, elegant, and user-friendly solutions. I work on both frontend and backend projects to help businesses grow through increased productivity and efficiency while reducing costs. I have experience in building web applications using HTML, CSS, JavaScript, React, Node, Express, and SQL.
+
+I am also an AWS-certified Solutions Architect and AI Practitioner, giving me a strong foundation in cloud architecture and AI/ML tools such as Amazon Bedrock and SageMaker.
                     </p>
 
                     <a download='' href={CV} className="button button--flex download-cv">Download CV
