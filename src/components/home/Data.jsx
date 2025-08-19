@@ -39,7 +39,7 @@ const Data = () => {
                 Hello, I'm Art.
                 <br />
                 <br />
-                I'm a fullstack software engineer & cloud enthusiast from Charlotte, NC.
+                Fullstack engineer, AWS cloud & AI/ML enthusiast from Charlotte, NC.
                 <br />
                 <br />
                 Let your stumbling upon this page be the start of something great!
