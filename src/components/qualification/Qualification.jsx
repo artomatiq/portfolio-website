@@ -48,9 +48,27 @@ const Qualification = () => {
                                 : 'qualification__content'
                         }
                     >
+
+                        <div className="qualification__data">
+                            <div></div>
+                            <div className='qualification__timeline'>
+                                <span className="qualification__rounder"></span>
+                                <span className="qualification__line"></span>
+                            </div>
+                            <div className='qualification__right'>
+                                <h3 className="qualification__title">Certified AI Practitioner</h3>
+                                <span className="qualification__subtitle">
+                                    Amazon Web Services
+                                </span>
+                                <div className="qualification__calendar">
+                                    <i className="uil uil-calendar-alt"></i> July '25 - Aug '25
+                                </div>
+                            </div>
+                        </div>
+
                         <div className="qualification__data">
                             <div className='qualification__left'>
-                                <h3 className="qualification__title">Associate Cloud Solutions Architect</h3>
+                                <h3 className="qualification__title">Certified Cloud Solutions Architect</h3>
                                 <span className="qualification__subtitle">
                                     Amazon Web Services
                                 </span>
@@ -58,37 +76,31 @@ const Qualification = () => {
                                     <i className="uil uil-calendar-alt"></i> Feb '25 - Apr '25
                                 </div>
                             </div>
-
                             <div className='qualification__timeline'>
                                 <span className="qualification__rounder"></span>
                                 <span className="qualification__line"></span>
                             </div>
-
                             <div></div>
                         </div>
 
                         <div className="qualification__data">
                             <div></div>
-
                             <div className='qualification__timeline'>
                                 <span className="qualification__rounder"></span>
                                 <span className="qualification__line"></span>
                             </div>
-
                             <div className='qualification__right'>
-                                <h3 className="qualification__title">Full Stack Web Development</h3>
+                                <h3 className="qualification__title">Fullstack Web Developer</h3>
                                 <span className="qualification__subtitle">
                                     Bloom Institute of Technology
                                 </span>
                                 <div className="qualification__calendar">
                                     <i className="uil uil-calendar-alt"></i> Apr '23 - Feb '24
                                 </div>
-
                             </div>
                         </div>
 
                         <div className="qualification__data">
-
                             <div className='qualification__left'>
                                 <h3 className="qualification__title">B.S. Neuroscience</h3>
                                 <span className="qualification__subtitle">
@@ -98,12 +110,10 @@ const Qualification = () => {
                                     <i className="uil uil-calendar-alt"></i> Sep '19 - Sep '21
                                 </div>
                             </div>
-
                             <div className='qualification__timeline'>
                                 <span className="qualification__rounder"></span>
                                 <span className="qualification__line"></span>
                             </div>
-
                             <div></div>
                         </div>
 
@@ -129,7 +139,6 @@ const Qualification = () => {
                                     <i className="uil uil-calendar-alt"></i> Feb '24 - present
                                 </div>
                             </div>
-
                             <div className='qualification__timeline'>
                                 <span className="qualification__rounder"></span>
                                 <span className="qualification__line"></span>
@@ -138,12 +147,10 @@ const Qualification = () => {
 
                         <div className="qualification__data">
                             <div></div>
-
                             <div className='qualification__timeline'>
                                 <span className="qualification__rounder"></span>
                                 <span className="qualification__line"></span>
                             </div>
-
                             <div className='qualification__right'>
                                 <h3 className="qualification__title">Soul Searcher</h3>
                                 <span className="qualification__subtitle">
