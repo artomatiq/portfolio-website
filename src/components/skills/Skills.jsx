@@ -3,6 +3,7 @@ import './skills.css';
 import Frontend from './Frontend';
 import Backend from './Backend';
 import Cloud from './Cloud';
+import AI from './AI';
 
 const Skills = () => {
     return (
@@ -16,6 +17,7 @@ const Skills = () => {
                     <Backend />
                 </div>
                 <Cloud />
+                <AI/>
             </div>
 
         </section>
