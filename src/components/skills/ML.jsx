@@ -1,6 +1,6 @@
 import React from "react";
 
-const AI = () => {
+const ML = () => {
     return (
         <div className="skills__content skills__ai">
             <h3 className="skills__title">AI</h3>
@@ -71,4 +71,4 @@ const AI = () => {
         </div>
     );
 }
-export default AI;
+export default ML;
