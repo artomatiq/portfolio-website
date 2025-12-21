@@ -10,7 +10,7 @@ const ML = () => {
                     <div className="skills__data">
                         <i className="bx bx-badge-check"></i>
                         <div className="skills__pair">
-                            <h3 className="skills__name">Artificial Intelligence</h3>
+                            <h3 className="skills__name">AI & Machine Learning</h3>
                             {/* <span className="skills__level">proficient</span> */}
                         </div>
                     </div>
@@ -18,7 +18,7 @@ const ML = () => {
                     <div className="skills__data">
                         <i className="bx bx-badge-check"></i>
                         <div className="skills__pair">
-                            <h3 className="skills__name">Machine Learning</h3>
+                            <h3 className="skills__name">Amazon Bedrock & SageMaker</h3>
                             {/* <span className="skills__level">proficient</span> */}
                         </div>
                     </div>
@@ -42,7 +42,23 @@ const ML = () => {
                     <div className="skills__data">
                         <i className="bx bx-badge-check"></i>
                         <div className="skills__pair">
-                            <h3 className="skills__name">Model Evaluation</h3>
+                            <h3 className="skills__name">Data Engineering</h3>
+                            {/* <span className="skills__level">intermediate</span> */}
+                        </div>
+                    </div>
+
+                    <div className="skills__data">
+                        <i className="bx bx-badge-check"></i>
+                        <div className="skills__pair">
+                            <h3 className="skills__name">Model Training/Evaluation/Deployment</h3>
+                            {/* <span className="skills__level">intermediate</span> */}
+                        </div>
+                    </div>
+
+                    <div className="skills__data">
+                        <i className="bx bx-badge-check"></i>
+                        <div className="skills__pair">
+                            <h3 className="skills__name">Hyperparameter Tuning</h3>
                             {/* <span className="skills__level">intermediate</span> */}
                         </div>
                     </div>
@@ -55,16 +71,12 @@ const ML = () => {
                         </div>
                     </div>
 
-                    <div className="skills__data">
-                        <i className="bx bx-badge-check"></i>
-                        <div>
-                            <h3 className="skills__name">Amazon Bedrock & SageMaker</h3>
-                            {/* <span className="skills__level">proficient</span> */}
-                        </div>
-                    </div>
                 </div>
             </div>
 
+            <a className="aws-badge" href="https://www.credly.com/badges/1343ca29-c464-4f59-ad2f-0aee803e3098/public_url" target="_blank" rel="noopener">
+                    <img src="https://images.credly.com/size/680x680/images/778bde6c-ad1c-4312-ac33-2fa40d50a147/image.png" alt="AWS Certification Badge" width="150" />
+            </a>
             <a className="aws-badge" href="https://www.credly.com/badges/206a5bc2-a25e-46f0-9a91-84d8be5c07f8/public_url" target="_blank" rel="noopener">
                     <img src="https://images.credly.com/size/680x680/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS Certification Badge" width="150" />
             </a>
