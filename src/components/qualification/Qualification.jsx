@@ -50,6 +50,23 @@ const Qualification = () => {
                     >
 
                         <div className="qualification__data">
+                            <div className='qualification__left'>
+                                <h3 className="qualification__title">Certified Machine Learning Specialist</h3>
+                                <span className="qualification__subtitle">
+                                    Amazon Web Services
+                                </span>
+                                <div className="qualification__calendar">
+                                    <i className="uil uil-calendar-alt"></i> Oct '25 - Dec '25
+                                </div>
+                            </div>
+                            <div className='qualification__timeline'>
+                                <span className="qualification__rounder"></span>
+                                <span className="qualification__line"></span>
+                            </div>
+                            <div></div>
+                        </div>
+                        
+                        <div className="qualification__data">
                             <div></div>
                             <div className='qualification__timeline'>
                                 <span className="qualification__rounder"></span>
