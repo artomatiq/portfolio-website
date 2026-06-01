@@ -14,9 +14,7 @@ const About = () => {
                 <div className="about__data">
 
                     <p className="about__description">
-                        I am passionate about learning new technologies and building robust, elegant, and user-friendly solutions. I work on both frontend and backend projects to help businesses grow through increased productivity and efficiency while reducing costs. I have experience in building web applications using HTML, CSS, JavaScript, React, Node, Express, and SQL.
-
-I am also an AWS-certified Solutions Architect and AI Practitioner, giving me a strong foundation in cloud architecture and AI/ML tools such as Amazon Bedrock and SageMaker.
+                        Drawing from a unique array of knowledge, skills, and experience — a Bachelor's degree in Neuroscience from UCLA, an AWS Machine Learning (Specialty) certification, an AWS Solutions Architect (Associate) certification, an AWS AI Practitioner certification, and a full-stack web development certificate — I build applied AI and cloud systems that solve real operational problems.
                     </p>
 
                     <a download='' href={CV} className="button button--flex download-cv">Download CV
