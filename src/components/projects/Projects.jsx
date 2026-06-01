@@ -73,6 +73,28 @@ const Portfolio = () => {
             <h2 className="section__title hide"><span className='hide'>My Projects</span></h2>
 
             <div id='projects'>
+                <div className='project-container ccs-ticket'>
+                    <div className="project-image">
+                        <div className="smartphone-frame">
+                            <iframe
+                                src="https://www.youtube.com/embed/vhvBROyRnOw?autoplay=1&mute=1&loop=1&playlist=vhvBROyRnOw&controls=0&rel=0"
+                                allow="autoplay; encrypted-media"
+                                allowFullScreen
+                                title="CCS Ticket Platform Demo"
+                            />
+                            <div className="smartphone-screen-overlay" />
+                        </div>
+                    </div>
+                    <div className="project-info">
+                        <h2 className='project-title hide'>AWS Event-Driven Logistics Ticket Processor</h2>
+                        <p className='project-description ccs-ticket hide'>An AWS-based logistics and ticket-processing platform built for a real trucking operation to digitize paper load tickets and automate invoice workflows. Uses OCR-based document scanning via OpenCV and Amazon Textract, event-driven AWS infrastructure, Google Sheets and Apps Script integrations, and real-time operational dashboards for ticket validation, invoice generation, bookkeeping, and driver management.</p>
+                        <div className="project-buttons hide">
+                            <a href="https://github.com/artomatiq/ccs-ticket-backend" className="project-button hide" rel="noreferrer" target="_blank">CODE   <i className="uil uil-github-alt"></i></a>
+                            <a href="https://carolinascourier.com/ticket/login" className="project-button hide" rel="noreferrer" target="_blank">VISIT   <i className="uil uil-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
                 <div className='project-container tweety'>
                     <div className="project-image">
                         {/* <video className='project hide' id='tweety-bird' src={tweetyBirdVid} draggable="false" loop autoPlay muted playsInline onClick={handleTweetyClick} /> */}
