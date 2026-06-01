@@ -12,18 +12,18 @@ import Footer from './components/footer/Footer';
 
 function App() {
 
-  const sectionTitleObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show')
-      }
-      else {
-        entry.target.classList.remove('show')
-      }
-    })
-  })
-
   useEffect(() => {
+    const sectionTitleObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show')
+        }
+        else {
+          entry.target.classList.remove('show')
+        }
+      })
+    })
+
     const sectionTitles = document.querySelectorAll('.section__title span')
 
     sectionTitles.forEach(title => {

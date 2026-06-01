@@ -4,7 +4,6 @@ import Social from "./Social";
 import Data from "./Data";
 import ScrollDown from "./ScrollDown";
 
-import profilePic from '../../assets/profile.jpg'
 
 const Home = () => {
 

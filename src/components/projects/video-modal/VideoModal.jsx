@@ -1,5 +1,5 @@
 import './VideoModal.css';
-import React, { useState } from "react";
+import React from "react";
 import Modal from 'react-modal';
 
 function VideoModal({ videoId, isOpen, onRequestClose }) {

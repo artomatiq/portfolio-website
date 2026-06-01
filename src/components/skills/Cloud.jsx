@@ -73,7 +73,7 @@ const Cloud = () => {
                 </div>
             </div>
 
-            <a className="aws-badge" href="https://www.credly.com/badges/16c45074-a25c-4d98-a383-26dc5efa28a1" target="_blank" rel="noopener">
+            <a className="aws-badge" href="https://www.credly.com/badges/16c45074-a25c-4d98-a383-26dc5efa28a1" target="_blank" rel="noreferrer">
                 <img src="https://images.credly.com/size/680x680/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certification Badge" width="150" />
             </a>
         </div>

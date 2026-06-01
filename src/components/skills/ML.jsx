@@ -74,10 +74,10 @@ const ML = () => {
                 </div>
             </div>
 
-            <a className="aws-badge" href="https://www.credly.com/badges/1343ca29-c464-4f59-ad2f-0aee803e3098/public_url" target="_blank" rel="noopener">
+            <a className="aws-badge" href="https://www.credly.com/badges/1343ca29-c464-4f59-ad2f-0aee803e3098/public_url" target="_blank" rel="noreferrer">
                     <img src="https://images.credly.com/size/680x680/images/778bde6c-ad1c-4312-ac33-2fa40d50a147/image.png" alt="AWS Certification Badge" width="150" />
             </a>
-            <a className="aws-badge" href="https://www.credly.com/badges/206a5bc2-a25e-46f0-9a91-84d8be5c07f8/public_url" target="_blank" rel="noopener">
+            <a className="aws-badge" href="https://www.credly.com/badges/206a5bc2-a25e-46f0-9a91-84d8be5c07f8/public_url" target="_blank" rel="noreferrer">
                     <img src="https://images.credly.com/size/680x680/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS Certification Badge" width="150" />
             </a>
         </div>
